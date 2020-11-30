@@ -120,6 +120,9 @@ return [
         'password' => 'パスワード', //追記
         'departure' => '貸出時間',
         'revert' => '返却時間',
+        'iconOwner'=>'アイコン画像',
+        'iconDriver' => 'アイコン画像',
+
     ],
 
 ];

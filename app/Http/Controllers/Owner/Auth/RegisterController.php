@@ -69,6 +69,8 @@ class RegisterController extends Controller
             'imgCar' => ['required','string','max:20'],
             'nameCar' => ['required','string','max:20'],
             'numPeople' => ['required','numeric','max:20'],
+            'numPeople' => ['required','numeric','max:20'],
+            'iconOwner' => ['required','string','max:20'],
             ]);
     }
 
@@ -87,6 +89,7 @@ class RegisterController extends Controller
             'imgCar' => $data['imgCar'],
             'nameCar' => $data['nameCar'],
             'numPeople' => $data['numPeople'],
+            'iconOwner' => $data['iconOwner'],
         ]);
     }
 }

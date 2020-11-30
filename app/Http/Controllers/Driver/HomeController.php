@@ -57,7 +57,9 @@ class HomeController extends Controller
      */
     public function show()
     {   
-
+        $idDriver = Auth::id();
+        $driver = Driver::find($idDriver);
+        return view('driver.show',compact('driver'));
     }
 
     /**
@@ -68,7 +70,9 @@ class HomeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $idDriver = $id;
+        $driver = Driver::find($idDriver);
+        return view('driver.edit',compact('driver'));
     }
 
     /**
@@ -79,8 +83,14 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+    {   
+        $driver = Driver::find($id);
+        $driver->nameDriver = $request->input('nameDriver');
+        $driver->email = $request->input('email');
+        $driver->iconDriver = $request->input('iconDriver');
+        $driver->save();
+
+        return redirect('driver/show');
     }
 
     /**

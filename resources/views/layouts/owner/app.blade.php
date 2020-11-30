@@ -23,7 +23,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ route('index') }}">
                 <img src="{{ asset('image/logo.png') }}" width="400px">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -40,17 +40,14 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         <li class="nav-item">
-                                <a class="nav-link" href="{{('/index')}}">{{ __('サービス説明') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('ログイン') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ ('contactOwner/register') }}">{{ __('新規登録') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{'/qa'}}">{{ __('Q＆A') }}</a>
-                            </li>
+                            <a class="nav-link" href="{{('/index')}}">{{ __('サービス説明') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{'/qa'}}">{{ __('Q＆A') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('owner.show')}}">{{ __('登録情報変更') }}</a>
+                        </li>
                         @unless (Auth::guard('owner')->check()) <!--追加-->
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('owner.login') }}">{{ __('ログイン') }}</a>
@@ -79,6 +76,7 @@
                                 </div>
                             </li>
                         @endunless
+
                     </ul>
                 </div>
             </div>

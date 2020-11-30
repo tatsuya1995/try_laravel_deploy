@@ -23,7 +23,7 @@ Route::get('/images/{filename}','ImagesController@show');
 Route::post('/images/{filename}','ImagesController@destroy');
 
 //ログイン前共通部分
-Route::get('/index','commonController@index');
+Route::get('/index','commonController@index')->name('index');
 Route::get('/qa','commonController@qa');
 Route::get('/select','commonController@select');
 
@@ -41,15 +41,19 @@ Route::namespace('Driver')->prefix('driver')->name('driver.')->group(function(){
     //ログイン認証後
     Route::middleware('auth:driver')->group(function(){
 
-        //TOPページ
+
         Route::get('home','HomeController@searchIn');
-        //Route::resource('home','HomeController',['only' => 'index']);
         Route::get('search','HomeController@searchIn')->name('search');
         Route::post('search','HomeController@searchOut')->name('search');
         Route::post('talk','HomeController@talkIn')->name('talk');
         Route::get('talk/{idOwner}','HomeController@talkIn');
         Route::post('post','HomeController@postIn')->name('post');
         Route::post('delete','HomeController@deletePost')->name('deletePost');
+
+        //登録情報表示
+        Route::get('show','HomeController@show')->name('show');
+        Route::get('edit/{id}','HomeController@edit')->name('edit');
+        Route::post('update/{id}','HomeController@update')->name('update');
     
     });
 });
@@ -77,6 +81,12 @@ Route::namespace('Owner')->prefix('owner')->name('owner.')->group(function(){
         Route::get('talkDetails/{idDriver}','HomeController@talkDetails')->name('talkDetails');
 
         Route::post('post/{idDriver}','HomeController@postIn')->name('post');
+
+        //登録情報表示
+        Route::get('show','HomeController@show')->name('show');
+        Route::get('edit/{id}','HomeController@edit')->name('edit');
+        Route::post('update/{id}','HomeController@update')->name('update');
+
 
     });
 });

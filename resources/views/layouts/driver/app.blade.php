@@ -23,7 +23,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ route('index') }}">
                 <img src="{{ asset('image/logo.png') }}" width="400px">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -41,10 +41,13 @@
                         <!-- Authentication Links -->
                         <li class="nav-item">
                                 <a class="nav-link" href="{{('/index')}}">{{ __('サービス説明') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{'/qa'}}">{{ __('Q＆A') }}</a>
-                            </li>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{'/qa'}}">{{ __('Q＆A') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('driver.show')}}">{{ __('登録情報') }}</a>
+                        </li>
                         @unless (Auth::guard('driver')->check()) <!--追加-->
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('driver.login') }}">{{ __('ログイン') }}</a>

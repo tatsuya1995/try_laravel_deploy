@@ -55,44 +55,43 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
-    {   
-
+    public function show() 
+    {
+        $idOwner = Auth::id();
+        $owner = Owner::find($idOwner);
+        return view('owner.show',compact('owner'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+/**
+ * Show the form for editing the specified resource.
+ *
+ * @param  int  $id
+ * @return \Illuminate\Http\Response
+ */
     public function edit($id)
     {
-        //
+        $idOwner = $id;
+        $owner = Owner::find($idOwner);
+        return view('owner.edit',compact('owner'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+/**
+ * Update the specified resource in storage.
+ *
+ * @param  \Illuminate\Http\Request  $request
+ * @param  int  $id
+ * @return \Illuminate\Http\Response
+ */
     public function update(Request $request, $id)
-    {
-        //
-    }
+    {   
+        $owner = Owner::find($id);
+        $owner->nameOwner = $request->input('nameOwner');
+        $owner->email = $request->input('email');
+        $owner->iconOwner = $request->input('iconOwner');
+        $owner->save();
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    // public function destroy($id)
-    // {
-    //     //
-    // }
+        return redirect('owner/show');
+    }
 
     public function scheduleIn()
     {

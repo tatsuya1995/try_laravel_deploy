@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.common')
 
 @section('content')
 <div class="container">
@@ -59,14 +59,14 @@
     <div class="card">
         <div class="card-body">
       <div>
-        <h3><a href="">ログイン</a></h3>
+        <h3>ログイン</h3>
           <p><a href="{{('driver/login')}}" ><img src="image/driverlogin.png" width="150" alt="ドライバーログインボタン"></a>
           (車両を借りたい方)<p>
           <p><a href="{{('owner/login')}}"><img src="image/ownerlogin.png" width="150" alt="オーナーログインボタン"></a>
           (車両を貸したい方)</p>
       </div>
       <div>
-          <h3><a href="">新規登録</a></h3>
+          <h3>新規登録</h3>
             <p><a href="{{'driver/register'}}"><img src="image/driverregist.png" width="150" alt="ドライバー登録ボタン"></a>
             (車両を借りたい方)</p>
             <p><a href="{{'owner/register'}}"><img src="image/ownerregist.png" width="150" alt="オーナー登録ボタン"></a> 
