@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">{{ __('登録情報') }}</div>
                     <div class="card-body">
-                        <form action="{{route('owner.update',['id'=>$owner->id])}}" method="post">
+                        <form action="{{route('owner.update',['id'=>$owner->id])}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row">
                         <label for="nameOwner" class="col-md-4 col-form-label text-md-right">{{ __('氏名') }}</label>
@@ -22,15 +22,15 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="iconOwner" class="col-md-4 col-form-label text-md-right">{{ __('車両画像') }}</label>
+                            <label for="iconOwner" class="col-md-4 col-form-label text-md-right">{{ __('アイコン画像') }}</label>
                             <div class="col-md-6">
-                                <input id="iconOwner" type="text" class="form-control" name="iconOwner" value="{{ $owner->iconOwner }}" required autocomplete="iconOwner">
+                                <input id="iconOwner" type="file"  name="iconOwner" value="{{ $owner->iconOwner }}" required autocomplete="iconOwner">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="imgCar" class="col-md-4 col-form-label text-md-right">{{ __('車両画像') }}</label>
                             <div class="col-md-6">
-                                <input id="imgCar" type="text" class="form-control" name="imgCar" value="{{ $owner->imgCar }}" required autocomplete="imgCar">
+                                <input id="imgCar" type="file"  name="imgCar" value="{{ $owner->imgCar }}" required autocomplete="imgCar">
                             </div>
                         </div>
                         <div class="form-group row">

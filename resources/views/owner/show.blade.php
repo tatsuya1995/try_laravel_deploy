@@ -10,8 +10,8 @@
                         <table class="table">
                             <tr><th>氏名</th><td>{{$owner->nameOwner}}</td></tr>
                             <tr><th>メールアドレス</th><td>{{$owner->email}}</td></tr>
-                            <tr><th>オーナーアイコン画像</th><td>{{$owner->iconOwner}}</td></tr>
-                            <tr><th>車両画像</th><td>{{$owner->imgCar}}</td></tr>
+                            <tr><th>オーナーアイコン画像</th><td><img src="{{asset('storage/'.$owner->iconOwner)}}" width="150px"></td></tr>
+                            <tr><th>車両画像</th><td><img src="{{asset('storage/'.$owner->imgCar)}}" width="150px"></td></tr>
                             <tr><th>車両名</th><td>{{$owner->nameCar}}</td></tr>
                             <tr><th>最大乗車人数</th><td>{{$owner->numPeople}}人</td></tr>
                             <tr><th></th><td>
