@@ -7,7 +7,7 @@
       <div class="card text-center">
         <div class="card-body">
           <h3>車を借りたい人・貸したい人　両者の思いを我々Car.マッチングが結びます。</h3>
-          <img src="image/index.png" width="400" alt="Car.マッチングイメージ画像">
+          <img src="{{asset('/assets/image/index.png')}}" width="400" alt="Car.マッチングイメージ画像">
         </div>
       </div>
     </div>
@@ -22,7 +22,7 @@
           </ul>
         </div>
         <div>
-          <img src="image/arrows.png"  width="70px" alt="矢印画像">
+          <img src="{{asset('/assets/image/arrows.png')}}"  width="70px" alt="矢印画像">
         </div>
         <div>
           <h3>オーナー目線</h3>
@@ -60,16 +60,16 @@
         <div class="card-body">
       <div>
         <h3>ログイン</h3>
-          <p><a href="{{('driver/login')}}" ><img src="image/driverlogin.png" width="150" alt="ドライバーログインボタン"></a>
+          <p><a href="{{('driver/login')}}" ><img src="{{asset('/assets/image/driverlogin.png')}}" width="150" alt="ドライバーログインボタン"></a>
           (車両を借りたい方)<p>
-          <p><a href="{{('owner/login')}}"><img src="image/ownerlogin.png" width="150" alt="オーナーログインボタン"></a>
+          <p><a href="{{('owner/login')}}"><img src="{{asset('/assets/image/ownerlogin.png')}}" width="150" alt="オーナーログインボタン"></a>
           (車両を貸したい方)</p>
       </div>
       <div>
           <h3>新規登録</h3>
-            <p><a href="{{'driver/register'}}"><img src="image/driverregist.png" width="150" alt="ドライバー登録ボタン"></a>
+            <p><a href="{{'driver/register'}}"><img src="{{asset('/assets/image/driverregist.png')}}" width="150" alt="ドライバー登録ボタン"></a>
             (車両を借りたい方)</p>
-            <p><a href="{{'owner/register'}}"><img src="image/ownerregist.png" width="150" alt="オーナー登録ボタン"></a> 
+            <p><a href="{{'owner/register'}}"><img src="{{asset('/assets/image/ownerregist.png')}}" width="150" alt="オーナー登録ボタン"></a> 
             (車両を貸したい方)</p>
       </div>
       </div>
