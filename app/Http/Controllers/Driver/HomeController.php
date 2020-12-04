@@ -59,6 +59,10 @@ class HomeController extends Controller
     {   
         $idDriver = Auth::id();
         $driver = Driver::find($idDriver);
+        
+        // $pathDriver = $data['iconDriver']->store('public');
+        // $iconDriver = basename($pathDriver);
+
         return view('driver.show',compact('driver'));
     }
 
@@ -87,7 +91,11 @@ class HomeController extends Controller
         $driver = Driver::find($id);
         $driver->nameDriver = $request->input('nameDriver');
         $driver->email = $request->input('email');
-        $driver->iconDriver = $request->input('iconDriver');
+
+        $pathIcon = $request->iconDriver->store('public');
+        $driverIcon = basename($pathIcon);
+        $driver->iconDriver = $driverIcon;
+
         $driver->save();
 
         return redirect('driver/show');

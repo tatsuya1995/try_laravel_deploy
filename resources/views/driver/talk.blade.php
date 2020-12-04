@@ -7,16 +7,16 @@
             <div class="card">
                 <div class="card-header">{{$ownerInfo->nameOwner}}さんの情報</div>
                     <div class="card-body">
-                        <div class ="row">
+                        <div class ="row text-center">
                             <div class="col-md-6">
                                 <ul>
-                                    <li><img src="" alt="アイコン画像">
-                                    <li>氏名:{{$ownerInfo->nameOwner}}
+                                    <li><img src="{{asset('storage/'.$ownerInfo->iconOwner)}}" width="200px" alt="アイコン画像">
+                                    <li>オーナー名:{{$ownerInfo->nameOwner}}
                                 </ul>
                             </div>
                             <div class="col-md-6">
                                 <ul>
-                                    <li><img src="" alt="車両画像">
+                                    <li><img src="{{asset('storage/'.$ownerInfo->imgCar)}}" width="200px" alt="車両画像">
                                     <li>車名：{{$ownerInfo->nameCar}}
                                     <li>最大乗車可能人数：{{$ownerInfo->numPeople}}人
                                 </ul>

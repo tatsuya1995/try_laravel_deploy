@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">{{ __('登録情報') }}</div>
                     <div class="card-body">
-                        <form action="{{route('driver.update',['id'=>$driver->id])}}" method="post">
+                        <form action="{{route('driver.update',['id'=>$driver->id])}}" method="post"  enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row">
                             <label for="nameDriver" class="col-md-4 col-form-label text-md-right">{{ __('氏名') }}</label>
@@ -24,7 +24,7 @@
                         <div class="form-group row">
                             <label for="iconDriver" class="col-md-4 col-form-label text-md-right">{{ __('アイコン画像') }}</label>
                             <div class="col-md-6">
-                                <input id="iconDriver" type="text" class="form-control" name="iconDriver" value="{{$driver->iconDriver}}" required autocomplete="iconDriver">
+                                <input id="iconDriver" type="file"  name="iconDriver" value="{{$driver->iconDriver}}" required autocomplete="iconDriver">
                             </div>
                         </div>
                         <div class="form-group row mb-0">

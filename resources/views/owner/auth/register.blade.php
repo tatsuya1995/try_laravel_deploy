@@ -18,7 +18,7 @@
                     </ul>
                 </div>
                 @endif
-                    <form method="POST" action="{{ route('owner.register') }}">
+                    <form method="POST" action="{{ route('owner.register') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row">
                             <label for="nameOwner" class="col-md-4 col-form-label text-md-right">{{ __('氏名') }}</label>
@@ -47,13 +47,13 @@
                         <div class="form-group row">
                             <label for="iconOwner" class="col-md-4 col-form-label text-md-right">{{ __('アイコン画像') }}</label>
                             <div class="col-md-6">
-                                <input id="iconOwner" type="text" class="form-control" name="iconOwner" value="{{ old('iconOwner') }}" required autocomplete="iconOwner">
+                                <input id="iconOwner" type="file"  name="iconOwner" value="{{ old('iconOwner') }}" required autocomplete="iconOwner">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="imgCar" class="col-md-4 col-form-label text-md-right">{{ __('車両画像') }}</label>
                             <div class="col-md-6">
-                                <input id="imgCar" type="text" class="form-control" name="imgCar" value="{{ old('imgCar') }}" required autocomplete="imgCar">
+                                <input id="imgCar" type="file"  name="imgCar" value="{{ old('imgCar') }}" required autocomplete="imgCar">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -65,7 +65,7 @@
                         <div class="form-group row">
                             <label for="numPeople" class="col-md-4 col-form-label text-md-right">{{ __('最大乗車人数') }}</label>
                             <div class="col-md-6">
-                                <input id="numPeople" type="number" class="form-control" name="numPeople" value="{{ old('numPeople') }}" required autocomplete="numPeople">
+                                <input id="numPeople" type="number" min="1" class="form-control" name="numPeople" value="{{ old('numPeople') }}" required autocomplete="numPeople">
                             </div>
                         </div>
                         <div class="form-group row mb-0">

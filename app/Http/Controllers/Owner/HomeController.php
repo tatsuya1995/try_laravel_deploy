@@ -87,9 +87,14 @@ class HomeController extends Controller
         $owner = Owner::find($id);
         $owner->nameOwner = $request->input('nameOwner');
         $owner->email = $request->input('email');
-        $owner->iconOwner = $request->input('iconOwner');
-        $owner->save();
+        $pathOwner = $request->iconOwner->store('public');
+        $iconOwner = basename($pathOwner);
+        $owner->iconOwner = $iconOwner;
 
+        $pathCar = $request->imgCar->store('public');
+        $imgCar = basename($pathCar);
+        $owner->imgCar = $imgCar;
+        $owner->save();
         return redirect('owner/show');
     }
 

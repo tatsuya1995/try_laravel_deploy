@@ -66,7 +66,7 @@ class RegisterController extends Controller
             'nameDriver' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:drivers'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'iconDriver' => ['required','string','max:20'],
+            'iconDriver' => ['required','file','image',],
             ]);
     }
 
@@ -78,11 +78,14 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return Driver::create([
+        $pathDriver = $data['iconDriver']->store('public');
+        $iconDriver = basename($pathDriver);
+        
+            return Driver::create([
             'nameDriver' => $data['nameDriver'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'iconDriver' => $data['iconDriver'],
+            'iconDriver' => $iconDriver,
         ]);
     }
 }
