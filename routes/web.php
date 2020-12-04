@@ -23,8 +23,7 @@ Route::get('/images/{filename}','ImagesController@show');
 Route::post('/images/{filename}','ImagesController@destroy');
 
 //ログイン前共通部分
-//Route::get('/index','commonController@index')->name('index');
-Route::get('/13.230.223.245/resources/views/index','commonController@index')->name('index');
+Route::get('/index','commonController@index')->name('index');
 Route::get('/qa','commonController@qa');
 Route::get('/select','commonController@select');
 
