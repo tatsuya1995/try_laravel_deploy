@@ -9,6 +9,7 @@ use App\Models\Owner;
 use App\Models\OwnerSchedule;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
+use Storage;
 
 class HomeController extends Controller
 {
@@ -56,9 +57,10 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show() 
-    {
+    {   
         $idOwner = Auth::id();
         $owner = Owner::find($idOwner);
+        dd($owner);
         return view('owner.show',compact('owner'));
     }
 
@@ -87,13 +89,15 @@ class HomeController extends Controller
         $owner = Owner::find($id);
         $owner->nameOwner = $request->input('nameOwner');
         $owner->email = $request->input('email');
-        $pathOwner = $request->iconOwner->store('public');
-        $iconOwner = basename($pathOwner);
-        $owner->iconOwner = $iconOwner;
 
-        $pathCar = $request->imgCar->store('public');
-        $imgCar = basename($pathCar);
-        $owner->imgCar = $imgCar;
+        //S3への画像保存
+        $owner->iconOwner = $iconOwner;
+        $pathIconOwner = Storage::disk('s3')->putFile('/iconOwner',$iconOwner,'public');
+        $imgCar = $request->imgCar;
+        $pathImgCar = Storage::disk('s3')->putFile('/imgCar',$imgCar,'public');
+        $owner->iconOwner = Storage::disk('s3')->url($pathIconOwner);
+        $owner->imgCar =Storage::disk('s3')->url($pathImgCar);
+
         $owner->save();
         return redirect('owner/show');
     }
