@@ -77,15 +77,19 @@ class RegisterController extends Controller
      * @return \App\User
      */
     protected function create(array $data)
-    {
-        $pathDriver = $data['iconDriver']->store('public');
-        $iconDriver = basename($pathDriver);
+    {   
+        //ファイル内に保存
+        // $pathDriver = $data['iconDriver']->store('public');
+        // $iconDriver = basename($pathDriver);
         
+        $iconDriver = $data['iconDriver'];
+        $pathIconDriver = Storage::disk('s3')->putFile('try',$iconDriver,'public');
+
             return Driver::create([
             'nameDriver' => $data['nameDriver'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'iconDriver' => $iconDriver,
+            'iconDriver' => Storage::disk('s3')->url($pathIconDriver),
         ]);
     }
 }

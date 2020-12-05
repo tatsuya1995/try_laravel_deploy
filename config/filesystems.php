@@ -57,11 +57,10 @@ return [
 
         's3' => [
             'driver' => 's3',
-            'key' => env('AKIA2QG4AAVKD2WGN475'),
-            'secret' => env('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'),
-            'region' => env('ap-northeast-1'),
-            'bucket' => env('laravel.s3'),
-            'url' => env('AWS_URL'),
+            'key' => env('AWS_ACCESS_KEY_ID'),
+            'secret' => env('AWS_SECRET_ACCESS_KEY'),
+            'region' => env('AWS_DEFAULT_REGION'),
+            'bucket' => env('AWS_BUCKET'),
         ],
 
     ],
