@@ -83,7 +83,7 @@ class RegisterController extends Controller
         // $iconDriver = basename($pathDriver);
         
         $iconDriver = $data['iconDriver'];
-        $pathIconDriver = Storage::disk('s3')->putFile('/laravel.s3',$iconDriver,'public');
+        $pathIconDriver = Storage::disk('s3')->putFile('/',$iconDriver,'public');
 
             return Driver::create([
             'nameDriver' => $data['nameDriver'],
