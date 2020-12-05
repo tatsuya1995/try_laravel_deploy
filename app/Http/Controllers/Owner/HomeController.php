@@ -60,7 +60,7 @@ class HomeController extends Controller
     {   
         $idOwner = Auth::id();
         $owner = Owner::find($idOwner);
-        dd($owner);
+        //dd($owner);
         return view('owner.show',compact('owner'));
     }
 

@@ -10,7 +10,7 @@
                         <table class="table">
                             <tr><th>氏名</th><td>{{$driver->nameDriver}}</td></tr>
                             <tr><th>メールアドレス</th><td>{{$driver->email}}</td></tr>
-                            <tr><th>ドライバーアイコン画像</th><td><img src="{{asset('storage/'.$driver->iconDriver)}}" width="150px" alt="アイコン画像"></td></tr>
+                            <tr><th>ドライバーアイコン画像</th><td><img src="{{$driver->iconDriver}}" width="150px" alt="アイコン画像"></td></tr>
                             <tr><th></th><td>
                                 <form action="{{route('driver.edit',['id'=>$driver->id])}}" method="get">
                                 @csrf
