@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\Driver;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
+use Storage;
 
 class HomeController extends Controller
 {
