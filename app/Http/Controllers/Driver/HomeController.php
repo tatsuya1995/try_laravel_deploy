@@ -92,12 +92,11 @@ class HomeController extends Controller
         $driver->nameDriver = $request->input('nameDriver');
         $driver->email = $request->input('email');
 
-        $pathIcon = $request->iconDriver->store('public');
-        $driverIcon = basename($pathIcon);
-        $driver->iconDriver = $driverIcon;
+        $iconDriver = $request->iconDriver;
+        $pathIconDriver = Storage::disk('s3')->putFile('/iconDriver',$iconDriver,'public');
+        $driver->iconDriver = Storage::disk('s3')->url($pathIconDriver);
 
         $driver->save();
-
         return redirect('driver/show');
     }
 
