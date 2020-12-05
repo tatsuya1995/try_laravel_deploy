@@ -91,7 +91,7 @@ class HomeController extends Controller
         $owner->email = $request->input('email');
 
         //S3への画像保存
-        $owner->iconOwner = $iconOwner;
+        $iconOwner = $request->iconOwner;
         $pathIconOwner = Storage::disk('s3')->putFile('/iconOwner',$iconOwner,'public');
         $imgCar = $request->imgCar;
         $pathImgCar = Storage::disk('s3')->putFile('/imgCar',$imgCar,'public');
