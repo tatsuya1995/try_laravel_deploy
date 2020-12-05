@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\owner\Auth;
+namespace App\Http\Controllers\Owner\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
-use App\Models\owner;
+use App\Models\Owner;
 
 class RegisterController extends Controller
 {
