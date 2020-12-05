@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Driver;
-
+use Storage;
 class RegisterController extends Controller
 {
     /*
