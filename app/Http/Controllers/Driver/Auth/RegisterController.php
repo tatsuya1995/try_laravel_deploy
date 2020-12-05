@@ -81,9 +81,10 @@ class RegisterController extends Controller
         //ファイル内に保存
         // $pathDriver = $data['iconDriver']->store('public');
         // $iconDriver = basename($pathDriver);
-        
+
+        //S3に保存
         $iconDriver = $data['iconDriver'];
-        $pathIconDriver = Storage::disk('s3')->putFile('/',$iconDriver,'public');
+        $pathIconDriver = Storage::disk('s3')->putFile('/iconDriver',$iconDriver,'public');
 
             return Driver::create([
             'nameDriver' => $data['nameDriver'],

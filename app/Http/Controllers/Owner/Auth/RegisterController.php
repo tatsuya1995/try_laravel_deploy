@@ -81,17 +81,24 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {   
-        $pathOwner = $data['iconOwner']->store('public');
-        $iconOwner = basename($pathOwner);
-        $pathCar = $data['imgCar']->store('public');
-        $imgCar = basename($pathCar);
+        //ファイル内に保存
+        // $pathOwner = $data['iconOwner']->store('public');
+        // $iconOwner = basename($pathOwner);
+        // $pathCar = $data['imgCar']->store('public');
+        // $imgCar = basename($pathCar);
+        
+        //S3に保存
+        $iconOwner = $data['iconOwner'];
+        $pathIconOwner = Srorage::disk('s3')->putFile('/iconOwner',$iconOwner,'public');
+        $imgCar = $data['imgCar'];
+        $pathImgCar = Srorage::disk('s3')->putFile('/imgCar',$imgCar,'public');
 
         return Owner::create([
             'nameOwner' => $data['nameOwner'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'iconOwner' => $iconOwner,
-            'imgCar' => $imgCar,
+            'iconOwner' => Storage::disk('s3')->url($pathIconOwner),
+            'imgCar' => Storage::disk('s3')->url($pathImgCar),
             'nameCar' => $data['nameCar'],
             'numPeople' => $data['numPeople'],
         ]);
