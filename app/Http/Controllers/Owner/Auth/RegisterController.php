@@ -89,9 +89,9 @@ class RegisterController extends Controller
         
         //S3に保存
         $iconOwner = $data['iconOwner'];
-        $pathIconOwner = Srorage::disk('s3')->putFile('/iconOwner',$iconOwner,'public');
+        $pathIconOwner = Storage::disk('s3')->putFile('/iconOwner',$iconOwner,'public');
         $imgCar = $data['imgCar'];
-        $pathImgCar = Srorage::disk('s3')->putFile('/imgCar',$imgCar,'public');
+        $pathImgCar = Storage::disk('s3')->putFile('/imgCar',$imgCar,'public');
 
         return Owner::create([
             'nameOwner' => $data['nameOwner'],
