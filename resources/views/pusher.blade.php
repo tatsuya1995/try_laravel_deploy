@@ -17,9 +17,14 @@
 </form> 
 
 <!-- 表示される部分 -->
-<td class="table-text" id="board">
-  <div><label for="comment">内容：</label></td>
-
+<!-- <td class="table-text" id="board">
+  <div><label for="comment">内容：</label></td> -->
+<h2>内容</h2>
+  <ul id="board">
+    @foreach($chats as $chat)
+        <li>{{ $chat->comment }}</li>
+    @endforeach
+  </ul>
 
   
 @endsection
