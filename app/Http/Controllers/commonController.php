@@ -55,7 +55,7 @@ class CommonController extends Controller
         $chat->save();
         //pusherの処理
         event(new Pusher($chat));
-
-        return view('/pusher');
+        $chats = Chat::all();
+        return view('/pusher',["chats" => $chats]);
     }
 }
