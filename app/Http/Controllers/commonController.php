@@ -54,7 +54,6 @@ class CommonController extends Controller
         //pusherの処理
         event(new Pusher($chat));
 
-        $chats = Chat::all();
-        return view('/pusher',["chats" => $chats]);
+        return view('/pusher');
     }
 }
