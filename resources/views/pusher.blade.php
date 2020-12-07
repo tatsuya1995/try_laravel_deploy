@@ -21,9 +21,11 @@
   <div><label for="comment">内容：</label></td> -->
 <h2>内容</h2>
   <ul id="board">
+  @if ($chats->any())
     @foreach($chats as $chat)
         <li>{{ $chat->comment }}</li>
     @endforeach
+  @endif
   </ul>
 
   
