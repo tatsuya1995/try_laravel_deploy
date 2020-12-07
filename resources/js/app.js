@@ -17,9 +17,8 @@ $(docummnt).ready(function(){
         });
         return false;
     });
-    window.Echo.channel("chat").listen("Pusher",e =>{
-        $("#board").append(
-            "<div><label>コメント</div>" + e.chat.comment + "</div>"
-        );
+    window.Echo.channel("chat")
+        .listen("Pusher",e =>{
+        $("#board").append("<li>" + e.chat.comment + "</li>");
     });
 });
