@@ -2,8 +2,8 @@
 
 @section('content')
 <!-- 送信フォーム -->
-<!-- <form enctype="multipart/form-data" action="" method="POST" class="form-horizontal">
-  {{ csrf_field() }} -->
+<form enctype="multipart/form-data" action="" method="POST" class="form-horizontal">
+  {{ csrf_field() }} 
   <div class="form-group">
     <div class="col-sm-6">
       <textarea name="comment"  cols="30" rows="10"  class="form-control" placeholder="入力してください" id="comment"></textarea>
