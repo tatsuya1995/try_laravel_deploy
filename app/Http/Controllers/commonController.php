@@ -46,16 +46,16 @@ class CommonController extends Controller
         return view('/pusher',["chats" => $chats]);
     }
 
-    public function pusherStore(Request $request)
+    public function pusherStore(Request $request):JsonResponse
     {   
         //dd($request);
         //Eloquet モデル
-        $chat = new Chat;
-        $chat->comment = $request->comment;
+        $chat = new Chat($request->all());
         $chat->save();
         //pusherの処理
         event(new Pusher($chat));
-        $chats = Chat::all();
-        return view('/pusher',["chats" => $chats]);
+        return response()->json(['message' => '投稿しました。']);
+
+    //     return view('/pusher',["chats" => $chats]);
     }
 }
