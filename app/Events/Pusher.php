@@ -3,7 +3,7 @@
 namespace App\Events;
 
 //データベースを参照
-use App\Chat;
+use App\Models\Chat;
 
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
