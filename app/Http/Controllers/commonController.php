@@ -46,7 +46,7 @@ class CommonController extends Controller
 
     public function pusherStore(Request $request): JsonResponse
     {   
-        dd($request);
+        //dd($request);
         //Eloquet モデル
         $chat = new Chat;
         $chat->comment = $request->comment;
