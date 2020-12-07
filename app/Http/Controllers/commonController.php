@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Chat;
 use App\Events\Pusher;
 use Illuminate\Http\JsonResponse;
+use Illuminate\View\View;
+
 class CommonController extends Controller
 {
     /**
