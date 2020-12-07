@@ -52,7 +52,7 @@ class CommonController extends Controller
         $chat->comment = $request->comment;
         $chat->save();
         //pusherの処理
-        //event(new Pusher($chat));
+        event(new Pusher($chat));
 
         return response()->json(['message' => '投稿しました。']);
     }
