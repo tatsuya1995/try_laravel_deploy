@@ -29,9 +29,11 @@ Route::get('/select','commonController@select');
 
 //pusherテスト
 Route::get('/pusher','commonController@pusherGet');
+Route::post('/pusher','commonController@pusherStore');
+
 //pusher受信テスト
 Route::get('/trypusher', function() {
-    return view('trypusher');
+    return view('tryPusher');
 });
 Route::get('/hello-world', function () {
     event(new App\Events\Pusher('hello world'));

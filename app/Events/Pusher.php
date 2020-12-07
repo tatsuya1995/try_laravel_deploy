@@ -3,7 +3,7 @@
 namespace App\Events;
 
 //データベースを参照
-//use App\Chat;
+use App\Chat;
 
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
@@ -25,7 +25,7 @@ class Pusher implements ShouldBroadcast
      *
      * @return void
      */
-    public function __construct($chat)
+    public function __construct(Chat $chat)
     {
         $this->chat = $chat;
     }
@@ -35,15 +35,15 @@ class Pusher implements ShouldBroadcast
      *
      * @return \Illuminate\Broadcasting\Channel|array
      */
-    public function broadcastOn()
-    {
-        //return new Channel('channelName');
-        return ['my-channel'];
-    }   
     // public function broadcastOn()
     // {
-    //     return new PrivateChannel('channel-name');
-    // }
+    //     //return new Channel('channelName');
+    //     return ['my-channel'];
+    // }   
+    public function broadcastOn()
+    {
+        return new Channel('chat');
+    }
 
     public function broadcastAs()
     {

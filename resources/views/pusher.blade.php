@@ -18,6 +18,8 @@
 
 <!-- 表示される部分 -->
 <td class="table-text" id="board">
-  <div><label for="comment">内容：</label>{{ $write->comment }}</td>
+  <div><label for="comment">内容：</label></td>
 
+
+  
 @endsection

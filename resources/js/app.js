@@ -7,7 +7,7 @@ $(docummnt).ready(function(){
         }
     });
     $("#submit").click(function(){
-        const url = "/chats";
+        const url = "/pusher";
         $.ajax({
             url: url,
             data: {
@@ -17,9 +17,9 @@ $(docummnt).ready(function(){
         });
         return false;
     });
-    window.Echo.channel("channelName").listen("PusherEvent",e =>{
-        $("board").prepend(
-            "<div><label>コメント</div>" + e.chats.commetnt + "</div>"
+    window.Echo.channel("chat").listen("Pusher",e =>{
+        $("#board").append(
+            "<div><label>コメント</div>" + e.chat.comment + "</div>"
         );
     });
 });

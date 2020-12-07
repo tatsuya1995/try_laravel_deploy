@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Chat;
+use App\Events\Pusher;
+use Illuminate\Http\JsonResponse;
 class CommonController extends Controller
 {
     /**
@@ -37,18 +39,20 @@ class CommonController extends Controller
     }
     
     public function pusherGet()
-    {
-        return view('/pusher');
+    {   
+        $chats = Chat::all();
+        return view('/pusher',["chats" => $chats]);
     }
 
-    public function pusherStore(Request $request)
+    public function pusherStore(Request $request): JsonResponse
     {   
-        //Eloquetn モデル
-        $chats = new Chat;
-        $chats->comment = $request->comment;
-        $posts->save();
+        //Eloquet モデル
+        $chat = new Chat;
+        $chat->comment = $request->comment;
+        $chat->save();
         //pusherの処理
-        event(new PusherEvent($chats));
-        //return view('/pusher');
+        event(new Pusher($chat));
+
+        return response()->json(['message' => '投稿しました。']);
     }
 }

@@ -12,7 +12,7 @@
 */
 
 
-Broadcast::channel('channelName', function () {
+Broadcast::channel('chat', function () {
     return true;
 });
 
