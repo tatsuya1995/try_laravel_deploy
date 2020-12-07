@@ -46,7 +46,7 @@ class CommonController extends Controller
         return view('/pusher',["chats" => $chats]);
     }
 
-    public function pusherStore(Request $request):JsonResponse
+    public function pusherCreate(Request $request):JsonResponse
     {   
         //dd($request);
         //Eloquet モデル

@@ -7,7 +7,7 @@ $(docummnt).ready(function(){
         }
     });
     $("#submit").click(function(){
-        const url = "/pusher";
+        const url = "/pusher/create";
         $.ajax({
             url: url,
             data: {
