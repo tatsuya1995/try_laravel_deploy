@@ -27,6 +27,17 @@ Route::get('/index','commonController@index')->name('index');
 Route::get('/qa','commonController@qa');
 Route::get('/select','commonController@select');
 
+//pusherテスト
+Route::get('/pusher','commonController@pusherGet');
+//pusher受信テスト
+Route::get('/trypusher', function() {
+    return view('trypusher');
+});
+Route::get('/hello-world', function () {
+    event(new App\Events\Pusher('hello world'));
+    return ['chat' => 'send to message : hello world'];
+});
+
 
 //ドライバー
 Route::namespace('Driver')->prefix('driver')->name('driver.')->group(function(){

@@ -25,12 +25,30 @@ class CommonController extends Controller
     {
         return view('/index');
     }
+    
     public function qa()
     {
         return view('/qa');
     }
+    
     public function select()
     {
         return view('/select');
+    }
+    
+    public function pusherGet()
+    {
+        return view('/pusher');
+    }
+
+    public function pusherStore(Request $request)
+    {   
+        //Eloquetn モデル
+        $chats = new Chat;
+        $chats->comment = $request->comment;
+        $posts->save();
+        //pusherの処理
+        event(new PusherEvent($chats));
+        //return view('/pusher');
     }
 }
