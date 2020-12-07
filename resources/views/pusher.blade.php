@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- 送信フォーム -->
-<form enctype="multipart/form-data" action="" method="POST" class="form-horizontal">
+<form enctype="multipart/form-data" action="{{route('pusher.create')}}" method="POST" class="form-horizontal">
   {{ csrf_field() }} 
   <div class="form-group">
     <div class="col-sm-6">
