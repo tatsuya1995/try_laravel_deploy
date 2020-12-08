@@ -2,6 +2,8 @@
 
 @section('content')
 <!-- 送信フォーム -->
+<script src="/js/app.js"></script>
+
 <form enctype="multipart/form-data" action="{{route('pusher.create')}}" method="POST" class="form-horizontal">
   {{ csrf_field() }} 
   <div class="form-group">
