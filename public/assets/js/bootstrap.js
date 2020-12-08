@@ -41,7 +41,7 @@ window.Echo = new Echo({
 });
 
 window.Echo.cannel('chat')
-            .listen('pusher',function(data){
+            .listen('Pusher',function(data){
                 console.log('received a message');
                 console.log(data);
             });
