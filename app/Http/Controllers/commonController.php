@@ -43,7 +43,7 @@ class CommonController extends Controller
     public function pusherGet()
     {   
         $chats = Chat::all();
-        return view('pusher.get',["chats" => $chats]);
+        return view('/pusher',["chats" => $chats]);
     }
 
     public function pusherCreate(Request $request):JsonResponse
