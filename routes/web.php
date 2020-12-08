@@ -34,16 +34,16 @@ Route::get('/pusher',function(){
 	$chat = ['id'=>1, 'name'=>'メールの確認'];
     event(new Pusher($chat));
 });
-Route::post('/pusher/create','commonController@pusherCreate')->name('pusher.create');
+// Route::post('/pusher/create','commonController@pusherCreate')->name('pusher.create');
 
-//pusher受信テスト
-Route::get('/trypusher', function() {
-    return view('tryPusher');
-});
-Route::get('/hello-world', function () {
-    event(new App\Events\Pusher('hello world'));
-    return ['chat' => 'send to message : hello world'];
-});
+// //pusher受信テスト
+// Route::get('/trypusher', function() {
+//     return view('tryPusher');
+// });
+// Route::get('/hello-world', function () {
+//     event(new App\Events\Pusher('hello world'));
+//     return ['chat' => 'send to message : hello world'];
+// });
 
 
 //ドライバー
