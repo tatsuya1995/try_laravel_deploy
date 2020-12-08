@@ -29,12 +29,13 @@ Route::get('/qa','commonController@qa');
 Route::get('/select','commonController@select');
 
 //pusherテスト
-//Route::get('/pusher','commonController@pusherGet')->name('pusher.get');
-Route::get('/pusher',function(){
-	$chat = ['id'=>1, 'name'=>'メールの確認'];
-    event(new Pusher($chat));
-});
-// Route::post('/pusher/create','commonController@pusherCreate')->name('pusher.create');
+Route::get('/pusher','commonController@pusherGet')->name('pusher.get');
+Route::post('/pusher/create','commonController@pusherCreate')->name('pusher.create');
+
+// Route::get('/pusher',function(){
+// 	$chat = ['id'=>1, 'name'=>'メールの確認'];
+//     event(new Pusher($chat));
+// });
 
 // //pusher受信テスト
 // Route::get('/trypusher', function() {
