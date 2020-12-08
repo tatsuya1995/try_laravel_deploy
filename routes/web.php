@@ -1,4 +1,5 @@
 <?php
+use App\Events\Pusher;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +29,10 @@ Route::get('/qa','commonController@qa');
 Route::get('/select','commonController@select');
 
 //pusherテスト
-Route::get('/pusher','commonController@pusherGet')->name('pusher.get');
+//Route::get('/pusher','commonController@pusherGet')->name('pusher.get');
+Route::get('/pusher',function(){
+    event(new Pusher);
+});
 Route::post('/pusher/create','commonController@pusherCreate')->name('pusher.create');
 
 //pusher受信テスト
