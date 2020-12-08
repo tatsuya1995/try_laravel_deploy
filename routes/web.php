@@ -31,7 +31,8 @@ Route::get('/select','commonController@select');
 //pusherテスト
 //Route::get('/pusher','commonController@pusherGet')->name('pusher.get');
 Route::get('/pusher',function(){
-    event(new Pusher);
+	$chat = ['id'=>1, 'name'=>'メールの確認'];
+    event(new Pusher($chat));
 });
 Route::post('/pusher/create','commonController@pusherCreate')->name('pusher.create');
 

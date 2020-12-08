@@ -25,7 +25,7 @@ class Pusher implements ShouldBroadcast
      *
      * @return void
      */
-    public function __construct(Chat $chat)
+    public function __construct($chat)
     {
         $this->chat = $chat;
     }
@@ -42,7 +42,7 @@ class Pusher implements ShouldBroadcast
     // }   
     public function broadcastOn()
     {
-        return new Channel('chat');
+        return new Channel('chat',$this->chat);
     }
 
     public function broadcastAs()
