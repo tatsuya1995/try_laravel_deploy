@@ -45,8 +45,9 @@ class Pusher implements ShouldBroadcast
         return new Channel('chat',$this->chat);
     }
 
-    public function broadcastAs()
-    {
-        return 'my-event';
-    }
+//    public function broadcastAs()
+//    {
+//        return 'my-event';
+//
+//    }
 }

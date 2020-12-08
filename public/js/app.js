@@ -43412,10 +43412,14 @@ window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   key: "6dfeb35a6b59eee36ab9",
   cluster: "ap3",
   encrypted: true
-});
-window.Echo.channel('chat').listen('Pusher', function (data) {
+}); // window.Echo.channel('chat')
+//             .listen('Pusher',function(data){
+//                 console.log('received a message');
+//                 console.log(data);
+// });
+
+window.Echo.channel('chat').listen('Pusher', function (e) {
   console.log('received a message');
-  console.log(data);
 });
 
 /***/ }),
