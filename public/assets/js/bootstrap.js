@@ -39,12 +39,10 @@ window.Echo = new Echo({
     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
     encrypted: true
 });
-// window.Echo.channel('chat')
-//             .listen('Pusher',function(data){
-//                 console.log('received a message');
-//                 console.log(data);
-// });
+
 window.Echo.channel('chat')
-            .listen('Pusher', (e) => {
+            .listen('Pusher',function(data){
                 console.log('received a message');
+                console.log(data);
 });
+
