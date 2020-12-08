@@ -40,11 +40,11 @@ window.Echo = new Echo({
     encrypted: true
 });
 
-window.Echo.channel('chat')
-            .listen('Pusher',function(data){
-                console.log('received a message');
-                console.log(data);
-});
+// window.Echo.channel('chat')
+//             .listen('Pusher',function(data){
+//                 console.log('received a message');
+//                 console.log(data);
+// });
 
 $(docummnt).ready(function(){
     $.ajaxSetup({
