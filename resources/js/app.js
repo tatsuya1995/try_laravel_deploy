@@ -1,4 +1,4 @@
-require('./bootstrap');
+require('../../public/assets/js/bootstrap');
 
 // $(docummnt).ready(function(){
 //     $.ajaxSetup({

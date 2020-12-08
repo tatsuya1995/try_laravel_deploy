@@ -39,3 +39,9 @@ window.Echo = new Echo({
     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
     encrypted: true
 });
+
+window.Echo.cannel('chat')
+            .listen('chat',function(data){
+                console.log('received a message');
+                console.log(data);
+            })
