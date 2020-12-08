@@ -43367,42 +43367,10 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./resources/js/app.js":
-/*!*****************************!*\
-  !*** ./resources/js/app.js ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // $(docummnt).ready(function(){
-//     $.ajaxSetup({
-//         headers: {
-//             "X-CSRF-TOKEN":$('meta[name="csrf-token"]').attr("content")
-//         }
-//     });
-//     $("#submit").click(function(){
-//         const url = "/pusher/create";
-//         $.ajax({
-//             url: url,
-//             data: {
-//                 comment: $("#comment").val(),
-//             },
-//             method: "POST"
-//         });
-//         return false;
-//     });
-//     window.Echo.channel("chat")
-//         .listen("Pusher",e =>{
-//         $("#board").append("<li>" + e.chat.comment + "</li>");
-//     });
-// });
-
-/***/ }),
-
-/***/ "./resources/js/bootstrap.js":
-/*!***********************************!*\
-  !*** ./resources/js/bootstrap.js ***!
-  \***********************************/
+/***/ "./public/assets/js/bootstrap.js":
+/*!***************************************!*\
+  !*** ./public/assets/js/bootstrap.js ***!
+  \***************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -43444,6 +43412,48 @@ window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   key: "6dfeb35a6b59eee36ab9",
   cluster: "ap3",
   encrypted: true
+});
+window.Echo.channel('chat').listen('Pusher', function (data) {
+  console.log('received a message');
+  console.log(data);
+});
+
+/***/ }),
+
+/***/ "./resources/js/app.js":
+/*!*****************************!*\
+  !*** ./resources/js/app.js ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ../../public/assets/js/bootstrap */ "./public/assets/js/bootstrap.js"); // // $(docummnt).ready(function(){
+// //     $.ajaxSetup({
+// //         headers: {
+//             "X-CSRF-TOKEN":$('meta[name="csrf-token"]').attr("content")
+//         }
+//     });
+//     $("#submit").click(function(){
+//         const url = "/pusher/create";
+//         $.ajax({
+//             url: url,
+//             data: {
+//                 comment: $("#comment").val(),
+//             },
+//             method: "POST"
+//         });
+//         return false;
+//     });
+//     window.Echo.channel("chat")
+//         .listen("Pusher",e =>{
+//         $("#board").append("<li>" + e.chat.comment + "</li>");
+//     });
+// });
+
+
+window.Echo.channel('chat').listen('Pusher', function (data) {
+  console.log('received a message');
+  console.log(data);
 });
 
 /***/ }),
