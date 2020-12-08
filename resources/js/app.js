@@ -1,8 +1,8 @@
-require('../../public/assets/js/bootstrap');
+// require('../../public/assets/js/bootstrap');
 
-// $(docummnt).ready(function(){
-//     $.ajaxSetup({
-//         headers: {
+// // $(docummnt).ready(function(){
+// //     $.ajaxSetup({
+// //         headers: {
 //             "X-CSRF-TOKEN":$('meta[name="csrf-token"]').attr("content")
 //         }
 //     });
