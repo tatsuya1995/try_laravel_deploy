@@ -22,8 +22,8 @@
 //         $("#board").append("<li>" + e.chat.comment + "</li>");
 //     });
 // });
-window.Echo.channel('chat')
-            .listen('Pusher',function(data){
-                console.log('received b message');
-                console.log(data);
-});
+// window.Echo.channel('chat')
+//             .listen('Pusher',function(data){
+//                 console.log('received b message');
+//                 console.log(data);
+// });
