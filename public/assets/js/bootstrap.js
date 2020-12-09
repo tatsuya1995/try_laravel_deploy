@@ -65,6 +65,6 @@ $(document).ready(function(){
     });
     window.Echo.channel("chat")
         .listen("Pusher",e =>{
-        $("#board").append("<li>" + e.chat.comment + "</li>");
+        $("#board").append("<li>" +"yes" +e.chat.comment + "</li>");
     });
 });
