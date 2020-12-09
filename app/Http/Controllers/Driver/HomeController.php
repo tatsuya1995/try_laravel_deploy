@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
+use App\Events\Pusher;
 use App\Models\Driver;
 use App\Models\Post;
+use App\Models\Chat;
 use Illuminate\Support\Facades\Auth;
 use Storage;
 
@@ -142,12 +144,21 @@ class HomeController extends Controller
         $idDriver = Auth::id();
         $driverInfo = DB::table('drivers')->where('id','=',$idDriver)->first();
         //投稿内容の表示
-        $posts = DB::table('posts')->where([
+        // $posts = DB::table('posts')->where([
+        //     ['idOwner','=',$idOwner],
+        //     ['idDriver','=',$idDriver],
+        // ])->orderBy('created_at','desc')
+        // ->paginate(10);
+        //ドライバー、オーナー区別するトライ
+        $query = DB::table('chats')->where([
             ['idOwner','=',$idOwner],
             ['idDriver','=',$idDriver],
-        ])->orderBy('created_at','desc')
-        ->paginate(10);
-
+        ]);
+        $query->orWhere(function($query) use($idOwner,$idDriver){
+            $query->where('idOwner',$idOwner);
+            $query->where('idDriver',$idDriver);
+        });
+        $posts = $query->get();
         return view('driver/talk',compact('ownerInfo','driverInfo','posts'));
 
     }
@@ -156,16 +167,36 @@ class HomeController extends Controller
     //     return view('talk');
     // }
     public function postIn(Request $request)
-    {   
-        //投稿内容の保存
-        $idOwner = $request->idOwner;
-        $post = new Post;
-        $post->comment = $request->input('comment');
-        $post->idOwner = $request->input('idOwner');
-        $post->idDriver = Auth::id();
-        $post->save();
-        //return redirect('driver.talk',['idOwner' => $idOwner]);
-        return redirect()->action('Driver\HomeController@talkIn',['idOwner' => $idOwner]);
+    {
+        $insertParam = [
+            'idOwner' => (int)$request->input('idOwner'),
+            'idDriver' => (int)$request->input('idDriver'),
+            'comment' => $request->input('comment'),
+        ];
+        
+        //チャットデータ保存
+        try{
+            Chat::insert($insertParam);
+        }catch (\Exception $e){
+            return false;
+        }
+
+        //イベント発火
+        event(new Pusher($request->all()));
+
+
+
+
+
+    //     //投稿内容の保存
+    //     $idOwner = $request->idOwner;
+    //     $post = new Post;
+    //     $post->comment = $request->input('comment');
+    //     $post->idOwner = $request->input('idOwner');
+    //     $post->idDriver = Auth::id();
+    //     $post->save();
+    //     //return redirect('driver.talk',['idOwner' => $idOwner]);
+    //     return redirect()->action('Driver\HomeController@talkIn',['idOwner' => $idOwner]);
     }
     public function deletePost(Request $request)
     {   

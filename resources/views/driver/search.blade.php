@@ -90,7 +90,7 @@
                                             <td>
                                                 <form action="{{route('driver.talk')}}" method="post">
                                                 @csrf
-                                                    <input name='idOwner' type="hidden" value="{{$search->idOwner}}">
+                                                    <input type="hidden" name='idOwner'value="{{$search->idOwner}}">
                                                     <input type="submit" value="→"></input>
                                                 </form>
                                             </td>

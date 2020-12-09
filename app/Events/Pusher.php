@@ -17,17 +17,17 @@ class Pusher implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    //利用する変数追加
-    public $chat;
-
+    //変数追加
+    protected $chat;
+    protected $request;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct(Chat $chat)
+    public function __construct($request)
     {
-        $this->chat = $chat;
+        $this->request = $request;
     }
 
     /**
@@ -35,19 +35,24 @@ class Pusher implements ShouldBroadcast
      *
      * @return \Illuminate\Broadcasting\Channel|array
      */
-    // public function broadcastOn()
-    // {
-    //     //return new Channel('channelName');
-    // }   
+
     public function broadcastOn()
     {
         return new Channel('chat');
     }
 
+    public function broadcastWith()
+    {
+        return[
+            'comment' => $this->request['comment'],
+            'idOwner' => $this->request['idOwner'],
+            'idDriver' => $this->request['idDriver'],
+        ];
+    }
 
-//    public function broadcastAs()
-//    {
-//        return 'my-event';
-//
-//    }
+    public function broadcastAs()
+    {
+        return 'chat-event';
+
+    }
 }
