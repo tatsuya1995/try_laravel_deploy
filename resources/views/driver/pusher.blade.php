@@ -4,7 +4,7 @@
 <!-- 送信フォーム -->
 <script src="/js/app.js"></script>
 
-<form enctype="multipart/form-data" action="{{action('Driver.TalkController@pusherCreate')}}" method="POST" class="form-horizontal">
+<form enctype="multipart/form-data" action="{{action('Driver\TalkController@pusherCreate')}}" method="POST" class="form-horizontal">
   {{ csrf_field() }} 
   <div class="form-group">
     <div class="col-sm-6">
