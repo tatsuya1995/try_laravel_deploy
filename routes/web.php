@@ -74,7 +74,7 @@ Route::namespace('Driver')->prefix('driver')->name('driver.')->group(function(){
     
         //pusherテスト
         Route::get('/pusher','TalkController@pusherGet')->name('pusher.get');
-        Route::post('/pusher/create','TalkController@pusherCreate')->name('pusher.create');
+        Route::post('/pusher','TalkController@pusherCreate')->name('pusher.create');
 
     });
 });
