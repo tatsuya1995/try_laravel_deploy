@@ -24,6 +24,6 @@
 // });
 window.Echo.channel('chat')
             .listen('Pusher',function(data){
-                console.log('received a message');
+                console.log('received b message');
                 console.log(data);
 });
