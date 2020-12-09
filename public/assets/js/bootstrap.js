@@ -53,7 +53,7 @@ $(document).ready(function(){
         }
     });
     $("#submit").click(function(){
-        const url = "driver/pusher";
+        const url = "/driver/pusher";
         $.ajax({
             url: url,
             data: {
