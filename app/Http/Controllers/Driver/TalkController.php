@@ -26,25 +26,10 @@ class TalkController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-        return view('/index');
-    }
-    
-    public function qa()
-    {
-        return view('/qa');
-    }
-    
-    public function select()
-    {
-        return view('/select');
-    }
-    
     public function pusherGet()
     {   
         $chats = Chat::all();
-        return view('/pusher',["chats" => $chats]);
+        return view('driver/pusher',["chats" => $chats]);
     }
 
     public function pusherCreate(Request $request):JsonResponse
