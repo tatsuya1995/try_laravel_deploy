@@ -28,9 +28,7 @@ Route::get('/index','commonController@index')->name('index');
 Route::get('/qa','commonController@qa');
 Route::get('/select','commonController@select');
 
-//pusherテスト
-Route::get('/pusher','TalkController@pusherGet')->name('pusher.get');
-Route::post('/pusher/create','TalkController@pusherCreate')->name('pusher.create');
+
 
 // Route::get('/pusher',function(){
 // 	$chat = ['id'=>1, 'name'=>'メールの確認'];
@@ -74,6 +72,10 @@ Route::namespace('Driver')->prefix('driver')->name('driver.')->group(function(){
         Route::get('edit/{id}','HomeController@edit')->name('edit');
         Route::post('update/{id}','HomeController@update')->name('update');
     
+        //pusherテスト
+        Route::get('/pusher','TalkController@pusherGet')->name('pusher.get');
+        Route::post('/pusher/create','TalkController@pusherCreate')->name('pusher.create');
+
     });
 });
 //オーナー
