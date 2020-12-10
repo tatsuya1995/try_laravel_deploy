@@ -61,10 +61,7 @@
                 <input type="hidden" name="idDriver" value="{{$driverInfo->id}}">
                 <input type="hidden" name="idOwner" value="{{$ownerInfo->id}}">
                 <input type="hidden" name="login" value="{{Auth::id()}}">
-
-
-@endsection
-@section('script')
+                
     <script>
         //ログを有効にする
         Pusher.logToConsole = true;
