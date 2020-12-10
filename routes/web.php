@@ -62,7 +62,7 @@ Route::namespace('Driver')->prefix('driver')->name('driver.')->group(function(){
         Route::get('home','HomeController@searchIn');
         Route::get('search','HomeController@searchIn')->name('search');
         Route::post('search','HomeController@searchOut')->name('search');
-        Route::post('talk','HomeController@postIn')->name('talk');
+        Route::post('talk','HomeController@talkIn')->name('talk');
         Route::get('talk/{idOwner}','HomeController@talkIn');
         Route::post('post','HomeController@postIn')->name('post');
         Route::post('delete','HomeController@deletePost')->name('deletePost');
@@ -74,7 +74,7 @@ Route::namespace('Driver')->prefix('driver')->name('driver.')->group(function(){
     
         //pusherテスト
         Route::get('/pusher','TalkController@pusherGet')->name('pusher.get');
-        Route::post('/pusher','TalkController@pusherCreate')->name('pusher.create');
+        Route::post('/pusher/create','TalkController@pusherCreate')->name('pusher.create');
 
     });
 });
