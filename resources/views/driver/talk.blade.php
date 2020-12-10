@@ -51,7 +51,7 @@
                             </div>
                         @endif
                         {{--   受信したメッセージ  --}}
-                        @if($post->idOwner == $driverInfo->id)
+                        @if($post->idOwner == $ownerInfo->id)
                             <div class="owner" style="text-align: left">
                                 <p>{{$post->comment}}</p>
                             </div>
@@ -85,7 +85,7 @@
             if(data.idDriver === login){
                 appendText = '<div class="idDriver" style="text-align:right"><p>' + data.comment + '</p></div> ';
             }else if(data.idOwner === login){
-            appendText = '<div class="idOwner" style="text-align:left"><p>' + data.comment + '</p></div> ';
+                appendText = '<div class="idOwner" style="text-align:left"><p>' + data.comment + '</p></div> ';
             }else{
                 return false;
             }
