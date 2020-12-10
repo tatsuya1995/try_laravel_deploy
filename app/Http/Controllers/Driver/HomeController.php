@@ -167,7 +167,7 @@ class HomeController extends Controller
     //     return view('talk');
     // }
     public function postIn(Request $request)
-    {
+    {   
         $insertParam = [
             'idOwner' => (int)$request->input('idOwner'),
             'idDriver' => (int)$request->input('idDriver'),
