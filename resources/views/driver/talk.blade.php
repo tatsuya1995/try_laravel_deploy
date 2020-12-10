@@ -61,9 +61,10 @@
                 <input type="hidden" name="idDriver" value="{{$driverInfo->id}}">
                 <input type="hidden" name="idOwner" value="{{$ownerInfo->id}}">
                 <input type="hidden" name="login" value="{{Auth::id()}}">
-    
-    <script src=“https://js.pusher.com/3.2/pusher.min.js“></script>
-    <script src=“https://cdnjs.cloudflare.com/ajax/libs/push.js/0.0.11/push.min.js”></script>
+
+                <script src="/js/app.js"></script>
+    <!-- <script src=“https://js.pusher.com/3.2/pusher.min.js“></script>
+    <script src=“https://cdnjs.cloudflare.com/ajax/libs/push.js/0.0.11/push.min.js”></script> -->
     <script>
         //ログを有効にする
         Pusher.logToConsole = true;
