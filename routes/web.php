@@ -62,7 +62,7 @@ Route::namespace('Driver')->prefix('driver')->name('driver.')->group(function(){
         Route::get('home','HomeController@searchIn');
         Route::get('search','HomeController@searchIn')->name('search');
         Route::post('search','HomeController@searchOut')->name('search');
-        Route::post('talk','HomeController@postIn')->name('postIn');
+        Route::post('talk','HomeController@postIn')->name('talk');
         Route::get('talk/{idOwner}','HomeController@talkIn');
         Route::post('post','HomeController@postIn')->name('post');
         Route::post('delete','HomeController@deletePost')->name('deletePost');
