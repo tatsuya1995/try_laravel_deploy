@@ -7,6 +7,68 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
+ /* ↓indexページ↓ */
+#padding {
+  padding:10px;
+}
+.under {
+background: linear-gradient(transparent 50%, #fffacd 50%);
+}
+.indent {
+text-indent:1em;
+}
+.frame {
+	display: inline-block;
+  transform: rotate(3deg);
+  padding:20px;
+}
+.frame img {
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px gray;
+
+}
+ul.stitch {
+  background: #fffde8;
+  box-shadow: 0px 0px 0px 10px #fffde8;/*線の外側*/
+  border: dashed 2px #ffb03f;/*破線*/
+  border-radius: 9px;
+  margin-left: 10px;/*はみ出ないように調整*/
+  margin-right: 10px;/*はみ出ないように調整*/
+  padding: 0.5em 0.5em 0.5em 2em;
+  list-style-type: square;
+}
+
+ul li{
+  line-height: 1.5;
+  padding: 0.5em 0;
+}
+
+ul {
+  padding: 0;
+  position: relative;
+}
+
+ul.bluetag li {
+  border-left: solid 6px #2d8fdd;/*左側の線*/
+  background: #f1f8ff;/*背景色*/
+  margin-bottom: 3px;/*下のバーとの余白*/
+  line-height: 1.5;
+  padding: 0.5em;
+  list-style-type: none!important;/*ポチ消す*/
+}
+/* ↑インデックスページ↑ */
+
+/* ↓selectページ↓ */
+.select {
+  padding:5%;
+}
+.selectbtn{
+  width:200px;
+}
+
+
+
+/* ↑selectページ↑ */
 :root {
   --blue: #3490dc;
   --indigo: #6574cd;
@@ -72,7 +134,7 @@ body {
   line-height: 1.6;
   color: #5f5039;
   text-align: left;
-  background-color:red;
+  background-color:#f3f2e9;
 }
 footer {
   margin-top:20px;
