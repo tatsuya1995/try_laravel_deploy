@@ -60,7 +60,7 @@
                     </div>
                 <input type="hidden" name="idDriver" value="{{$driverInfo->id}}">
                 <input type="hidden" name="idOwner" value="{{$ownerInfo->id}}">
-                <input type="hidden" name="login" value="{{Auth::id()}}">
+                <input type="hidden" name="login" value="1">
 
                 <script src="/js/app.js"></script>
     <!-- <script src=“https://js.pusher.com/3.2/pusher.min.js“></script>
