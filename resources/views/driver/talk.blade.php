@@ -32,7 +32,7 @@
             <div class="card-header">{{$ownerInfo->nameOwner}}さんのトークルーム</div>
                 <div class="card-body"> 
                     <div class="row">
-                        <form action="" method="post">
+                        <form action="{{route('driver.talk')}}" method="post">
                         @csrf
                             <input type="hidden" name="idDriver" value="{{$driverInfo->id}}">
                             <input name='idOwner' type="hidden" value="{{$ownerInfo->id}}">
