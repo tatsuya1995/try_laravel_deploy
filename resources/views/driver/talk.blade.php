@@ -61,10 +61,10 @@
                 <input type="hidden" name="idDriver" value="{{$driverInfo->id}}">
                 <input type="hidden" name="idOwner" value="{{$ownerInfo->id}}">
                 <input type="hidden" name="login" value="{{Auth::id()}}">
-                
+
     <script>
         //ログを有効にする
-        Pusher.logToConsole = true;
+        //Pusher.logToConsole = true;
 
         var pusher = new Pusher('6dfeb35a6b59eee36ab9',{
             cluster :'ap3',
