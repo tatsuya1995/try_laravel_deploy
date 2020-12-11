@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-              <div class="card-header">{{ __('Q&A') }}</div>
+              <div class="card-header">Q&A</div>
                   <div class="card-body">
                   <h2 class="indent">◆事故・トラブル時について</h2>
 				<div class="acdn_one">
@@ -37,7 +37,7 @@
 				</div>
 				<h2 class="indent">◆予約について</h2>
 				<div class="acdn_one">
-					<div class="acdn_header">Q.予約のキャンセル/変更はいつまで可能ですか？<div class="i_box"><i class="one_i"></i></div></div>
+					<div class="acdn_header">Q.予約のキャンセル/変更はいつまで可能ですか？<div class="i_box"></div></div>
 					<div class="acdn_inner">
 						<div class="box_one">
 							<p class="txt">A.ご利用開始時間前の変更・取り消しは１日前まで可能です。<br>
@@ -68,13 +68,14 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ __('お問い合わせ') }}</div>
+                <div class="card-header">お問い合わせ</div>
                     <div class="card-body">
                         <div class="mailform">
                         <div class="indent">
-                        <p>お問い合わせは、下記フォームよりお気軽にお寄せください。</p>
-                        <p>ご登録いただいた個人情報は、お問い合わせ内容の確認以外には使用いたしません。</p></br>
-                        <form action="confirm.php" method="post">
+							<p>お問い合わせは、下記フォームよりお気軽にお寄せください。</br>
+							<p>ご登録いただいた個人情報は、お問い合わせ内容の確認以外には使用いたしません。</p>
+						<form action="/mail" method="post">
+						@csrf
                         <dl>	
                             <dt>お名前（必須）</dt>
                             <dd><input type="text" name="name" required></dd>
@@ -92,10 +93,13 @@
                                     <option value="問い合わせ（その他について）">その他</option>	
                                 </select>
                             </dd>
-                            <dd><textarea name="content" cols="35" rows="5" maxlength="255"
-                                placeholder="内容を選択し、ご記入ください。" ></textarea></dd>
+                            <dd><textarea name="content" cols="40" rows="3" maxlength="120"
+								placeholder="こちらにご記入ください。" ></textarea>
+							</dd>
                         </dl>
-                        <dd><input type="submit" value="メールを送信する"></dd>
+						<dd><input type="submit" value="メールを送信する"></dd>
+						<p>※確認のため、お客様にもメールを送信いたします。</br>
+						　　時間が経ってもメールが届かない場合は、お電話ください。</p>
                         </form>
                     </div>   
                 </div>

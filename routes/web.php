@@ -28,7 +28,7 @@ Route::get('/index','commonController@index')->name('index');
 Route::get('/qa','commonController@qa');
 Route::get('/select','commonController@select');
 //メールの送信
-Route::get('/mail','MailSendController@send');
+Route::post('/mail','MailSendController@send');
 
 
 // Route::get('/pusher',function(){
