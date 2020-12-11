@@ -1,0 +1,87 @@
+.acdn_one {
+    max-width: 100%;
+    margin: 0 auto;
+    padding-left:5%;
+}
+.acdn_one .acdn_header {
+    font-size: 120%;
+    font-weight: bold;
+    position: relative;
+    border-bottom:1px solid #ccc;
+    padding:10px 5px; 
+    z-index: +1;
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+.acdn_one .acdn_header:hover {
+    opacity: 0.8;
+}
+.acdn_one .acdn_header .i_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    box-sizing: border-box;
+
+}
+.acdn_one .acdn_header .i_box .one_i {
+    display: block;
+    width: 18px;
+    height: 18px;
+    position: relative;
+}
+
+.acdn_one .acdn_header .i_box .one_i:before, .acdn_one .acdn_header .i_box .one_i:after {
+    display: flex;
+    content: '';
+    background-color: #5f5039;
+    border-radius: 10px;
+    width: 18px;
+    height: 4px;
+    position: absolute;
+    top: 7px;
+    left: 0;
+
+}
+.acdn_one .acdn_header .i_box .one_i:before {
+    width: 4px;
+    height: 18px;
+    top: 0;
+    left: 7px;
+}
+.acdn_one .acdn_header.open .i_box .one_i:before {
+    content: none;
+}
+
+.acdn_one .acdn_inner {
+    display: none;
+    padding: 10px 10px 10px 30px;
+    box-sizing: border-box;
+}
+
+.acdn_one .acdn_inner p.txt {
+    margin: 0;
+}
+@media screen and (max-width: 1024px) {
+    .acdn_one .acdn_header {
+        font-size: 18px;
+    }
+    .acdn_one .acdn_header .i_box {
+        width: 30px;
+        height: 30px;
+        margin-top: -15px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .acdn_one .acdn_header {
+        font-size: 16px;
+        text-align: left;
+        padding: 15px 60px 15px 15px;
+    }
+}

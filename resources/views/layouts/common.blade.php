@@ -11,7 +11,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('/assets/js/app.js') }}" defer></script>
-
+    <script src="{{ asset('/assets/js/jquery-3.5.1.min.js')}}"></script>
+    <script src="{{ asset('/assets/js/acdn.js')}}"></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -19,6 +20,7 @@
     <!-- Styles -->
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link href="{{ asset('/assets/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('/assets/css/acdn.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">

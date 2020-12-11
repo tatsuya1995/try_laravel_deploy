@@ -37,7 +37,7 @@
 				</div>
 				<h2 class="indent">◆予約について</h2>
 				<div class="acdn_one">
-					<div class="acdn_header">Q.予約のキャンセル/変更はいつまで可能ですか？<div class="i_box"></div></div>
+					<div class="acdn_header">Q.予約のキャンセル/変更はいつまで可能ですか？<div class="i_box"><i class="one_i"></i></div></div>
 					<div class="acdn_inner">
 						<div class="box_one">
 							<p class="txt">A.ご利用開始時間前の変更・取り消しは１日前まで可能です。<br>
