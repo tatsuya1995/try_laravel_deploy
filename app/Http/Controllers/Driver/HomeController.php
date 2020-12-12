@@ -149,11 +149,17 @@ class HomeController extends Controller
         //     ['idDriver','=',$idDriver],
         // ])->orderBy('created_at','desc')
         // ->paginate(10);
+
         //ドライバー、オーナー区別するトライ
-        $query = DB::table('chats')->where([
-            ['idOwner','=',$idOwner],
-            ['idDriver','=',$idDriver],
-        ]);
+        $param = [
+            'idOwner' => $idOwner,
+            'idDriver' => $idDriver,
+        ];
+        // $query = DB::table('chats')->where([
+        //     ['idOwner','=',$idOwner],
+        //     ['idDriver','=',$idDriver],
+        // ]);
+        $query = Chats::where('idOwner' , $idOwner)->where('idDriver', $idDriver);
         $query->orWhere(function($query) use($idOwner,$idDriver){
             $query->where('idOwner',$idOwner);
             $query->where('idDriver',$idDriver);
@@ -183,10 +189,6 @@ class HomeController extends Controller
 
         //イベント発火
         event(new Pusher($request->all()));
-
-
-
-
 
     //     //投稿内容の保存
     //     $idOwner = $request->idOwner;

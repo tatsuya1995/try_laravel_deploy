@@ -49,7 +49,7 @@ Route::post('/mail','MailSendController@send');
 //ドライバー
 Route::namespace('Driver')->prefix('driver')->name('driver.')->group(function(){
 
-    //ログイン認証
+
     Auth::routes([
         'register' => true,
         'reset' => false,
@@ -59,7 +59,7 @@ Route::namespace('Driver')->prefix('driver')->name('driver.')->group(function(){
     //ログイン認証後
     Route::middleware('auth:driver')->group(function(){
 
-
+        //ブレイド の名前書いたり　見てわかる物は書かない
         Route::get('home','HomeController@searchIn');
         Route::get('search','HomeController@searchIn')->name('search');
         Route::post('search','HomeController@searchOut')->name('search');
@@ -82,7 +82,6 @@ Route::namespace('Driver')->prefix('driver')->name('driver.')->group(function(){
 //オーナー
 Route::namespace('Owner')->prefix('owner')->name('owner.')->group(function(){
 
-    //ログイン認証
     Auth::routes([
         'register' => true,
         'reset' => false,
