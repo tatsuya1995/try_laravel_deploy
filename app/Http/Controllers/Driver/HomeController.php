@@ -159,7 +159,7 @@ class HomeController extends Controller
         //     ['idOwner','=',$idOwner],
         //     ['idDriver','=',$idDriver],
         // ]);
-        $query = Chats::where('idOwner' , $idOwner)->where('idDriver', $idDriver);
+        $query = Chat::where('idOwner' , $idOwner)->where('idDriver', $idDriver);
         $query->orWhere(function($query) use($idOwner,$idDriver){
             $query->where('idOwner',$idOwner);
             $query->where('idDriver',$idDriver);
