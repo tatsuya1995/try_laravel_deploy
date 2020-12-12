@@ -4,10 +4,10 @@
     padding-left:5%;
 }
 .acdn_one .acdn_header {
-    font-size: 120%;
+    font-size: 110%;
     font-weight: bold;
     position: relative;
-    border-bottom:1px solid #ccc;
+    border-bottom:1px dotted #ccc;
     padding:10px 5px; 
     z-index: +1;
     cursor: pointer;

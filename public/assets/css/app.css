@@ -7,15 +7,39 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
+
+ /* ↓commonページ↓ */
+
+#imglogo {
+  width:80%
+}
+
+@media screen and (max-width: 767px) {
+  #imglogo {
+    width:350px;
+  }
+}
+@media screen and (max-width: 500px) {
+  #imglogo {
+    width:250px;
+  }
+}
+
+
+ /* ↑commonページ↑ */
+
+
+
+
  /* ↓indexページ↓ */
 #padding {
   padding:10px;
 }
 .under {
-background: linear-gradient(transparent 50%, #fffacd 50%);
+  background: linear-gradient(transparent 50%, #fffacd 50%);
 }
 .indent {
-text-indent:1em;
+  text-indent:1em;
 }
 .frame {
 	display: inline-block;
