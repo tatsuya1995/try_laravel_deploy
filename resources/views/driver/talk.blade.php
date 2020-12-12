@@ -51,7 +51,7 @@
                             </div>
                         @endif
                         {{--   受信したメッセージ  --}}
-                        @if($post->idDriver || Auth::id())
+                        @if($post->idOwner ＝＝ Auth::id())
                             <div class="owner" style="text-align: left">
                                 <p>{{$post->comment}}</p>
                             </div>
