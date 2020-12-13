@@ -1,4 +1,4 @@
-@extends('layouts.driver.app')
+@extends('layouts.owner.app')
 
 @section('content')
 <div class="container">

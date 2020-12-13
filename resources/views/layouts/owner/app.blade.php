@@ -24,7 +24,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('index') }}">
-                <img src="{{ asset('/assets/image/logo.png') }}" width="400px">
+                <img src="{{ asset('/assets/image/logo.png') }}" id="imglogo">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -40,21 +40,21 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         <li class="nav-item">
-                            <a class="nav-link" href="{{'/index'}}">{{ __('サービス説明') }}</a>
+                            <a class="nav-link" href="{{'/index'}}">サービス説明</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{'/qa'}}">{{ __('Q＆A') }}</a>
+                            <a class="nav-link" href="{{'/qa'}}">Q＆A</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('owner.show')}}">{{ __('登録情報変更') }}</a>
+                            <a class="nav-link" href="{{route('owner.show')}}">登録情報変更</a>
                         </li>
-                        @unless (Auth::guard('owner')->check()) <!--追加-->
+                        @unless (Auth::guard('owner')->check())
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('owner.login') }}">{{ __('ログイン') }}</a>
+                                <a class="nav-link" href="{{ route('owner.login') }}">ログイン</a>
                             </li>
                             @if (Route::has('owner.register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('owner.register') }}">{{ __('登録') }}</a>
+                                    <a class="nav-link" href="{{ route('owner.register') }}">登録</a>
                                 </li>
                             @endif
                         @else

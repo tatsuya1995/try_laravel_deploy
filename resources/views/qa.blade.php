@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-            	<div class="card-header"><h3>Q&A</h3></div>
+            	<div class="card-header">Q&A</div>
                 <div class="card-body">
                 	<h4 class="indent">◆ 事故・トラブル時について</h4>
 					<div class="acdn_one">
@@ -67,7 +67,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header"><h3>お問い合わせ</h3></div>
+                <div class="card-header">お問い合わせ</div>
 				<div class="card-body">
 					<div class="mailform">
 						<div class="indent">

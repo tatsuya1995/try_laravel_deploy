@@ -97,11 +97,13 @@ Route::namespace('Owner')->prefix('owner')->name('owner.')->group(function(){
         Route::get('schedule','HomeController@scheduleIn')->name('schedule');
         Route::post('schedule','HomeController@scheduleOut')->name('owner.schedule');
         Route::post('destroy/{id}','HomeController@destroy')->name('destroy');
-        Route::get('talk','HomeController@talk')->name('talk');
-        Route::post('talkDetails/{idDriver}','HomeController@talkDetails')->name('talkDetails');
-        Route::get('talkDetails/{idDriver}','HomeController@talkDetails')->name('talkDetails');
+        Route::post('talkerSelect','HomeController@talkerSelect')->name('talkerSelect');
+        Route::get('talkerSelect','HomeController@talkerSelect')->name('talkerSelect');
+        Route::get('talk/{idDriver}','HomeController@talk')->name('talk');
+        Route::post('talk/{idDriver}','HomeController@talk')->name('talkpost');
 
-        Route::post('post/{idDriver}','HomeController@postIn')->name('post');
+        //Route::post('post/{idDriver}','HomeController@postIn')->name('post');
+        Route::get('contract','HomeController@contract')->name('contract');
 
         //登録情報表示
         Route::get('show','HomeController@show')->name('show');

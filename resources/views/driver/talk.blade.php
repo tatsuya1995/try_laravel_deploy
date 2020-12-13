@@ -5,18 +5,18 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header">{{$ownerInfo->nameOwner}}さんの情報</div>
+                <div class="card-header">オーナー：{{$ownerInfo->nameOwner}}さんの情報</div>
                     <div class="card-body">
                         <div class ="row text-center">
                             <div class="col-md-6">
-                                <ul>
-                                    <li><img src="{{asset('storage/'.$ownerInfo->iconOwner)}}" width="200px" alt="アイコン画像">
+                                <ul class="marker">
+                                    <li><img src="{{asset('storage/'.$ownerInfo->iconOwner)}}" class="iconImg" alt="アイコン画像">
                                     <li>オーナー名:{{$ownerInfo->nameOwner}}
                                 </ul>
                             </div>
                             <div class="col-md-6">
-                                <ul>
-                                    <li><img src="{{asset('storage/'.$ownerInfo->imgCar)}}" width="200px" alt="車両画像">
+                                <ul class="marker">
+                                    <li><img src="{{asset('storage/'.$ownerInfo->imgCar)}}" class="carImg" alt="車両画像">
                                     <li>車名：{{$ownerInfo->nameCar}}
                                     <li>最大乗車可能人数：{{$ownerInfo->numPeople}}人
                                 </ul>
@@ -122,28 +122,3 @@
     </script>
 
 @endsection
-
-                <!-- @isset($posts)
-                @foreach ($posts as $post)
-                <div class="col-md-10">
-                    <div class="card">
-                        <p>アイコン画像、{{$driverInfo->nameDriver}}さん　{{$post->created_at}}、
-                        <form action="{{route('driver.deletePost',['id'=> $post->id])}}" method="post">
-                        @csrf
-                            <input name='idOwner' type="hidden" value="{{$ownerInfo->id}}">
-                            <input class="btn btn-danger"  type="submit" value="削除">
-                        </form></p>
-                        <p>{{$post->comment}}</p>
-                    </div>
-                </div>
-                @endforeach
-                @endisset
-                リンクが飛ばせない
-
-                </div>
-            </div>
-            </div>
-        </div>
-    </div>
-</div>
-

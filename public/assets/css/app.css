@@ -25,6 +25,9 @@
   }
 }
 
+.card-header {
+  font-size:150%
+}
 
  /* ↑commonページ↑ */
 
@@ -90,11 +93,61 @@ ul.bluetag li {
   width:200px;
 }
 
-
-
 /* ↑selectページ↑ */
 
-d
+
+/* ↓ ************* driverページ ************* ↓ */
+
+/* ↓driver searchページ↓ */
+#arrow3 {
+  width:60%;
+  transform:rotate(90deg);
+}
+/* ↑driver searchページ↑ */
+
+/* ↓driver talk（owner talk）ページ↓ */
+.iconImg {
+  width:200px;
+  width:200px;
+  border-radius:50%;
+  border: 2px solid #5f5039;
+
+}
+.carImg {
+  width:200px;
+  border: 2px solid #5f5039;
+}
+
+.marker {
+  list-style-type:none;
+
+}
+/* ↑driver talkページ↑ */
+
+/* ↑ ************* driverページ ************* ↑ */
+
+
+
+
+
+
+/* ↓ ************* owneerページ ************* ↓ */
+/* ↓owner talkページ↓ */
+#cardTalk {
+  border-radius:0;
+  border:2px ridge ;
+  margin:5px;
+  padding:1rem;
+  font-size:120%;
+}
+#arrow2 {
+  width:8%;
+  transform:rotate(90deg);
+  float:right;
+}
+/* ↑owner talkページ↑ */
+/* ↑ ************* ownerページ ************* ↑ */
+
 :root {
   --blue: #3490dc;
   --indigo: #6574cd;

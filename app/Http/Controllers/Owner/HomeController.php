@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Owner;
 use App\Models\OwnerSchedule;
-use App\Models\Post;
+use App\Models\Chat;
 use Illuminate\Support\Facades\Auth;
 use Storage;
 
@@ -28,26 +28,6 @@ class HomeController extends Controller
         $owner = Owner::find($id);
         //dd($owner);
         return view('owner.show',compact('owner'));
-    }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
     }
 
     /**
@@ -111,7 +91,6 @@ class HomeController extends Controller
     }
     public function scheduleOut(Request $request)
     {   
-        //バリデーション
         $request->validate([
         'departure' => 'required',
         'revert' => 'required|after:departure',
@@ -135,21 +114,18 @@ class HomeController extends Controller
         return redirect('owner.schedule');
     }
 
-    public function talk()
+    public function talkerSelect()
     {   
         //オーナー情報の取得
         $idOwner = Auth::id();
-        $ownerInfo = DB::table('owners')->where('id','=',$idOwner)->first();
-        
         $posts = DB::table('posts')
                     ->join('drivers','posts.idDriver','=','drivers.id')
                     ->where('idOwner','=',$idOwner)
+                    ->groupBy('idDriver')
                     ->orderBy('posts.created_at','desc')
-                    //->groupBy('idDriver')  考えるやつ
-                    //->limit(2)
                     ->get();
         //dd($posts);
-        return view('owner.talk',compact('ownerInfo','posts'));
+        return view('owner/talkerSelect',compact('posts'));
     }
 
     public function postIn(Request $request)
@@ -163,38 +139,34 @@ class HomeController extends Controller
         //dd($post);
         //talkDetailsにドライバー情報を渡す
         $idDriver = $request->idDriver;
-        //return redirect('driver.talk',['idOwner' => $idOwner]);
         return redirect()->action('Owner\HomeController@talkDetails',['idDriver'=>$idDriver]);
     }
 
-    public function talkDetails(Request $request)
+    public function talk(Request $request, $idDriver)
     {   
         // オーナーとドライバーのidと氏名を取得
-        $idOwner = Auth::id();
-        $idDriver = $request->idDriver;
-        
-        // $nameOwner = DB::table('owners')
-        //             ->where('id','=',$idOwner)
-        //             ->select('nameOwner')
-        //             ->first();
-        // $nameDriver = DB::table('drivers')
-        //             ->where('id','=',$idDriver)
-        //             ->select('nameDriver')
-        //             ->first();
-        //dd($nameDriver);
 
-        //投稿内容の表示
-        $posts = DB::table('posts')
-        ->join('Owners','posts.idOwner','=','Owners.id')
-        ->join('Drivers','posts.idDriver','=','Drivers.id')
-        ->where([            
-            ['idOwner','=',$idOwner],
-            ['idDriver','=',$idDriver],
-        ])->orderBy('posts.created_at','desc')
-        ->paginate(10);
+        $idOwner = Auth::id();
+        $ownerInfo = DB::table('owners')->where('id','=',$idOwner)->first();
+        $driverInfo = DB::table('drivers')->where('id','=',$idDriver)->first();
+        //ドライバー、オーナー区別するトライ
+        $param = [
+            'idOwner' => $idOwner,
+            'idDriver' => $idDriver,
+        ];
+        $query = Chat::where('idOwner' , $idOwner)->where('idDriver', $idDriver);
+        $query->orWhere(function($query) use($idOwner,$idDriver){
+            $query->where('idOwner',$idOwner);
+            $query->where('idDriver',$idDriver);
+        });
+        $posts = $query->get();
+        return view('owner/talk',compact('ownerInfo','driverInfo','posts'));
         
         //dd($posts);
-        return view('owner.talkDetails',compact('posts','idDriver'));
+    }
+    
+    public function contract(){
+        return view('owner/contract');
     }
 
     

@@ -5,7 +5,7 @@
   <div class="row" >
     <div class="col-md-6">
       <div class="card">
-      <div class="card-header"><h3>ログイン</h3></div>
+      <div class="card-header">ログイン</div>
         <div class="card-body">
           <div class="select">
             <h4>車両を借りたい方</h4>
@@ -20,7 +20,7 @@
     </div>
     <div class="col-md-6">
       <div class="card">
-      <div class="card-header"><h3>新規登録</h3></div>
+      <div class="card-header">新規登録</div>
         <div class="card-body">
           <div class="select">
             <h4>車両を借りたい方</h4>

@@ -119,18 +119,28 @@ class HomeController extends Controller
     }
     public function searchOut(Request $request)
     {   
+        $request->validate([
+            'departure' => 'required',
+            'revert' => 'required|after:departure',
+            'place' => 'required',
+            'numPeople' => 'min:1',
+        ]);
+
         $requestDep = $request->departure;
         $requestRev = $request->revert;
         $requestPla = $request->place;
-        $idOwner = DB::table('_owner_schedules')->select('idOwner')->get();
+        $requestNumPople = $request->numPeople;
 
         //検索
-        $searches = DB::table('_owner_schedules')->where([
+        $searches = DB::table('_owner_schedules')
+        ->join('owners','_owner_schedules.idOwner','=','owners.id')
+        ->where([
             ['departure','<=',$requestDep],
             ['revert','>=',$requestRev],
             ['place','=',$requestPla],
+            ['numPeople','>=',$requestNumPople],
         ])->get();
-        
+        //dd($searches);
         return view('driver.search',compact('searches','request'));
     }
 
@@ -166,7 +176,6 @@ class HomeController extends Controller
         });
         $posts = $query->get();
         return view('driver/talk',compact('ownerInfo','driverInfo','posts'));
-
     }
     // public function talkOut(Request $request)
     // {
