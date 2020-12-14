@@ -37,14 +37,14 @@
                             <input type="submit" value="送信"> 
                         </form>
                     </div>
-                    {{--  チャットルーム  --}}
+                    <!-- チャットルーム -->
                     <div id="room">
                         @foreach($posts as $key => $post)
-                            @if($post->sort == 1)
+                            @if($post->sort === 1)
                                 <div class="driver" style="text-align:left">
                                     <p>{{$post->comment}}</p>
                                 </div>
-                            @else
+                            @elseif($post->sort === 0)
                             <div class="owner" style="text-align:right">
                                 <p>{{$post->comment}}</p>
                             </div>
@@ -56,8 +56,6 @@
                 <input type="hidden" name="login" value="{{Auth::id()}}">
 
                 <script src="/js/app.js"></script>
-    <!-- <script src=“https://js.pusher.com/3.2/pusher.min.js“></script>
-    <script src=“https://cdnjs.cloudflare.com/ajax/libs/push.js/0.0.11/push.min.js”></script> -->
     <script>
         //ログを有効にする
         Pusher.logToConsole = true;

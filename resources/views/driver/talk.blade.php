@@ -40,17 +40,15 @@
                             <input type="submit" value="送信"> 
                         </form>
                     </div>
-                    {{--  チャットルーム  --}}
+                    <!-- チャットルーム -->
                     <div id="room">
                         @foreach($posts as $key => $post)
-                            {{--   送信したメッセージ  --}}
-                            @if($post->sort == 1)
-                                <div class="driver" style="text-align: right">
+                            @if($post->sort === 1)
+                                <div class="driver" style="text-align:right">
                                     <p>{{$post->comment}}</p>
                                 </div>
-                            {{--   受信したメッセージ  --}}
-                            @else
-                                <div class="owner" style="text-align: left">
+                            @elseif($post->sort === 0)
+                                <div class="owner" style="text-align:left">
                                     <p>{{$post->comment}}</p>
                                 </div>
                             @endif
