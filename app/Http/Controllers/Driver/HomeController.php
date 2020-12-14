@@ -180,8 +180,9 @@ class HomeController extends Controller
             'idOwner' => (int)$request->input('idOwner'),
             'idDriver' => (int)$request->input('idDriver'),
             'comment' => $request->input('comment'),
+            'sort' => 1,
         ];
-        
+        dd($insertParam);
         //チャットデータ保存
         try{
             Chat::insert($insertParam);
