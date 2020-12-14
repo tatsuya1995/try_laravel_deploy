@@ -39,23 +39,15 @@
                     </div>
                     {{--  チャットルーム  --}}
                     <div id="room">
-                        @foreach($posts as $post)
-                        @if($post->comment === "cc")
-                        <h1>big</h1>
-                        @endif
-
-
-                            {{--   送信したメッセージ  --}}
-                            @if($post->idDriver == Auth::id())
-                                <div class="driver" style="text-align: left">
+                        @foreach($posts as $key => $post)
+                            @if($post->sort == 1)
+                                <div class="driver" style="text-align:left">
                                     <p>{{$post->comment}}</p>
                                 </div>
-                            @endif
-                            {{--   受信したメッセージ  --}}
-                            @if($post->idOwner == Auth::id())
-                                <div class="owner" style="text-align: right">
-                                    <p>{{$post->comment}}</p>
-                                </div>
+                            @else
+                            <div class="owner" style="text-align:right">
+                                <p>{{$post->comment}}</p>
+                            </div>
                             @endif
                         @endforeach
                     </div>
