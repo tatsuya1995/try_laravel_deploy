@@ -9,7 +9,7 @@
                     <div class="card-body"> 
                         @isset($posts)
                             @foreach ($posts as $post)
-                            <form action="{{route('owner.talk',['idDriver'=> $post->idDriver])}}" method="get">
+                            <form action="{{route('owner.talk',['idOwner'=> $post->idOwner])}}" method="get">
                             @csrf
                                 <div class="col-md-12">
                                     <div class="card" id="cardTalk">

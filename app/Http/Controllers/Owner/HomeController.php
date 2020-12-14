@@ -139,7 +139,7 @@ class HomeController extends Controller
         //ドライバー情報の表示
         $idDriver = Auth::id();
         $driverInfo = DB::table('drivers')->where('id','=',$idDriver)->first();
-        dd($idDriver);
+        dd($idOwner);
         //投稿内容の表示
         // $posts = DB::table('posts')->where([
         //     ['idOwner','=',$idOwner],
