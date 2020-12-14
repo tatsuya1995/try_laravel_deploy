@@ -173,7 +173,7 @@ class HomeController extends Controller
         //イベント発火
         event(new Pusher($request->all()));
 
-        return redirect('owner/talk',['idDriver' => $idDriver]);
+        return redirect('owner/talk',['idDriver' => $insertParam["idDriver"]]);
     }
 
     public function talk(Request $request, $idDriver)
