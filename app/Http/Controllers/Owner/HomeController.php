@@ -176,15 +176,6 @@ class HomeController extends Controller
         //イベント発火
         event(new Pusher($request->all()));
 
-        // //投稿内容の保存
-        // $post = new Post;
-        // $post->idOwner = Auth::id();
-        // $post->idDriver = $request->input('idDriver'); 
-        // $post->comment = $request->input('comment');
-        // $post->save();
-        // //dd($post);
-        // //talkDetailsにドライバー情報を渡す
-        // $idDriver = $request->idDriver;
         return redirect()->action('Owner\HomeController@talkDetails',['idDriver'=>$idDriver]);
     }
 

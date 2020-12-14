@@ -102,8 +102,8 @@ Route::namespace('Owner')->prefix('owner')->name('owner.')->group(function(){
         Route::get('talkerSelect','HomeController@talkerSelect')->name('talkerSelect');
         Route::get('talk/{idDriver}','HomeController@talk')->name('talk');
         Route::post('talk/{idDriver}','HomeController@talk')->name('talkpost');
+        Route::post('post','HomeController@postIn')->name('post');
 
-        //Route::post('post/{idDriver}','HomeController@postIn')->name('post');
         Route::get('contract','HomeController@contract')->name('contract');
 
         //登録情報表示

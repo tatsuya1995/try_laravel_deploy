@@ -28,7 +28,7 @@
             <div class="card">
                 <div class="card-body"> 
                     <div class="row">
-                        <form action="" method="post">
+                        <form action="{{route('owner.post')}}" method="post">
                         @csrf
                             <input type="hidden" name="idDriver" value="{{$driverInfo->id}}">
                             <input name='idOwner' type="hidden" value="{{$ownerInfo->id}}">
