@@ -114,7 +114,9 @@ ul.bluetag li {
 
 }
 .iconImgTalk {
-  width:40%;
+  width:20%;
+  width:20%;
+  border-radius:50%;
   border: 1px solid #5f5039;
 }
 .carImg {

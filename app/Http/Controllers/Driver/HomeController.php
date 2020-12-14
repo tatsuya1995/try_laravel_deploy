@@ -159,7 +159,6 @@ class HomeController extends Controller
         //     ['idDriver','=',$idDriver],
         // ])->orderBy('created_at','desc')
         // ->paginate(10);
-        dd($driverInfo);
         //ドライバー、オーナー区別するトライ
         $param = [
             'idOwner' => $idOwner,
