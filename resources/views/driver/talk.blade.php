@@ -44,13 +44,12 @@
                     <div id="room">
                         @foreach($posts as $key => $post)
                             {{--   送信したメッセージ  --}}
-                            @if($post->idDriver == Auth::id())
+                            @if($post->sort == 1)
                                 <div class="driver" style="text-align: right">
                                     <p>{{$post->comment}}</p>
                                 </div>
-                            @endif
                             {{--   受信したメッセージ  --}}
-                            @if($post->idOwner == Auth::id())
+                            @elseif
                                 <div class="owner" style="text-align: left">
                                     <p>{{$post->comment}}</p>
                                 </div>
