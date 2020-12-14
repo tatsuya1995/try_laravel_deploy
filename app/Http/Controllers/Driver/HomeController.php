@@ -181,7 +181,6 @@ class HomeController extends Controller
             'idDriver' => (int)$request->input('idDriver'),
             'comment' => $request->input('comment'),
             'sort' => 1,
-            'created_at' => timestamps(),
         ];
         //チャットデータ保存
         try{
