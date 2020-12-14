@@ -129,7 +129,7 @@ class HomeController extends Controller
         return view('owner/talkerSelect',compact('posts'));
     }
 
-    public function talkIn(Request $request)
+    public function talkIn(Request $request, $idDriver)
     {   
         
         //オーナー情報の表示
