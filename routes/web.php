@@ -97,6 +97,7 @@ Route::namespace('Owner')->prefix('owner')->name('owner.')->group(function(){
         Route::get('schedule','HomeController@scheduleIn')->name('schedule');
         Route::post('schedule','HomeController@scheduleOut')->name('owner.schedule');
         Route::post('destroy/{id}','HomeController@destroy')->name('destroy');
+        
         Route::post('talkerSelect','HomeController@talkerSelect')->name('talkerSelect');
         Route::get('talkerSelect','HomeController@talkerSelect')->name('talkerSelect');
         Route::get('talk/{idDriver}','HomeController@talk')->name('talk');

@@ -42,7 +42,7 @@
                     </div>
                     {{--  チャットルーム  --}}
                     <div id="room">
-                        @foreach($posts as $post)
+                        @foreach($posts as $key => $post)
                             {{--   送信したメッセージ  --}}
                             @if($post->idDriver == Auth::id())
                                 <div class="driver" style="text-align: right">
