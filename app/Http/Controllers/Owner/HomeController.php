@@ -128,17 +128,63 @@ class HomeController extends Controller
         return view('owner/talkerSelect',compact('posts'));
     }
 
+    public function talkIn(Request $request)
+    {   
+        //オーナー情報の表示
+        $idOwner = $request->idOwner;
+        $ownerInfo = DB::table('owners')->where('id','=',$idOwner)->first();
+        
+        //ドライバー情報の表示
+        $idDriver = Auth::id();
+        $driverInfo = DB::table('drivers')->where('id','=',$idDriver)->first();
+        //投稿内容の表示
+        // $posts = DB::table('posts')->where([
+        //     ['idOwner','=',$idOwner],
+        //     ['idDriver','=',$idDriver],
+        // ])->orderBy('created_at','desc')
+        // ->paginate(10);
+        //ドライバー、オーナー区別するトライ
+        $param = [
+            'idOwner' => $idOwner,
+            'idDriver' => $idDriver,
+        ];
+        $query = Chat::where('idOwner' , $idOwner)->where('idDriver', $idDriver);
+        $query->orWhere(function($query) use($idOwner,$idDriver){
+            $query->where('idOwner',$idOwner);
+            $query->where('idDriver',$idDriver);
+        });
+        $posts = $query->get();
+        return view('driver/talk',compact('ownerInfo','driverInfo','posts'));
+    }
+
+
     public function postIn(Request $request)
     {   
-        //投稿内容の保存
-        $post = new Post;
-        $post->idOwner = Auth::id();
-        $post->idDriver = $request->input('idDriver'); 
-        $post->comment = $request->input('comment');
-        $post->save();
-        //dd($post);
-        //talkDetailsにドライバー情報を渡す
-        $idDriver = $request->idDriver;
+        $insertParam = [
+            'idOwner' => (int)$request->input('idOwner'),
+            'idDriver' => (int)$request->input('idDriver'),
+            'comment' => $request->input('comment'),
+        ];
+        
+        //チャットデータ保存
+        try{
+            Chat::insert($insertParam);
+        }catch (\Exception $e){
+            return false;
+        }
+
+        //イベント発火
+        event(new Pusher($request->all()));
+
+        // //投稿内容の保存
+        // $post = new Post;
+        // $post->idOwner = Auth::id();
+        // $post->idDriver = $request->input('idDriver'); 
+        // $post->comment = $request->input('comment');
+        // $post->save();
+        // //dd($post);
+        // //talkDetailsにドライバー情報を渡す
+        // $idDriver = $request->idDriver;
         return redirect()->action('Owner\HomeController@talkDetails',['idDriver'=>$idDriver]);
     }
 

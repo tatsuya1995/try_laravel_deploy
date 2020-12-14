@@ -164,10 +164,6 @@ class HomeController extends Controller
             'idOwner' => $idOwner,
             'idDriver' => $idDriver,
         ];
-        // $query = DB::table('chats')->where([
-        //     ['idOwner','=',$idOwner],
-        //     ['idDriver','=',$idDriver],
-        // ]);
         $query = Chat::where('idOwner' , $idOwner)->where('idDriver', $idDriver);
         $query->orWhere(function($query) use($idOwner,$idDriver){
             $query->where('idOwner',$idOwner);
@@ -176,10 +172,7 @@ class HomeController extends Controller
         $posts = $query->get();
         return view('driver/talk',compact('ownerInfo','driverInfo','posts'));
     }
-    // public function talkOut(Request $request)
-    // {
-    //     return view('talk');
-    // }
+
     public function postIn(Request $request)
     {   
         $insertParam = [
