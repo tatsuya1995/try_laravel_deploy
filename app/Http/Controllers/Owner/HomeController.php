@@ -139,7 +139,7 @@ class HomeController extends Controller
         //ドライバー情報の表示
         $idDriver = $request->idDriver;
         $driverInfo = DB::table('drivers')->where('id','=',$idDriver)->first();
-        dd($idDriver);
+
         //投稿内容の表示
         // $posts = DB::table('posts')->where([
         //     ['idOwner','=',$idOwner],
@@ -151,6 +151,7 @@ class HomeController extends Controller
             'idOwner' => $idOwner,
             'idDriver' => $idDriver,
         ];
+        dd($param);
         $query = Chat::where('idOwner' , $idOwner)->where('idDriver', $idDriver);
         $query->orWhere(function($query) use($idOwner,$idDriver){
             $query->where('idOwner',$idOwner);
