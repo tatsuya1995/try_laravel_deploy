@@ -10,7 +10,7 @@ use App\Models\OwnerSchedule;
 use App\Models\Chat;
 use Illuminate\Support\Facades\Auth;
 use Storage;
-use Events\Pusher;
+use App\Events\Pusher;
 
 class HomeController extends Controller
 {
