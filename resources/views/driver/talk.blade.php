@@ -72,13 +72,15 @@
             let appendText;
             let login = $('input[name="login"]').val();
 
-            if(data.idDriver === login){
-                appendText = '<div class="idDriver" style="text-align:right"><p>' + data.comment + '</p></div> ';
-            }else if(data.idOwner === login){
-                appendText = '<div class="idOwner" style="text-align:left"><p>' + data.comment + '</p></div> ';
-            }else{
-                return false;
-            }
+
+            appendText = '<div class="idOwner" style="text-align:left"><p>' + data.comment + '</p></div> ';
+            // if(data.idDriver === login){
+            //     appendText = '<div class="idDriver" style="text-align:right"><p>' + data.comment + '</p></div> ';
+            // }else if(data.idOwner === login){
+            //     appendText = '<div class="idOwner" style="text-align:left"><p>' + data.comment + '</p></div> ';
+            // }else{
+            //     return false;
+            // }
 
             //メッセージを表示
             $("#room").append(appendText);
