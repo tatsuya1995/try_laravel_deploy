@@ -151,14 +151,14 @@ class HomeController extends Controller
             'idOwner' => $idOwner,
             'idDriver' => $idDriver,
         ];
-        dd($param);
+        //dd($param);
         $query = Chat::where('idOwner' , $idOwner)->where('idDriver', $idDriver);
         $query->orWhere(function($query) use($idOwner,$idDriver){
             $query->where('idOwner',$idOwner);
             $query->where('idDriver',$idDriver);
         });
         $posts = $query->get();
-        //dd($driverInfo);
+        dd($posts);
         return view('driver/talk',compact('ownerInfo','driverInfo','posts'));
     }
 
