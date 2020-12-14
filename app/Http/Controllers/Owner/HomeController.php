@@ -157,7 +157,8 @@ class HomeController extends Controller
         return view('owner/talk',compact('ownerInfo','driverInfo','posts'));
     }
     public function postIn(Request $request)
-    {   
+    { 
+        $idDriver = (int)$request->input('idDriver');
         $insertParam = [
             'idOwner' => (int)$request->input('idOwner'),
             'idDriver' => (int)$request->input('idDriver'),
@@ -173,7 +174,7 @@ class HomeController extends Controller
         //イベント発火
         event(new Pusher($request->all()));
 
-        return redirect('owner/talk',['idDriver' => 1 ]);
+        return redirect()->action('Owner\HomeController@talkIn',['idDriver' => $idDriver])
     }
 
     public function talk(Request $request, $idDriver)
