@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
-                <div class="card-header">{{ __('登録情報編集') }}</div>
+                <div class="card-header">登録情報編集</div>
                     <div class="card-body">
                         <table class="table">
                             <tr><th>氏名</th><td>{{$driver->nameDriver}}</td></tr>
@@ -14,8 +14,7 @@
                             <tr><th></th><td>
                                 <form action="{{route('driver.edit',['id'=>$driver->id])}}" method="get">
                                 @csrf
-                                    <button type="submit" class="btn btn-primary">
-                                    {{ __('編集する') }}
+                                    <button type="submit" class="btn btn-primary">編集する</button>
                                 </form></td>
                             </tr>
                         </table>
