@@ -131,11 +131,11 @@ class HomeController extends Controller
 
     public function talkIn(Request $request)
     {   
-        dd($request);
+        
         //オーナー情報の表示
         $idOwner = $request->idOwner;
         $ownerInfo = DB::table('owners')->where('id','=',$idOwner)->first();
-        
+        dd($idOwner);
         //ドライバー情報の表示
         $idDriver = Auth::id();
         $driverInfo = DB::table('drivers')->where('id','=',$idDriver)->first();
