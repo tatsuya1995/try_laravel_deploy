@@ -133,11 +133,11 @@ class HomeController extends Controller
     {   
         
         //オーナー情報の表示
-        $idOwner = $request->idOwner;
+        $idOwner = Auth::id();
         $ownerInfo = DB::table('owners')->where('id','=',$idOwner)->first();
         
         //ドライバー情報の表示
-        $idDriver = Auth::id();
+        $idDriver = $request->idDriver;
         $driverInfo = DB::table('drivers')->where('id','=',$idDriver)->first();
         dd($idOwner);
         //投稿内容の表示
