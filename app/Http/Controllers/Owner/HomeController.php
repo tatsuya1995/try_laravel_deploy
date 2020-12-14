@@ -125,12 +125,13 @@ class HomeController extends Controller
                     ->groupBy('idDriver')
                     ->orderBy('posts.created_at','desc')
                     ->get();
-        dd($posts);
+        //dd($posts);
         return view('owner/talkerSelect',compact('posts'));
     }
 
     public function talkIn(Request $request)
     {   
+        dd($request);
         //オーナー情報の表示
         $idOwner = $request->idOwner;
         $ownerInfo = DB::table('owners')->where('id','=',$idOwner)->first();
@@ -155,7 +156,7 @@ class HomeController extends Controller
             $query->where('idDriver',$idDriver);
         });
         $posts = $query->get();
-        dd($driverInfo);
+        //dd($driverInfo);
         return view('driver/talk',compact('ownerInfo','driverInfo','posts'));
     }
 
