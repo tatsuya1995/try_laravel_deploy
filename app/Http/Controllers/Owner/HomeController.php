@@ -182,7 +182,7 @@ class HomeController extends Controller
         //イベント発火
         event(new Pusher($request->all()));
 
-        //return redirect()->action('Owner\HomeController@talkDetails',['idDriver'=>$idDriver]);
+        return view('Owner/talk',compact('idDriver'));
     }
 
     public function talk(Request $request, $idDriver)
