@@ -100,8 +100,8 @@ Route::namespace('Owner')->prefix('owner')->name('owner.')->group(function(){
         
         Route::post('talkerSelect','HomeController@talkerSelect')->name('talkerSelect');
         Route::get('talkerSelect','HomeController@talkerSelect')->name('talkerSelect');
-        Route::get('talk/{idDriver}','HomeController@talk')->name('talk');
-        Route::post('talk/{idDriver}','HomeController@talk')->name('talkpost');
+        Route::get('talk/{idDriver}','HomeController@talkIn')->name('talk');
+        Route::post('talk/{idDriver}','HomeController@talkIn')->name('talkpost');
         Route::post('post','HomeController@postIn')->name('post');
 
         Route::get('contract','HomeController@contract')->name('contract');
