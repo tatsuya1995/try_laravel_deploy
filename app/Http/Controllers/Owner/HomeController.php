@@ -139,18 +139,13 @@ class HomeController extends Controller
         //ドライバー情報の表示
         $idDriver = (int)$request->idDriver;
         $driverInfo = DB::table('drivers')->where('id','=',$idDriver)->first();
-
         //投稿内容の表示
         // $posts = DB::table('posts')->where([
         //     ['idOwner','=',$idOwner],
         //     ['idDriver','=',$idDriver],
         // ])->orderBy('created_at','desc')
         // ->paginate(10);
-        //ドライバー、オーナー区別するトライ
-        $param = [
-            'idOwner' => $idOwner,
-            'idDriver' => $idDriver,
-        ];
+
         //dd($param);
         $query = Chat::where('idOwner' , $idOwner)->where('idDriver', $idDriver);
         $query->orWhere(function($query) use($idOwner,$idDriver){
@@ -161,8 +156,6 @@ class HomeController extends Controller
         //dd($posts);
         return view('owner/talk',compact('ownerInfo','driverInfo','posts'));
     }
-
-
     public function postIn(Request $request)
     {   
         $insertParam = [
@@ -171,18 +164,16 @@ class HomeController extends Controller
             'comment' => $request->input('comment'),
             'sort' => 0,
         ];
-        
         //チャットデータ保存
         try{
             Chat::insert($insertParam);
         }catch (\Exception $e){
             return false;
         }
-
         //イベント発火
         event(new Pusher($request->all()));
 
-        return redirect('owner/talk',compact('idDriver'));
+        return redirect('owner/talk',['idDriver' => $idDriver]);
     }
 
     public function talk(Request $request, $idDriver)
