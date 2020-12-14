@@ -12,7 +12,7 @@
                                 <form action="{{route('owner.contract',['idDriver'=> $driverInfo->id])}}" method="get">
                                 @csrf
                                 <ul class="marker">
-                                    <li><img src="{{$driverInfo->IconDriver}}" class="iconImgTalk"  alt="アイコン画像">
+                                    <li><img src="{{$driverInfo->iconDriver}}" class="iconImgTalk"  alt="アイコン画像">
                                     <li>氏名:{{$driverInfo->nameDriver}}
                                     <li>契約を結ぶ（確認画面へ移動）<input type="image" src="{{asset('assets/image/arrow2.png')}}" id="arrow2"  alt="矢印画像">
                                 </ul>
