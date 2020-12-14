@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header">オーナー：{{$ownerInfo->nameOwner}}さんの情報</div>
+                <div class="card-header">オーナー：{{$ownerInfo->nameOwner}}さんとのトークルーム</div>
                     <div class="card-body">
                         <div class ="row text-center">
                             <div class="col-md-6">
@@ -29,7 +29,6 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-            <div class="card-header">{{$ownerInfo->nameOwner}}さんのトークルーム</div>
                 <div class="card-body"> 
                     <div class="row">
                         <form action="{{route('driver.post')}}" method="post">
@@ -63,9 +62,7 @@
                 <input type="hidden" name="login" value="{{Auth::id()}}">
 
                 <script src="/js/app.js"></script>
-    <!-- <script src=“https://js.pusher.com/3.2/pusher.min.js“></script>
-    <script src=“https://cdnjs.cloudflare.com/ajax/libs/push.js/0.0.11/push.min.js”></script> -->
-    <script>
+        <script>
         //ログを有効にする
         Pusher.logToConsole = true;
 
