@@ -81,7 +81,7 @@
             }
 
             //メッセージを表示
-            $("#room").prepend(appendText);
+            $("#room").append(appendText);
 
             if(data.idOwner === login){
                 //ブラウザへプッシュ通知
