@@ -191,7 +191,7 @@ class HomeController extends Controller
 
         //イベント発火
         event(new Pusher($request->all()));
-
+        return true;
     //     //投稿内容の保存
     //     $idOwner = $request->idOwner;
     //     $post = new Post;

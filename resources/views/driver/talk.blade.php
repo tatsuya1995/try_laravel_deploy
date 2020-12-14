@@ -31,16 +31,15 @@
             <div class="card">
                 <div class="card-body"> 
                     <div class="row">
-                        <form action="{{route('driver.post')}}" method="post">
+                        <form>
                         @csrf
+                            <textarea name="comment" cols="40" rows="3" placeholder="こちらにメッセージを入力"></textarea>
+                            <button type="button" id="send">送信</button>
+                        </form>
                             <input type="hidden" name="idDriver" value="{{$driverInfo->id}}">
                             <input name='idOwner' type="hidden" value="{{$ownerInfo->id}}">
                             <input type="hidden" name="login" value="{{Auth::id()}}">
-                            <textarea name="comment" cols="40" rows="3" placeholder="こちらにメッセージを入力"></textarea>
-                            <input type="submit" value="送信"> 
-                        </form>
                     </div>
-                    <!-- チャットルーム -->
                     <div id="room">
                         @foreach($posts as $key => $post)
                             @if($post->sort === 1)
@@ -77,9 +76,9 @@
             let login = $('input[name="login"]').val();
 
             if(data.idDriver === login){
-                appendText = '<div class="idDriver" style="text-align:left"><p>' + data.comment + '</p></div> ';
+                appendText = '<div class="idDriver" style="text-align:right"><p>' + data.comment + '</p></div> ';
             }else if(data.idOwner === login){
-                appendText = '<div class="idOwner" style="text-align:right"><p>' + data.comment + '</p></div> ';
+                appendText = '<div class="idOwner" style="text-align:left"><p>' + data.comment + '</p></div> ';
             }else{
                 return false;
             }
@@ -99,10 +98,10 @@
             }
         });
         //メッセージ送信
-        $('#submit').on('click' , function(){
+        $('#send').on('click' , function(){
             $.ajax({
             type : 'POST',
-            url : '/driver/talk',
+            url : '/driver/post',
             data : {
                 comment : $('textarea[name="comment"]').val(),
                 idDriver : $('input[name="idDriver"]').val(),
