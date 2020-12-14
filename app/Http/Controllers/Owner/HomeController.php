@@ -159,7 +159,7 @@ class HomeController extends Controller
         });
         $posts = $query->get();
         //dd($posts);
-        return view('owner.talk',compact('ownerInfo','driverInfo','posts'));
+        return view('owner/talk',compact('ownerInfo','driverInfo','posts'));
     }
 
 
@@ -182,7 +182,7 @@ class HomeController extends Controller
         //イベント発火
         event(new Pusher($request->all()));
 
-        return view('Owner/talk',compact('idDriver'));
+        return view('owner/talk',compact('idDriver'));
     }
 
     public function talk(Request $request, $idDriver)
