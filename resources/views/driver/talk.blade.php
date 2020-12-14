@@ -49,7 +49,7 @@
                                     <p>{{$post->comment}}</p>
                                 </div>
                             {{--   受信したメッセージ  --}}
-                            @elseif
+                            @else
                                 <div class="owner" style="text-align: left">
                                     <p>{{$post->comment}}</p>
                                 </div>
