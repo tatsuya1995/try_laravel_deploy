@@ -28,16 +28,15 @@
             <div class="card">
                 <div class="card-body"> 
                     <div class="row">
-                        <form action="{{route('owner.post')}}" method="post">
+                        <form>
                         @csrf
-                            <input type="hidden" name="idDriver" value="{{$driverInfo->id}}">
-                            <input name='idOwner' type="hidden" value="{{$ownerInfo->id}}">
-                            <input type="hidden" name="login" value="{{Auth::id()}}">
                             <textarea name="comment" cols="40" rows="3" placeholder="こちらにメッセージを入力"></textarea>
-                            <input type="submit" value="送信"> 
+                            <button type="button" id="send">送信</button>
                         </form>
+                        <input type="hidden" name="idDriver" value="{{$driverInfo->id}}">
+                        <input name='idOwner' type="hidden" value="{{$ownerInfo->id}}">
+                        <input type="hidden" name="login" value="{{Auth::id()}}">
                     </div>
-                    <!-- チャットルーム -->
                     <div id="room">
                         @foreach($posts as $key => $post)
                             @if($post->sort === 1)
@@ -55,7 +54,7 @@
                 <input type="hidden" name="idOwner" value="{{$ownerInfo->id}}">
                 <input type="hidden" name="login" value="{{Auth::id()}}">
 
-                <script src="/js/app.js"></script>
+    <script src="/js/app.js"></script>
     <script>
         //ログを有効にする
         Pusher.logToConsole = true;
@@ -96,10 +95,10 @@
             }
         });
         //メッセージ送信
-        $('#submit').on('click' , function(){
+        $('#send').on('click' , function(){
             $.ajax({
             type : 'POST',
-            url : '/driver/talk',
+            url : '/owner/post',
             data : {
                 comment : $('textarea[name="comment"]').val(),
                 idDriver : $('input[name="idDriver"]').val(),
