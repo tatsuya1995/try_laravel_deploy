@@ -43,11 +43,11 @@
                     <div id="room">
                         @foreach($posts as $key => $post)
                             @if($post->sort === 1)
-                                <div class="driver" style="text-align:right">
+                                <div class="driver" style="text-align:left">
                                     <p>{{$post->comment}}</p>
                                 </div>
                             @elseif($post->sort === 0)
-                                <div class="owner" style="text-align:left">
+                                <div class="owner" style="text-align:right">
                                     <p>{{$post->comment}}</p>
                                 </div>
                             @endif
