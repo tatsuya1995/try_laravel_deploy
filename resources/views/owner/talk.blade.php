@@ -40,7 +40,7 @@
                     {{--  チャットルーム  --}}
                     <div id="room">
                         @foreach($posts as $post)
-                        @if({{$post->comment}} === "cc")
+                        @if($post->comment === "cc")
                         <h1>big</h1>
                         @endif
 
