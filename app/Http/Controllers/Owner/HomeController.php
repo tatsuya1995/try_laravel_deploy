@@ -192,7 +192,7 @@ class HomeController extends Controller
             $query->where('idOwner',$idOwner);
             $query->where('idDriver',$idDriver);
         });
-        $posts = $query->get();
+        $posts = $query->orderBy('created_at','desc')->get();
         return view('owner/talk',compact('ownerInfo','driverInfo','posts'));
         
         //dd($posts);
