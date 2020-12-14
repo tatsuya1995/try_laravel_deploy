@@ -171,8 +171,8 @@ class HomeController extends Controller
         //     $query->where('idDriver',$idDriver);
         // });
         $posts = $query->orderBy('id','desc')
-                        ->paginate(10)
-                        ->get();
+                        ->paginate(10);
+
         return view('driver/talk',compact('ownerInfo','driverInfo','posts'));
     }
 
