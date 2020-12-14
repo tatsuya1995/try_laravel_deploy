@@ -10,7 +10,7 @@
                         <div class ="row text-center">
                             <div class="col-md-6">
                                 <ul class="marker">
-                                    <li><img src="{{$ownerInfo->iconOwner}}" class="iconImg" alt="アイコン画像">
+                                    <li><img src="{{$ownerInfo->iconOwner}}" class="iconImgTalk" alt="アイコン画像">
                                     <li>オーナー名:{{$ownerInfo->nameOwner}}
                                 </ul>
                             </div>
