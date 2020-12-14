@@ -53,11 +53,8 @@
                             @endif
                         @endforeach
                     </div>
-                <input type="hidden" name="idDriver" value="{{$driverInfo->id}}">
-                <input type="hidden" name="idOwner" value="{{$ownerInfo->id}}">
-                <input type="hidden" name="login" value="{{Auth::id()}}">
 
-                <script src="/js/app.js"></script>
+        <script src="/js/app.js"></script>
         <script>
         //ログを有効にする
         Pusher.logToConsole = true;
@@ -84,7 +81,7 @@
             }
 
             //メッセージを表示
-            $("#room").append(appendText);
+            $("#room").prepend(appendText);
 
             if(data.idOwner === login){
                 //ブラウザへプッシュ通知

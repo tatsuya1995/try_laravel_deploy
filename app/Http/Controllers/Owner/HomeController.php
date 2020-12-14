@@ -148,22 +148,21 @@ class HomeController extends Controller
 
         //dd($param);
         $query = Chat::where('idOwner' , $idOwner)->where('idDriver', $idDriver);
-        $query->orWhere(function($query) use($idOwner,$idDriver){
-            $query->where('idOwner',$idOwner);
-            $query->where('idDriver',$idDriver);
-        });
+        // $query->orWhere(function($query) use($idOwner,$idDriver){
+        //     $query->where('idOwner',$idOwner);
+        //     $query->where('idDriver',$idDriver);
+        // });
         $posts = $query->get();
         //dd($posts);
         return view('owner/talk',compact('ownerInfo','driverInfo','posts'));
     }
     public function postIn(Request $request)
     { 
-        $idDriver = (int)$request->input('idDriver');
         $insertParam = [
             'idOwner' => (int)$request->input('idOwner'),
             'idDriver' => (int)$request->input('idDriver'),
             'comment' => $request->input('comment'),
-            'sort' => false,
+            'sort' => 0,
         ];
         //チャットデータ保存
         try{
@@ -174,7 +173,6 @@ class HomeController extends Controller
         //イベント発火
         event(new Pusher($request->all()));
         return true;
-        //return redirect()->action('Owner\HomeController@talkIn',['idDriver' => $idDriver]);
     }
 
     public function talk(Request $request, $idDriver)

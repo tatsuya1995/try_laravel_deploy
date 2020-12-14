@@ -166,10 +166,10 @@ class HomeController extends Controller
         ];
         //dd($param);
         $query = Chat::where('idOwner' , $idOwner)->where('idDriver', $idDriver);
-        $query->orWhere(function($query) use($idOwner,$idDriver){
-            $query->where('idOwner',$idOwner);
-            $query->where('idDriver',$idDriver);
-        });
+        // $query->orWhere(function($query) use($idOwner,$idDriver){
+        //     $query->where('idOwner',$idOwner);
+        //     $query->where('idDriver',$idDriver);
+        // });
         $posts = $query->orderBy('created_at','desc')->get();
         return view('driver/talk',compact('ownerInfo','driverInfo','posts'));
     }
@@ -192,15 +192,6 @@ class HomeController extends Controller
         //イベント発火
         event(new Pusher($request->all()));
         return true;
-    //     //投稿内容の保存
-    //     $idOwner = $request->idOwner;
-    //     $post = new Post;
-    //     $post->comment = $request->input('comment');
-    //     $post->idOwner = $request->input('idOwner');
-    //     $post->idDriver = Auth::id();
-    //     $post->save();
-    //     //return redirect('driver.talk',['idOwner' => $idOwner]);
-    //     return redirect()->action('Driver\HomeController@talkIn',['idOwner' => $idOwner]);
     }
     public function deletePost(Request $request)
     {   
