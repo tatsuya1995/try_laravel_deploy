@@ -137,7 +137,7 @@ class HomeController extends Controller
         $ownerInfo = DB::table('owners')->where('id','=',$idOwner)->first();
         
         //ドライバー情報の表示
-        $idDriver = $request->idDriver;
+        $idDriver = (int)$request->idDriver;
         $driverInfo = DB::table('drivers')->where('id','=',$idDriver)->first();
 
         //投稿内容の表示
