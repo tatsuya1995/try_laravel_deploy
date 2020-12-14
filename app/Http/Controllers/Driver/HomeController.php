@@ -170,7 +170,7 @@ class HomeController extends Controller
         //     $query->where('idOwner',$idOwner);
         //     $query->where('idDriver',$idDriver);
         // });
-        $posts = $query->orderBy('id','desc')
+        $posts = $query->orderBy('id','asc')
                         ->paginate(10);
 
         return view('driver/talk',compact('ownerInfo','driverInfo','posts'));
