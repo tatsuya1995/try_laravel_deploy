@@ -152,7 +152,7 @@ class HomeController extends Controller
         //     $query->where('idOwner',$idOwner);
         //     $query->where('idDriver',$idDriver);
         // });
-        $posts = $query->pagenate(10)->get();
+        $posts = $query->paginate(10)->get();
         //dd($posts);
         return view('owner/talk',compact('ownerInfo','driverInfo','posts'));
     }
