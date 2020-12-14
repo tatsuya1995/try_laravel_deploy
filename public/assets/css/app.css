@@ -107,15 +107,15 @@ ul.bluetag li {
 
 /* ↓driver talk（owner talk）ページ↓ */
 .iconImg {
-  width:200px;
-  width:200px;
+  width:150px;
+  width:150px;
   border-radius:50%;
-  border: 2px solid #5f5039;
+  border: 1px solid #5f5039;
 
 }
 .carImg {
-  width:200px;
-  border: 2px solid #5f5039;
+  width:150px;
+  border: 1px solid #5f5039;
 }
 
 .marker {

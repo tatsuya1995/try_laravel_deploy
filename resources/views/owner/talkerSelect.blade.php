@@ -13,7 +13,7 @@
                             @csrf
                                 <div class="col-md-12">
                                     <div class="card" id="cardTalk">
-                                        <p><img src="{{$post->iconDriver}}">、{{$post->nameDriver}}さん　{{$post->created_at}}</p>
+                                        <p><img src="{{$post->iconDriver}}" class="iconImg" alt="アイコン画像">、{{$post->nameDriver}}さん　{{$post->created_at}}</p>
                                         <p>{{$post->comment}}
                                             <input type="image" src="{{asset('assets/image/arrow2.png')}}" id="arrow2"  alt="矢印画像">
                                         </form> </p>
