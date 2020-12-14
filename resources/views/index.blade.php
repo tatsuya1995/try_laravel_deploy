@@ -28,9 +28,6 @@
             <li>レンタカー屋が近くにないから不便
             <li>ライフスタイルに合わせた利用がしたい
           </ul>
-            <!--<div class="text-center">
-              <img src="{{asset('/assets/image/arrows.png')}}"  width="70px" alt="矢印画像">
-          </div> -->
           <h4 class="indent">車を上手く使えてないな…</h4>
           <ul class="stitch">
             <li>平日しか車は使わないから、土日は車庫に入れたまま

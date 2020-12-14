@@ -10,13 +10,13 @@
                         <div class ="row text-center">
                             <div class="col-md-6">
                                 <ul class="marker">
-                                    <li><img src="{{asset('storage/'.$ownerInfo->iconOwner)}}" class="iconImg" alt="アイコン画像">
+                                    <li><img src="{{$ownerInfo->iconOwner}}" class="iconImg" alt="アイコン画像">
                                     <li>オーナー名:{{$ownerInfo->nameOwner}}
                                 </ul>
                             </div>
                             <div class="col-md-6">
                                 <ul class="marker">
-                                    <li><img src="{{asset('storage/'.$ownerInfo->imgCar)}}" class="carImg" alt="車両画像">
+                                    <li><img src="{{$ownerInfo->imgCar}}" class="carImg" alt="車両画像">
                                     <li>車名：{{$ownerInfo->nameCar}}
                                     <li>最大乗車可能人数：{{$ownerInfo->numPeople}}人
                                 </ul>

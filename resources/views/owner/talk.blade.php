@@ -11,7 +11,7 @@
                             <div class="col-md-6">
                                 <form action="{{route('owner.contract',['idDriver'=> $driverInfo->id])}}" method="get">
                                 <ul class="marker">
-                                    <li><img src="{{asset('storage/'.$ownerInfo->imgCar)}}" class="iconImg"  alt="アイコン画像">
+                                    <li><img src="{{$ownerInfo->imgCar}}" class="iconImg"  alt="アイコン画像">
                                     <li>氏名:{{$ownerInfo->nameOwner}}
                                     <li>契約を結ぶ（確認画面へ移動）<input type="image" src="{{asset('assets/image/arrow2.png')}}" id="arrow2"  alt="矢印画像">
                                 </ul>

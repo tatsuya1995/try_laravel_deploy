@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
-                <div class="card-header">{{ __('登録情報') }}</div>
+                <div class="card-header">登録情報</div>
                 <div class="card-body">
                         <table class="table">
                             <tr><th>氏名</th><td>{{$owner->nameOwner}}</td></tr>
@@ -17,9 +17,8 @@
                             <tr><th></th><td>
                             <form action="{{route('owner.edit',['id'=>$owner->id])}}" method="get">
                             @csrf
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('編集する') }}
-                                </form></td>
+                                <button type="submit" class="btn btn-primary">編集する
+                            </form></td>
                             </tr>
                         </table>
                         <a href="{{route('index')}}">トップページへ戻る</a>
