@@ -40,15 +40,15 @@
                     </div>
                     <div id="room">
                         @foreach($posts as $key => $post)
-                        <div class="card" id="cardTalk">
+                        <div class="card"　class="col-md-8" id="cardTalk">
                             @if($post->sort === 1)
                                 <div class="driver" style="text-align:left">
-                                <p><img src="{{$driverInfo->iconDriver}}" class="iconImg" alt="ドライバーアイコン画像">、{{$driverInfo->nameDriver}}さん　{{$post->created_at}}</p>
+                                <p><img src="{{$driverInfo->iconDriver}}" class="iconImgTalk" alt="ドライバーアイコン画像">、{{$driverInfo->nameDriver}}さん　{{$post->created_at}}</p>
                                     <p>{{$post->comment}}</p>
                                 </div>
                             @elseif($post->sort === 0)
                             <div class="owner" style="text-align:right">
-                            <p><img src="{{$ownerInfo->iconOwner}}" class="iconImg" alt="オーナーアイコン画像">、{{$ownerInfo->nameOwner}}さん　{{$post->created_at}}</p>
+                            <p><img src="{{$ownerInfo->iconOwner}}" class="iconImgTalk" alt="オーナーアイコン画像">、{{$ownerInfo->nameOwner}}さん　{{$post->created_at}}</p>
                                 <p>{{$post->comment}}</p>
                             </div>
                             @endif
