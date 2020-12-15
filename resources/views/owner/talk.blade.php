@@ -17,7 +17,7 @@
                             <div class="col-md-6 d-flex align-items-end">
                                 <form action="{{route('owner.contract',['idDriver'=> $driverInfo->id])}}" method="get">
                                     @csrf
-                                    <p>契約を結ぶ（確認画面へ移動）<input type="image" src="{{asset('assets/image/arrow2.png')}}" id="arrow2"  alt="矢印画像"></p>
+                                    <div>契約を結ぶ（確認画面へ移動）<input type="image" src="{{asset('assets/image/arrow2.png')}}" id="arrow2"  alt="矢印画像"></div>
                                 </form>
                             </div>
                         </div>
@@ -42,19 +42,19 @@
                     </div>
                     <div id="room">
                         @foreach($posts as $key => $post)
-                        <div class="card" id="cardTalk">
+                        <!-- <div class="card" id="cardTalk"> -->
                             @if($post->sort === 1)
-                                <div class="driver" style="text-align:left">
+                                <div class="driverCard" style="text-align:left">
                                 <p><img src="{{$driverInfo->iconDriver}}" class="iconImgTalk" alt="ドライバーアイコン画像">、{{$driverInfo->nameDriver}}さん　○○○○○○○○○{{$post->created_at}}</p>
                                     <p>{{$post->comment}}</p>
                                 </div>
                             @elseif($post->sort === 0)
-                            <div class="owner" style="text-align:right">
+                            <div class="ownerCard" style="text-align:right">
                             <p><img src="{{$ownerInfo->iconOwner}}" class="iconImgTalk" alt="オーナーアイコン画像">、{{$ownerInfo->nameOwner}}さん　○○○○○○○○○{{$post->created_at}}</p>
                                 <p>{{$post->comment}}</p>
                             </div>
                             @endif
-                        </div>
+                        <!-- </div> -->
                         @endforeach
                     </div>
                 <input type="hidden" name="idDriver" value="{{$driverInfo->id}}">
