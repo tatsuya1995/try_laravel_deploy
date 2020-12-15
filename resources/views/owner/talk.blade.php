@@ -73,7 +73,7 @@
             let appendText;
             let login = $('input[name="login"]').val();
 
-            println(data.sort);
+            console.log(data.sort);
             if(data.sort === 1){
                 appendText = '<div class="idDriver" style="text-align:left"><p>' + data.comment + '</p></div> ';
             }else if(data.sort === 0){
