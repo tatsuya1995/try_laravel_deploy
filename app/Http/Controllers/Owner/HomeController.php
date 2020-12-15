@@ -163,7 +163,7 @@ class HomeController extends Controller
             'idOwner' => (int)$request->input('idOwner'),
             'idDriver' => (int)$request->input('idDriver'),
             'comment' => $request->input('comment'),
-            'sort' => 0,
+            'sort' => $request->input('sort'),
         ];
         //チャットデータ保存
         try{

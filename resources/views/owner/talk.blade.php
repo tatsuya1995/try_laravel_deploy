@@ -53,6 +53,7 @@
                 <input type="hidden" name="idDriver" value="{{$driverInfo->id}}">
                 <input type="hidden" name="idOwner" value="{{$ownerInfo->id}}">
                 <input type="hidden" name="login" value="{{Auth::id()}}">
+                <input type="hidden" name="sort" value="0">
 
     <script src="/js/app.js"></script>
     <script>
@@ -72,15 +73,14 @@
             let appendText;
             let login = $('input[name="login"]').val();
 
-            appendText = '<div class="idOwner" style="text-align:right"><p>' + data.comment + '</p></div> ';
 
-            // if(data.idDriver === login){
-            //     appendText = '<div class="idDriver" style="text-align:left"><p>' + data.comment + '</p></div> ';
-            // }else if(data.idOwner === login){
-            //     appendText = '<div class="idOwner" style="text-align:right"><p>' + data.comment + '</p></div> ';
-            // }else{
-            //     return false;
-            // }
+            if(data.sort === 1){
+                appendText = '<div class="idDriver" style="text-align:left"><p>' + data.comment + '</p></div> ';
+            }else if(data.sort === 0){
+                appendText = '<div class="idOwner" style="text-align:right"><p>' + data.comment + '</p></div> ';
+            }else{
+                return false;
+            }
 
             //メッセージを表示
             $("#room").append(appendText);
@@ -105,6 +105,7 @@
                 comment : $('textarea[name="comment"]').val(),
                 idDriver : $('input[name="idDriver"]').val(),
                 idOwner : $('input[name="idOwner"]').val(),
+                sort : $('input[name="sort"]').val(),
             }
             }).done(function(result){
                 $('textarea[name="comment"]').val('');
