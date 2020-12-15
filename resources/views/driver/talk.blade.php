@@ -73,7 +73,7 @@
             let login = $('input[name="login"]').val();
 
 
-            appendText = '<div class="idDriver" style="text-align:center"><p>'+'NEW MESSAGE' + data.comment + '</p></div> ';
+            appendText = '<div class="idDriver" style="text-align:center"><p>'+'-NEW MESSAGE-<br>' + data.comment + '</p></div> ';
             // if(data.idDriver === login){
             //     appendText = '<div class="idDriver" style="text-align:right"><p>' + data.comment + '</p></div> ';
             // }else if(data.idOwner === login){
