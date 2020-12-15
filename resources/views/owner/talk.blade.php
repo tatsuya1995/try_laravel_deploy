@@ -9,13 +9,15 @@
                     <div class="card-body">
                         <div class ="row">
                             <div class="col-md-6">
-                                <form action="{{route('owner.contract',['idDriver'=> $driverInfo->id])}}" method="get">
-                                @csrf
                                 <ul class="marker">
                                     <li><img src="{{$driverInfo->iconDriver}}" class="iconImgTalktop"  alt="アイコン画像">
                                     <li>氏名:{{$driverInfo->nameDriver}}
-                                    <li>契約を結ぶ（確認画面へ移動）<input type="image" src="{{asset('assets/image/arrow2.png')}}" id="arrow2"  alt="矢印画像">
                                 </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <form action="{{route('owner.contract',['idDriver'=> $driverInfo->id])}}" method="get">
+                                    @csrf
+                                    <p>契約を結ぶ（確認画面へ移動）<input type="image" src="{{asset('assets/image/arrow2.png')}}" id="arrow2"  alt="矢印画像"></p>
                                 </form>
                             </div>
                         </div>
@@ -43,7 +45,7 @@
                         <div class="card" id="cardTalk">
                             @if($post->sort === 1)
                                 <div class="driver" style="text-align:left">
-                                <p><img src="{{$driverInfo->iconDriver}}" class="iconImgTalk" alt="ドライバーアイコン画像">、{{$driverInfo->nameDriver}}さん　{{$post->created_at}}</p>
+                                <p><img src="{{$driverInfo->iconDriver}}" class="iconImgTalk" alt="ドライバーアイコン画像">、{{$driverInfo->nameDriver}}さん　○○○○○○○○○{{$post->created_at}}</p>
                                     <p>{{$post->comment}}</p>
                                 </div>
                             @elseif($post->sort === 0)
