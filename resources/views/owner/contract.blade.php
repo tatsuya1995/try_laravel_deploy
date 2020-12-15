@@ -10,24 +10,29 @@
                     <table class="table">
                         <form aciton="finalcheck.php" method="post"> 
 
-                        <tr><th>ドライバー</th><td><img src="{{$driverInfo->iconDriver}}" class="iconImgTalk" alt="ドライバーアイコン画像">　{{$driverInfo->nameDriver}}様</td>
+                        <tr><th>ドライバー</th><td><img src="{{$driverInfo->iconDriver}}" class="iconImgContract" alt="ドライバーアイコン画像">　{{$driverInfo->nameDriver}}様</td>
                         <tr><th>使用開始時間</th><td>
                                                     <dt>
                                                         <dd>
-                                                            <input type="date" size="2" name="month" value="">
-                                                            <input type="time" size="2" name="time1" value="">
+                                                            <input type="date" name="dateDeparture">
+                                                            <input type="time" name="timeDeparture">
                                                         </dd>
                                                     </dt>
                                                 </td>
                         <tr><th>使用終了時間</th><td>
                                                     <dt>
                                                         <dd>
-                                                            <input type="date" size="2" name="month" value="">
-                                                            <input type="time" size="2" name="time1" value="">
+                                                            <input type="date" name="dateRevert">
+                                                            <input type="time" name="timeRevert">
                                                         </dd>
                                                     </dt>
                                                 </td>
-                        <tr><th>車両情報</th><td>{{$ownerInfo->nameCar}}（最大{{$ownerInfo->numPeople}}人乗り）　　ナンバープレート：<input type=text name="carNumber">北九州い○○-1234</input> </td></tr>
+                        <tr><th>車両情報</th>
+                            <td>
+                                <dd>車種名：{{$ownerInfo->nameCar}}（最大{{$ownerInfo->numPeople}}人乗り）
+                                <dd>ナンバープレート：<input type=text name="carNumber">（例.北九州123-あ-1234）</input>
+                            </td>
+                        </tr>
                         <tr><th>使用料金 </th><td>
                             <dd class="text-primary">ドライバーと合意した金額を「小計」に入力後、<br>「計算する」ボタンを押してください。
                             <dd>小　計：<input type="text" size="5"  name="subtotal" id="subtotal"> 円＋保険料500円　 <b id="outputSubtotal"></b>
