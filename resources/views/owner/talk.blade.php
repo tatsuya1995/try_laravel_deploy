@@ -42,10 +42,12 @@
                         @foreach($posts as $key => $post)
                             @if($post->sort === 1)
                                 <div class="driver" style="text-align:left">
+                                <p><img src="{{$driverInfo->iconDriver}}" class="iconImg" alt="ドライバーアイコン画像">、{{$driverInfo->nameDriver}}さん　{{$post->created_at}}</p>
                                     <p>{{$post->comment}}</p>
                                 </div>
                             @elseif($post->sort === 0)
                             <div class="owner" style="text-align:right">
+                            <p><img src="{{$ownerInfo->iconOwner}}" class="iconImg" alt="オーナーアイコン画像">、{{$ownerInfo->nameOwner}}さん　{{$post->created_at}}</p>
                                 <p>{{$post->comment}}</p>
                             </div>
                             @endif
