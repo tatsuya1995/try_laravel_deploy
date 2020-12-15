@@ -30,7 +30,6 @@ Route::get('/select','commonController@select');
 //メールの送信
 Route::post('/mail','MailSendController@send');
 
-
 // Route::get('/pusher',function(){
 // 	$chat = ['id'=>1, 'name'=>'メールの確認'];
 //     event(new Pusher($chat));
@@ -105,6 +104,7 @@ Route::namespace('Owner')->prefix('owner')->name('owner.')->group(function(){
         Route::post('post','HomeController@postIn')->name('post');
 
         Route::get('contract/{idDriver}','HomeController@contract')->name('contract');
+        Route::get('/mailContract','MailContractController@send');
 
         //登録情報表示
         Route::get('show','HomeController@show')->name('show');

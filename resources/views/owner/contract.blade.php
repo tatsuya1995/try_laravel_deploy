@@ -8,8 +8,8 @@
                 <div class="card-header">契約確認</div>
                     <div class="card-body">
                     <table class="table">
-                        <form aciton="finalcheck.php" method="post"> 
-
+                        <form aciton="/owner/mailContract" method="get"> 
+                        @csrf
                         <tr><th>ドライバー</th><td><img src="{{$driverInfo->iconDriver}}" class="iconImgContract" alt="ドライバーアイコン画像">　{{$driverInfo->nameDriver}}様</td>
                         <tr><th>使用開始時間</th><td>
                                                     <dt>
@@ -37,16 +37,20 @@
                             <dd class="text-primary">ドライバーと合意した金額を「小計」に入力後、<br>「計算する」ボタンを押してください。
                             <dd>小　計：<input type="text" size="5"  name="subtotal" id="subtotal"> 円＋保険料500円　 <b id="outputSubtotal"></b>
                             <dd>手数料：<b id="fee"></b>（小計の10%）　
-                            <dd><button type="button" class="btn-primary" id="calc">計算する</button>　<b>総計：<span id="outputTotal"></span></b></li>
+                            <dd><button type="button" class="btn-primary" id="calc">計算する</button>　<b>総計：<span id="outputTotal"></span></b>
                         </td></tr>
-                        <tr><th></th><td>
-                            <ul>
-                                <li><input type="checkbox" name="confirm">上記の内容で問題なし</li>
-                        <li>※メールにてドライバー確認後、最終決定となります。</li>
-                        <li><input type="submit" value="メール送信"></li>
-                        </td></tr>
-
-                        </table>
+                        <tr><th></th>
+                            <td>
+                                <ul>
+                                    <li><input type="checkbox" name="confirm">上記の内容で問題なし
+                                    <li>※メールにてドライバー確認後、最終決定となります。
+                                    <li><input type="submit" value="メール送信">
+                                </ul>
+                            </td>
+                        </tr>
+                        <input type="hidden" name="driverInfo" value="$driverInfo">
+                    </form>
+                    </table>
 
                     </div>
                     <a href="{{route('index')}}">トークルームへ戻る</a>
