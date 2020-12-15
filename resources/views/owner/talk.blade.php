@@ -36,6 +36,8 @@
                         <input type="hidden" name="idDriver" value="{{$driverInfo->id}}">
                         <input name='idOwner' type="hidden" value="{{$ownerInfo->id}}">
                         <input type="hidden" name="login" value="{{Auth::id()}}">
+                        <input type="hidden" name="sort" value="0">
+
                     </div>
                     <div id="room">
                         @foreach($posts as $key => $post)
@@ -53,7 +55,6 @@
                 <input type="hidden" name="idDriver" value="{{$driverInfo->id}}">
                 <input type="hidden" name="idOwner" value="{{$ownerInfo->id}}">
                 <input type="hidden" name="login" value="{{Auth::id()}}">
-                <input type="hidden" name="sort" value="0">
 
     <script src="/js/app.js"></script>
     <script>
