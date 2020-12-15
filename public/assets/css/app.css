@@ -137,7 +137,7 @@ ul.bluetag li {
 
 
 
-/* ↓ ************* owneerページ ************* ↓ */
+/* ↓ ************* ownerページ ************* ↓ */
 /* ↓owner talkページ↓ */
 #cardTalk {
   border-radius:0;
@@ -158,8 +158,17 @@ ul.bluetag li {
   border: 1px solid #5f5039;
 }
 
-
 /* ↑owner talkページ↑ */
+
+/* ↓owner contractページ↓ */
+.iconImgContract {
+  width:10%;
+  width:10%;
+  border-radius:50%;
+  border: 1px solid #5f5039;
+}
+/* ↑owner contractページ↑ */
+
 /* ↑ ************* ownerページ ************* ↑ */
 
 :root {

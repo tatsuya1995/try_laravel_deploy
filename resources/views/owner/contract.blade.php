@@ -10,7 +10,7 @@
                     <table class="table">
                         <form aciton="finalcheck.php" method="post"> 
 
-                        <tr><th>ドライバー</th><td>{{$driverInfo->iconDriver}}　{{$driverInfo->nameDriver}}様</td>
+                        <tr><th>ドライバー</th><td><img src="{{$driverInfo->iconDriver}}" class="iconImgTalk" alt="ドライバーアイコン画像">　{{$driverInfo->nameDriver}}様</td>
                         <tr><th>使用開始時間</th><td>
                                                     <dt>
                                                         <dd>
