@@ -190,7 +190,7 @@ class HomeController extends Controller
         }catch (\Exception $e){
             return false;
         }
-        dd($request);
+        
         //イベント発火
         event(new Pusher($request->all()));
         return true;
