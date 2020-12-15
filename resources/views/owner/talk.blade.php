@@ -8,13 +8,13 @@
                 <div class="card-header">ドライバー：{{$driverInfo->nameDriver}}さんとのトークルーム</div>
                     <div class="card-body">
                         <div class ="row">
-                            <div class="col-md-6">
+                            <div class="col-md-6 text-center">
                                 <ul class="marker">
                                     <li><img src="{{$driverInfo->iconDriver}}" class="iconImgTalktop"  alt="アイコン画像">
                                     <li>氏名:{{$driverInfo->nameDriver}}
                                 </ul>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 d-flex align-items-end">
                                 <form action="{{route('owner.contract',['idDriver'=> $driverInfo->id])}}" method="get">
                                     @csrf
                                     <p>契約を結ぶ（確認画面へ移動）<input type="image" src="{{asset('assets/image/arrow2.png')}}" id="arrow2"  alt="矢印画像"></p>
@@ -50,7 +50,7 @@
                                 </div>
                             @elseif($post->sort === 0)
                             <div class="owner" style="text-align:right">
-                            <p><img src="{{$ownerInfo->iconOwner}}" class="iconImgTalk" alt="オーナーアイコン画像">、{{$ownerInfo->nameOwner}}さん　{{$post->created_at}}</p>
+                            <p><img src="{{$ownerInfo->iconOwner}}" class="iconImgTalk" alt="オーナーアイコン画像">、{{$ownerInfo->nameOwner}}さん　○○○○○○○○○{{$post->created_at}}</p>
                                 <p>{{$post->comment}}</p>
                             </div>
                             @endif
