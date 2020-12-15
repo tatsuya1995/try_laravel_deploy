@@ -43,11 +43,11 @@
                     <div id="room">
                         @foreach($posts as $key => $post)
                             @if($post->sort === 1)
-                                <div class="driver" style="text-align:right">
+                                <div class="driver" style="text-align:left">
                                     <p>{{$post->comment}}</p>
                                 </div>
                             @elseif($post->sort === 0)
-                                <div class="owner" style="text-align:left">
+                                <div class="owner" style="text-align:right">
                                     <p>{{$post->comment}}</p>
                                 </div>
                             @endif
@@ -73,7 +73,7 @@
             let login = $('input[name="login"]').val();
 
 
-            appendText = '<div class="idDriver" style="text-align:right"><p>' + data.comment + '</p></div> ';
+            appendText = '<div class="idDriver" style="text-align:left"><p>' + data.comment + '</p></div> ';
             // if(data.idDriver === login){
             //     appendText = '<div class="idDriver" style="text-align:right"><p>' + data.comment + '</p></div> ';
             // }else if(data.idOwner === login){
