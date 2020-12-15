@@ -113,7 +113,7 @@ ul.bluetag li {
   border: 1px solid #5f5039;
 
 }
-.iconImgTalk {
+.iconImgTalktop {
   width:40%;
   width:40%;
   border-radius:50%;
@@ -150,6 +150,12 @@ ul.bluetag li {
   width:8%;
   transform:rotate(90deg);
   float:right;
+}
+.iconImgTalk {
+  width:15%;
+  width:15%;
+  border-radius:50%;
+  border: 1px solid #5f5039;
 }
 /* ↑owner talkページ↑ */
 /* ↑ ************* ownerページ ************* ↑ */

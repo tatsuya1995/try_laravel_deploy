@@ -40,6 +40,7 @@
                     </div>
                     <div id="room">
                         @foreach($posts as $key => $post)
+                        <div class="card" id="cardTalk">
                             @if($post->sort === 1)
                                 <div class="driver" style="text-align:left">
                                 <p><img src="{{$driverInfo->iconDriver}}" class="iconImg" alt="ドライバーアイコン画像">、{{$driverInfo->nameDriver}}さん　{{$post->created_at}}</p>
@@ -51,6 +52,7 @@
                                 <p>{{$post->comment}}</p>
                             </div>
                             @endif
+                        </div>
                         @endforeach
                     </div>
                 <input type="hidden" name="idDriver" value="{{$driverInfo->id}}">
