@@ -184,11 +184,7 @@ class HomeController extends Controller
         $idOwner = Auth::id();
         $ownerInfo = DB::table('owners')->where('id','=',$idOwner)->first();
         $driverInfo = DB::table('drivers')->where('id','=',$idDriver)->first();
-        //ドライバー、オーナー区別するトライ
-        $param = [
-            'idOwner' => $idOwner,
-            'idDriver' => $idDriver,
-        ];
+
         $query = Chat::where('idOwner' , $idOwner)->where('idDriver', $idDriver);
         // $query->orWhere(function($query) use($idOwner,$idDriver){
         //     $query->where('idOwner',$idOwner);
@@ -197,11 +193,15 @@ class HomeController extends Controller
         $posts = $query->orderBy('created_at','desc')->get();
         return view('owner/talk',compact('ownerInfo','driverInfo','posts'));
         
-        //dd($posts);
     }
     
-    public function contract(){
-        return view('owner/contract');
+    public function contract($idDriver){
+
+        $idOwner = Auth::id();
+        $ownerInfo = DB::table('owners')->where('id','=',$idOwner)->first();
+        $driverInfo = DB::table('drivers')->where('id','=',$idDriver)->first();
+
+        return view('owner/contract',compact('ownerInfo','driverInfo'));
     }
 
     
