@@ -10,7 +10,7 @@
                     <table class="table">
                     <form action="/owner/mailContract" method="get">
                         @csrf                        
-                        <tr><th>ドライバー</th><td><img src="" class="iconImgContract" alt="ドライバーアイコン画像">　様</td>
+                        <tr><th>ドライバー</th><td><img src="{{$driverInfo->iconDriver}}" class="iconImgContract" alt="ドライバーアイコン画像">{{$driverInfo->nameDriver}}　様</td>
                         <tr><th>使用開始時間</th><td>
                                                     <dt>
                                                         <dd>
