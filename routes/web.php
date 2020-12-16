@@ -104,7 +104,7 @@ Route::namespace('Owner')->prefix('owner')->name('owner.')->group(function(){
         Route::post('post','HomeController@postIn')->name('post');
 
         Route::get('contract/{idDriver}','HomeController@contract')->name('contract');
-        Route::get('/mailContract','MailContractController@send');
+        Route::get('/mailContract','MailContractController@send')->name('mailContract');
 
         //登録情報表示
         Route::get('show','HomeController@show')->name('show');

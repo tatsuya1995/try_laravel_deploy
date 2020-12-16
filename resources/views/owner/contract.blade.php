@@ -8,9 +8,9 @@
                 <div class="card-header">契約確認</div>
                     <div class="card-body">
                     <table class="table">
-                        <form aciton="/owner/mailContract" method="get"> 
-                        @csrf
-                        <tr><th>ドライバー</th><td><img src="{{$driverInfo->iconDriver}}" class="iconImgContract" alt="ドライバーアイコン画像">　{{$driverInfo->nameDriver}}様</td>
+                    <form action="/owner/mailContract" method="get">
+                        @csrf                        
+                        <tr><th>ドライバー</th><td><img src="" class="iconImgContract" alt="ドライバーアイコン画像">　様</td>
                         <tr><th>使用開始時間</th><td>
                                                     <dt>
                                                         <dd>
@@ -44,11 +44,14 @@
                                 <ul>
                                     <li><input type="checkbox" name="confirm">上記の内容で問題なし
                                     <li>※メールにてドライバー確認後、最終決定となります。
-                                    <li><input type="submit" value="メール送信">
+                                    <li><input type="submit" value="メールを送信する">
                                 </ul>
                             </td>
                         </tr>
-                        <input type="hidden" name="driverInfo" value="$driverInfo">
+                    <input type="hidden" name="idDriver" value="{{$driverInfo->id}}">
+                        <input type="hidden" name="idOwner" value="{{$ownerInfo->id}}">
+                        <input type="hidden" name="subtotal" value="">
+                        <input type="hidden" name="fee" value="fee">
                     </form>
                     </table>
 

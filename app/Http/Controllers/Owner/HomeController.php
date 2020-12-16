@@ -200,6 +200,7 @@ class HomeController extends Controller
         $idOwner = Auth::id();
         $ownerInfo = DB::table('owners')->where('id','=',$idOwner)->first();
         $driverInfo = DB::table('drivers')->where('id','=',$idDriver)->first();
+        //dd($driverInfo);
 
         return view('owner/contract',compact('ownerInfo','driverInfo'));
     }

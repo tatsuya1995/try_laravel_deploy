@@ -16,9 +16,12 @@ class ContractMail extends Mailable
      *
      * @return void
      */
-    public function __construct(Request $request)
+    public function __construct($request,$driverInfo,$ownerInfo)
     {
         $this->request = $request;
+        $this->driverInfo = $driverInfo;
+        $this->ownerInfo = $ownerInfo;
+
     }
 
     /**
@@ -28,8 +31,15 @@ class ContractMail extends Mailable
      */
     public function build()
     {   
-        return $this->view('emails.contract')
-                    ->from('aaa@gmail.com');
+        //dd($this->driverInfo);
+        //dd($this->request);
 
+        return $this->view('emails.contract')
+                    ->from('tatsuyawada1995@gmail.com')
+                    ->subject('契約内容確認')
+                    ->with(['request'=> $this->request,
+                            'driverInfo'=> $this->driverInfo,
+                            'ownerInfo' => $this->ownerInfo,
+                            ]);
     }
 }

@@ -7,20 +7,31 @@
 </div>
 
 <div>
-<p>ーーーー問い合わせ内容ーーーーー</p>
+<p>ーーーー契約内容ーーーーー</p>
+<p>◆ドライバー名<br>
+　　{{$driverInfo->nameDriver}}　様</p>
+<p>◆オーナー名<br>
+　　{{$ownerInfo->nameOwner}}　様</p>
 
-<p>◆{{$request->title}}</p>
+<p>◆使用開始時間<br>
+　　{{$request->dateDeparture}}</br>
+　　{{$request->timeDeparture}}</p>
+<p>◆使用終了時間<br>
+　　{{$request->dateRevert}}</br>
+　　{{$request->timeRevert}}</p>
+<p>◆車両情報<br>
+　　ナンバープレート：{{$request->carNumber}}</p>
 
-<p>◆コメント<br>
-　　{{$request->content}}</p>
+<p>◆使用料金<br>
+　　小計：{{$request->subtotal}}<br>
+　　手数料：{{$request->fee}}
 
 
 <p>ーーーーーーーーーーーーーーー</p>
 </div>
 
 <div>
-<p>{{$request->name}} 様へご返信ください。<br>
-メールアドレス：{{$request->email}} </p>
+<p>契約内容に誤りがありましたら、弊社までご連絡ください。<p>
 
 以上。<br>
 --------------------------------<br>
