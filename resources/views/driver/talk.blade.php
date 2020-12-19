@@ -34,35 +34,34 @@
                         @foreach($posts as $key => $post)
                             @if($post->sort === 1)
                                 <div class="driver" style="text-align:left">
-                                <p><img src="{{$driverInfo->iconDriver}}" class="iconImgTalk" alt="ドライバーアイコン画像">、{{$driverInfo->nameDriver}}さん　○○○○○○○○○{{$post->created_at}}</p>
+                                <p><img src="{{$driverInfo->iconDriver}}" class="iconImgTalk" alt="ドライバーアイコン画像">　{{$driverInfo->nameDriver}}さん　○○○○○○○○○{{$post->created_at}}</p>
                                     <p>{{$post->comment}}</p>
                                 </div>
                             @elseif($post->sort === 0)
                                 <div class="owner" style="text-align:right">
-                                <p><img src="{{$ownerInfo->iconOwner}}" class="iconImgTalk" alt="オーナーアイコン画像">、{{$ownerInfo->nameOwner}}さん　○○○○○○○○○{{$post->created_at}}</p>
+                                <p><img src="{{$ownerInfo->iconOwner}}" class="iconImgTalk" alt="オーナーアイコン画像">　{{$ownerInfo->nameOwner}}さん　○○○○○○○○○{{$post->created_at}}</p>
                                     <p>{{$post->comment}}</p>
                                 </div>
                             @endif
                         @endforeach
                     </div>
+             <div id="fixed">
+                <form>
+                    @csrf
+                    <textarea id="textarea" name="comment" cols="70" rows="3" placeholder="メッセージを入力"></textarea>     
+                    <button type="button" class="btn btn-primary" id="send">送信</button>
+                </form>
+                    <input type="hidden" name="idDriver" value="{{$driverInfo->id}}">
+                    <input name='idOwner' type="hidden" value="{{$ownerInfo->id}}">
+                    <input type="hidden" name="login" value="{{Auth::id()}}">
+                </div>
+            </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row col-md-12">
-    <div id="fixed">
-        <form>
-            @csrf
-            <textarea id="textarea" name="comment" cols="70" rows="3" placeholder="メッセージを入力"></textarea>     
-            <button type="button" class="btn btn-primary" id="send">送信</button>
-        </form>
-            <input type="hidden" name="idDriver" value="{{$driverInfo->id}}">
-            <input name='idOwner' type="hidden" value="{{$ownerInfo->id}}">
-            <input type="hidden" name="login" value="{{Auth::id()}}">
-		</div>
-	</div>
 </div>
-@endsection
+
         <script src="/js/app.js"></script>
         <script>
         //ログを有効にする
@@ -122,3 +121,4 @@
         });
     </script>
 
+@endsection
