@@ -10,8 +10,8 @@
                     <table class="table">
                     <form action="/owner/mailContract" method="get"> 
                         @csrf                        
-                        <tr><th class="col-md-4  text-md-right">ドライバー</th><td class="col-md-6"><img src="{{$driverInfo->iconDriver}}" class="iconImgContract" alt="ドライバーアイコン画像">　{{$driverInfo->nameDriver}}　様</td>
-                        <tr><th>使用開始時間</th><td>
+                        <tr><th class="col-md-4">ドライバー</th><td class="col-md-6"><img src="{{$driverInfo->iconDriver}}" class="iconImgContract" alt="ドライバーアイコン画像">　{{$driverInfo->nameDriver}}　様</td>
+                        <tr><th class="col-md-4">使用開始時間</th><td class="col-md-6">
                                                     <dt>
                                                         <dd>
                                                             <input type="date" name="dateDeparture">
@@ -19,7 +19,7 @@
                                                         </dd>
                                                     </dt>
                                                 </td>
-                        <tr><th>使用終了時間</th><td>
+                        <tr><th class="col-md-4">使用終了時間</th><td class="col-md-6">
                                                     <dt>
                                                         <dd>
                                                             <input type="date" name="dateRevert">
@@ -27,8 +27,8 @@
                                                         </dd>
                                                     </dt>
                                                 </td>
-                        <tr><th>車両情報</th>
-                            <td>
+                        <tr><th class="col-md-4">車両情報</th>
+                            <td class="col-md-6">
                                 <dd>車種名：{{$ownerInfo->nameCar}}（最大{{$ownerInfo->numPeople}}人乗り）
                                 <dd>ナンバープレート：<input type=text name="carNumber">（例.北九州123-あ-1234）</input>
                             </td>
