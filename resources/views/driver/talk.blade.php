@@ -5,18 +5,16 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header">オーナー：{{$ownerInfo->nameOwner}}さんとのトークルーム</div>
+                <div class="card-header">オーナー：<img src="{{$ownerInfo->iconOwner}}" class="iconImgContract" alt="アイコン画像">{{$ownerInfo->nameOwner}}さんとのトークルーム</div>
                     <div class="card-body">
                         <div class ="row text-center">
                             <div class="col-md-6">
                                 <ul class="marker">
-                                    <li><img src="{{$ownerInfo->iconOwner}}" class="iconImgTalktop" alt="アイコン画像">
-                                    <li>オーナー名:{{$ownerInfo->nameOwner}}
+                                    <li><img src="{{$ownerInfo->imgCar}}" class="carImg" alt="車両画像">
                                 </ul>
                             </div>
                             <div class="col-md-6">
                                 <ul class="marker">
-                                    <li><img src="{{$ownerInfo->imgCar}}" class="carImg" alt="車両画像">
                                     <li>車名：{{$ownerInfo->nameCar}}
                                     <li>最大乗車可能人数：{{$ownerInfo->numPeople}}人
                                 </ul>
