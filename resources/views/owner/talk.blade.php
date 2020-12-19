@@ -17,7 +17,7 @@
 		
 
 	}
-	#fixed #textarea {
+	#fixed textarea {
 		margin:10px 30px;
 		border-radius:20px;
 		padding:8px;
@@ -27,7 +27,7 @@
 	}
 
 	@media screen and (max-width: 767px) {
-	#fixed #scrollBtn {
+	#fixed button {
     	float:right;
 	  }
 	}
