@@ -20,7 +20,7 @@ ul {
             <div class="card">
                 <div class="card-header">契約確認</div>
                     <div class="card-body">
-                        <a href="{{route('index')}}">トークルームへ戻る</a>
+                        <a href="{{route('owner.talk',['idDriver'=> $driverInfo->id])}">トークルームへ戻る</a>
                         
                         <table class="table">
                         <form action="/owner/mailContract" method="get"> 
