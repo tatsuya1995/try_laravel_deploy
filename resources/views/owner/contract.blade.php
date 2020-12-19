@@ -8,9 +8,9 @@
                 <div class="card-header">契約確認</div>
                     <div class="card-body">
                     <table class="table">
-                    <form action="/owner/mailContract" method="get">
+                    <form action="/owner/mailContract" method="get"> 
                         @csrf                        
-                        <tr><th>ドライバー</th><td><img src="{{$driverInfo->iconDriver}}" class="iconImgContract" alt="ドライバーアイコン画像">　{{$driverInfo->nameDriver}}　様</td>
+                        <tr><th class="col-md-4  text-md-right">ドライバー</th><td class="col-md-6"><img src="{{$driverInfo->iconDriver}}" class="iconImgContract" alt="ドライバーアイコン画像">　{{$driverInfo->nameDriver}}　様</td>
                         <tr><th>使用開始時間</th><td>
                                                     <dt>
                                                         <dd>
