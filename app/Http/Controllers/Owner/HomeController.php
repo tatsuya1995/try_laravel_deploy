@@ -160,7 +160,7 @@ class HomeController extends Controller
         return view('owner/talk',compact('ownerInfo','driverInfo','posts'));
     }
     public function postIn(Request $request)
-    { 
+    {   dd($request);
         $insertParam = [
             'idOwner' => (int)$request->input('idOwner'),
             'idDriver' => (int)$request->input('idDriver'),
