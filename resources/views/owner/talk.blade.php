@@ -61,7 +61,7 @@
                         @endforeach
                         </div>
 
-                <div id="fixed" class="row col-md-12">
+                <div id="fixed">
                     <form>
                         @csrf
                         <textarea name="comment" cols="70" rows="3" placeholder="メッセージを入力"></textarea>
