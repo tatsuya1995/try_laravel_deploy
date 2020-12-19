@@ -2,10 +2,10 @@
 
 <style>
 th {
-    width:30%;
+    width:20%;
 }
 td {
-    width:70%;
+    width:80%;
 }
 </style>
 
@@ -44,7 +44,7 @@ td {
                             </td>
                         </tr>
                         <tr><th class="">使用料金 </th><td class="">
-                            <dd class="text-primary">ドライバーと合意した金額を「小計」に入力後、<br>「計算する」ボタンを押してください。
+                            <dd class="text-primary">ドライバーと合意した金額を「小計」に入力後、「計算する」ボタンを押してください。
                             <dd>小　計：<input type="text" size="5"  name="subtotal" id="subtotal"> 円＋保険料500円　 <b id="outputSubtotal"></b>
                             <dd>手数料：<b id="fee"></b>（小計の10%）　
                             <dd><button type="button" class="btn-primary" id="calc">計算する</button>　<b>総計：<span id="outputTotal"></span></b>
