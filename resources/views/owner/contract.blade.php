@@ -3,25 +3,14 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header">契約確認</div>
                     <div class="card-body">
                     <table class="table">
                     <form action="/owner/mailContract" method="get"> 
                         @csrf             
-                        <!-- <div class="form-group row">
-                            <label for="nameOwner" class="col-md-4 col-form-label text-md-right">ドライバー</label>
-                            <div class="">
-                                <input id="nameOwner" type="text" class="form-control" name="nameOwner" value="{{ old('nameOwner') }}" required autocomplete="nameOwner" autofocus>
-                            </div>
-                        </div> -->
-
-
-
-
-
-                        <tr><th class="">ドライバー</th><td class=""><img src="{{$driverInfo->iconDriver}}" class="iconImgContract" alt="ドライバーアイコン画像">　{{$driverInfo->nameDriver}}　様</td>
+                        <tr><th class="">ドライバー</th><td class=""><img src="{{$driverInfo->iconDriver}}" class="iconImgContract" alt="ドライバーアイコン画像">　{{$driverInfo->nameDriver}}　様</td></tr>
                         <tr><th class="">使用開始時間</th><td class="">
                                                     <dt>
                                                         <dd>
@@ -29,7 +18,7 @@
                                                             <input type="time" name="timeDeparture">
                                                         </dd>
                                                     </dt>
-                                                </td>
+                                                </td></tr>
                         <tr><th class="">使用終了時間</th><td class="">
                                                     <dt>
                                                         <dd>
@@ -37,7 +26,7 @@
                                                             <input type="time" name="timeRevert">
                                                         </dd>
                                                     </dt>
-                                                </td>
+                                                </td></tr>
                         <tr><th class="">車両情報</th>
                             <td class="">
                                 <dd>車種名：{{$ownerInfo->nameCar}}（最大{{$ownerInfo->numPeople}}人乗り）
