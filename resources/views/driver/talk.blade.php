@@ -101,7 +101,7 @@
 		</div>
 	</div>
 </div>
-
+@endsection
         <script src="/js/app.js"></script>
         <script>
         //ログを有効にする
@@ -161,4 +161,3 @@
         });
     </script>
 
-@endsection
