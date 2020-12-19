@@ -39,7 +39,7 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-10">
+        <!-- <div class="col-md-10">
             <div class="card">
                 <div class="card-header">ドライバー：<img src="{{$driverInfo->iconDriver}}" class="iconImgContract"  alt="アイコン画像"> {{$driverInfo->nameDriver}}さんとのトークルーム</div>
                     <div class="card-body">
@@ -54,7 +54,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
@@ -84,7 +84,7 @@
                         <textarea name="comment" cols="70" rows="3" placeholder="メッセージを入力"></textarea>
                         <button type="button" id="send">送信</button>
                     </form>
-                    <div class="col-md-12 text-right align-items-end">
+                    <div class="text-right align-items-end">
                         <form action="{{route('owner.contract',['idDriver'=> $driverInfo->id])}}" method="get">
                             @csrf
                             <div>契約を結ぶ（確認画面へ移動）<input type="image" src="{{asset('assets/image/arrow2.png')}}" id="arrow2"  alt="矢印画像"></div>
