@@ -9,7 +9,18 @@
                     <div class="card-body">
                     <table class="table">
                     <form action="/owner/mailContract" method="get"> 
-                        @csrf                        
+                        @csrf             
+                        <div class="form-group row">
+                            <label for="nameOwner" class="col-md-4 col-form-label text-md-right">ドライバー</label>
+                            <div class="col-md-6">
+                                <input id="nameOwner" type="text" class="form-control" name="nameOwner" value="{{ old('nameOwner') }}" required autocomplete="nameOwner" autofocus>
+                            </div>
+                        </div>
+
+
+
+
+
                         <tr><th class="col-md-2">ドライバー</th><td class="col-md-6"><img src="{{$driverInfo->iconDriver}}" class="iconImgContract" alt="ドライバーアイコン画像">　{{$driverInfo->nameDriver}}　様</td>
                         <tr><th class="col-md-2">使用開始時間</th><td class="col-md-6">
                                                     <dt>
