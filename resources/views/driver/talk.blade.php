@@ -1,6 +1,45 @@
 @extends('layouts.driver.app')
 
 @section('content')
+
+
+<style>
+	#fixed {
+		position:fixed;
+		z-index:10;
+		background-color:#f5f5f5;
+		border:1px solid #CCC;
+		opacity:0.9;
+		display: table;
+		bottom:0;
+		text-align:left;
+		margin-bottom:20px;
+		width:70%;
+		
+
+	}
+	#fixed #textarea {
+		margin:10px 30px;
+		border-radius:20px;
+		padding:8px;
+		display: table-cell;
+		vertical-align: middle;
+		width: 70%;
+	}
+
+	@media screen and (max-width: 767px) {
+	#fixed #scrollBtn {
+    	float:right;
+	  }
+	}
+	.card {
+		z-index:1;
+	}
+</style>
+
+
+
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
@@ -51,6 +90,17 @@
                             @endif
                         @endforeach
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row col-md-12">
+		<div id="fixed">
+			<textarea id="textarea" name="comment" cols="70" rows="3" placeholder="メッセージを入力"></textarea>
+			<button type="button" class="btn btn-primary" id="scrollBtn">送信</button>
+		</div>
+	</div>
+</div>
 
         <script src="/js/app.js"></script>
         <script>
@@ -111,4 +161,3 @@
         });
     </script>
 
-@endsection

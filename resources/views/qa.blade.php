@@ -7,7 +7,8 @@
 		position:fixed;
 		z-index:10;
 		background-color:#f5f5f5;
-		opacity:0.8;
+		border:1px solid #CCC;
+		opacity:0.9;
 		display: table;
 		bottom:0;
 		text-align:left;
@@ -18,12 +19,17 @@
 	}
 	#fixed #textarea {
 		margin:10px 30px;
-		border-radius:30px;
+		border-radius:20px;
 		padding:8px;
 		display: table-cell;
 		vertical-align: middle;
-		width: 80%;
+		width: 70%;
+	}
 
+	@media screen and (max-width: 767px) {
+	#fixed #scrollBtn {
+    	float:right;
+	  }
 	}
 	.card {
 		z-index:1;
@@ -140,8 +146,8 @@
 	</div>
 	<div class="row col-md-12">
 		<div id="fixed">
-			<textarea id="textarea" name="comment" cols="80" rows="3" placeholder="こちらにメッセージを入力"></textarea>
-			<button type="button" class="btn btn-primary">送信</button>
+			<textarea id="textarea" name="comment" cols="70" rows="3" placeholder="メッセージを入力"></textarea>
+			<button type="button" class="btn btn-primary" id="scrollBtn">送信</button>
 		</div>
 	</div>
 	<div class ="scroll"></div>
