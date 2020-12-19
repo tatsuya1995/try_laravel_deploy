@@ -20,9 +20,8 @@ ul {
             <div class="card">
                 <div class="card-header">契約確認</div>
                     <div class="card-body">
-                        </div>
                         <a href="{{route('index')}}">トークルームへ戻る</a>
-                        </div>
+                        
                         <table class="table">
                         <form action="/owner/mailContract" method="get"> 
                         @csrf             
@@ -71,6 +70,7 @@ ul {
                     </form>
                     </table>
                 </div>
+            </div>
             </div>
         </div>
     </div>
