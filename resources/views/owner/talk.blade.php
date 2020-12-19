@@ -1,11 +1,47 @@
 @extends('layouts.owner.app')
 
 @section('content')
+
+<style>
+	#fixed {
+		position:fixed;
+		z-index:10;
+		background-color:#f5f5f5;
+		border:1px solid #CCC;
+		opacity:0.9;
+		display: table;
+		bottom:0;
+		text-align:left;
+		margin-bottom:20px;
+		width:60%;
+		
+
+	}
+	#fixed #textarea {
+		margin:10px 30px;
+		border-radius:20px;
+		padding:8px;
+		display: table-cell;
+		vertical-align: middle;
+		width: 70%;
+	}
+
+	@media screen and (max-width: 767px) {
+	#fixed #scrollBtn {
+    	float:right;
+	  }
+	}
+	.card {
+		z-index:1;
+	}
+</style>
+
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header">ドライバー：<img src="{{$driverInfo->iconDriver}}" class="iconImgTalktop"  alt="アイコン画像"> {{$driverInfo->nameDriver}}さんとのトークルーム</div>
+                <div class="card-header">ドライバー：<img src="{{$driverInfo->iconDriver}}" class="iconImgContract"  alt="アイコン画像"> {{$driverInfo->nameDriver}}さんとのトークルーム</div>
                     <div class="card-body">
                         <div class ="row">
                             <div class="col-md-12 d-flex align-items-end">
