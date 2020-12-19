@@ -30,20 +30,6 @@ Route::get('/select','commonController@select');
 //メールの送信
 Route::post('/mail','MailSendController@send');
 
-// Route::get('/pusher',function(){
-// 	$chat = ['id'=>1, 'name'=>'メールの確認'];
-//     event(new Pusher($chat));
-// });
-
-// //pusher受信テスト
-// Route::get('/trypusher', function() {
-//     return view('tryPusher');
-// });
-// Route::get('/hello-world', function () {
-//     event(new App\Events\Pusher('hello world'));
-//     return ['chat' => 'send to message : hello world'];
-// });
-
 
 //ドライバー
 Route::namespace('Driver')->prefix('driver')->name('driver.')->group(function(){

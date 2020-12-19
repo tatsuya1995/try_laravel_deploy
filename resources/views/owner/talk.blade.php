@@ -2,41 +2,6 @@
 
 @section('content')
 
-<style>
-	#fixed {
-		position:fixed;
-		z-index:10;
-		background-color:#f5f5f5;
-		border:1px solid #CCC;
-		opacity:0.9;
-		display: table;
-		bottom:0;
-		text-align:left;
-		margin-bottom:20px;
-		width:60%;
-		
-
-	}
-	#fixed textarea {
-		margin:10px 30px;
-		border-radius:20px;
-		padding:8px;
-		display: table-cell;
-		vertical-align: middle;
-		width: 70%;
-	}
-
-	@media screen and (max-width: 767px) {
-	#fixed button {
-    	float:right;
-	  }
-	}
-	.card {
-		z-index:1;
-	}
-</style>
-
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
