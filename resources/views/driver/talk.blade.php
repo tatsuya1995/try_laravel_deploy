@@ -67,16 +67,7 @@
         <div class="col-md-10">
             <div class="card">
                 <div class="card-body"> 
-                    <div class="row">
-                        <form>
-                        @csrf
-                            <textarea name="comment" cols="40" rows="3" placeholder="こちらにメッセージを入力"></textarea>
-                            <button type="button" id="send">送信</button>
-                        </form>
-                            <input type="hidden" name="idDriver" value="{{$driverInfo->id}}">
-                            <input name='idOwner' type="hidden" value="{{$ownerInfo->id}}">
-                            <input type="hidden" name="login" value="{{Auth::id()}}">
-                    </div>
+
                     <div id="room">
                         @foreach($posts as $key => $post)
                             @if($post->sort === 1)
@@ -95,9 +86,16 @@
         </div>
     </div>
     <div class="row col-md-12">
-		<div id="fixed">
-			<textarea id="textarea" name="comment" cols="70" rows="3" placeholder="メッセージを入力"></textarea>
-			<button type="button" class="btn btn-primary" id="scrollBtn">送信</button>
+
+    <div id="fixed">
+        <form>
+            @csrf
+            <textarea id="textarea" name="comment" cols="70" rows="3" placeholder="メッセージを入力"></textarea>     
+            <button type="button" class="btn btn-primary" id="scrollBtn">送信</button>
+        </form>
+            <input type="hidden" name="idDriver" value="{{$driverInfo->id}}">
+            <input name='idOwner' type="hidden" value="{{$ownerInfo->id}}">
+            <input type="hidden" name="login" value="{{Auth::id()}}">
 		</div>
 	</div>
 </div>
