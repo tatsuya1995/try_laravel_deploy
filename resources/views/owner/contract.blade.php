@@ -12,7 +12,7 @@
                         @csrf             
                         <!-- <div class="form-group row">
                             <label for="nameOwner" class="col-md-4 col-form-label text-md-right">ドライバー</label>
-                            <div class="col-md-6">
+                            <div class="">
                                 <input id="nameOwner" type="text" class="form-control" name="nameOwner" value="{{ old('nameOwner') }}" required autocomplete="nameOwner" autofocus>
                             </div>
                         </div> -->
@@ -21,8 +21,8 @@
 
 
 
-                        <tr><th class="col-md-2">ドライバー</th><td class="col-md-6"><img src="{{$driverInfo->iconDriver}}" class="iconImgContract" alt="ドライバーアイコン画像">　{{$driverInfo->nameDriver}}　様</td>
-                        <tr><th class="col-md-2">使用開始時間</th><td class="col-md-6">
+                        <tr><th class="">ドライバー</th><td class=""><img src="{{$driverInfo->iconDriver}}" class="iconImgContract" alt="ドライバーアイコン画像">　{{$driverInfo->nameDriver}}　様</td>
+                        <tr><th class="">使用開始時間</th><td class="">
                                                     <dt>
                                                         <dd>
                                                             <input type="date" name="dateDeparture">
@@ -30,7 +30,7 @@
                                                         </dd>
                                                     </dt>
                                                 </td>
-                        <tr><th class="col-md-2">使用終了時間</th><td class="col-md-6">
+                        <tr><th class="">使用終了時間</th><td class="">
                                                     <dt>
                                                         <dd>
                                                             <input type="date" name="dateRevert">
@@ -38,20 +38,20 @@
                                                         </dd>
                                                     </dt>
                                                 </td>
-                        <tr><th class="col-md-2">車両情報</th>
-                            <td class="col-md-6">
+                        <tr><th class="">車両情報</th>
+                            <td class="">
                                 <dd>車種名：{{$ownerInfo->nameCar}}（最大{{$ownerInfo->numPeople}}人乗り）
                                 <dd>ナンバープレート：<input type=text name="carNumber">（例.北九州123-あ-1234）</input>
                             </td>
                         </tr>
-                        <tr><th class="col-md-2">使用料金 </th><td class="col-md-6">
+                        <tr><th class="">使用料金 </th><td class="">
                             <dd class="text-primary">ドライバーと合意した金額を「小計」に入力後、<br>「計算する」ボタンを押してください。
                             <dd>小　計：<input type="text" size="5"  name="subtotal" id="subtotal"> 円＋保険料500円　 <b id="outputSubtotal"></b>
                             <dd>手数料：<b id="fee"></b>（小計の10%）　
                             <dd><button type="button" class="btn-primary" id="calc">計算する</button>　<b>総計：<span id="outputTotal"></span></b>
                         </td></tr>
-                        <tr><th class="col-md-2"></th>
-                            <td class="col-md-6">
+                        <tr><th class=""></th>
+                            <td class="">
                                 <ul>
                                     <li><input type="checkbox" name="confirm">上記の内容で問題なし
                                     <li>※メールにてドライバー確認後、最終決定となります。
