@@ -14,7 +14,7 @@
 		bottom:0;
 		text-align:left;
 		margin-bottom:20px;
-		width:70%;
+		width:60%;
 		
 
 	}
@@ -161,3 +161,4 @@
         });
     </script>
 
+@endsection
