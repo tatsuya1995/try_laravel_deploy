@@ -43,24 +43,7 @@
             <div class="card">
                 <div class="card-header">ドライバー：<img src="{{$driverInfo->iconDriver}}" class="iconImgContract"  alt="アイコン画像"> {{$driverInfo->nameDriver}}さんとのトークルーム</div>
                     <div class="card-body">
-                        <!-- <div class ="row">
-                            <div class="col-md-12 d-flex align-items-end">
-                                <form action="{{route('owner.contract',['idDriver'=> $driverInfo->id])}}" method="get">
-                                    @csrf
-                                    <div>契約を結ぶ（確認画面へ移動）<input type="image" src="{{asset('assets/image/arrow2.png')}}" id="arrow2"  alt="矢印画像"></div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <div class="row justify-content-center">
-        <div class="col-md-10">
-            <div class="card">
-                <div class="card-body">  -->
-
-                    <div id="room">
+                        <div id="room">
                         @foreach($posts as $key => $post)
                         
                             @if($post->sort === 1)
@@ -76,7 +59,7 @@
                             @endif
                         
                         @endforeach
-                    </div>
+                        </div>
 
                 <div id="fixed" class="row col-md-12">
                     <form>

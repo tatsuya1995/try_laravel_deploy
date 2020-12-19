@@ -91,7 +91,7 @@
         <form>
             @csrf
             <textarea id="textarea" name="comment" cols="70" rows="3" placeholder="メッセージを入力"></textarea>     
-            <button type="button" class="btn btn-primary" id="scrollBtn">送信</button>
+            <button type="button" class="btn btn-primary" id="send">送信</button>
         </form>
             <input type="hidden" name="idDriver" value="{{$driverInfo->id}}">
             <input name='idOwner' type="hidden" value="{{$ownerInfo->id}}">
