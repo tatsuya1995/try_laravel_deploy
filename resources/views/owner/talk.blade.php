@@ -65,7 +65,7 @@
                     <form>
                         @csrf
                         <textarea name="comment" cols="70" rows="3" placeholder="メッセージを入力"></textarea>
-                        <button type="button" id="send">送信</button>
+                        <button type="button"　class="btn btn-primary" id="send">送信</button>
                     </form>
                     <div class="text-right align-items-end">
                         <form action="{{route('owner.contract',['idDriver'=> $driverInfo->id])}}" method="get">
