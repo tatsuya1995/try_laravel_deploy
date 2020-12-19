@@ -33,14 +33,14 @@
                                 <dd>ナンバープレート：<input type=text name="carNumber">（例.北九州123-あ-1234）</input>
                             </td>
                         </tr>
-                        <tr><th>使用料金 </th><td>
+                        <tr><th class="col-md-4">使用料金 </th><td class="col-md-6">
                             <dd class="text-primary">ドライバーと合意した金額を「小計」に入力後、<br>「計算する」ボタンを押してください。
                             <dd>小　計：<input type="text" size="5"  name="subtotal" id="subtotal"> 円＋保険料500円　 <b id="outputSubtotal"></b>
                             <dd>手数料：<b id="fee"></b>（小計の10%）　
                             <dd><button type="button" class="btn-primary" id="calc">計算する</button>　<b>総計：<span id="outputTotal"></span></b>
                         </td></tr>
-                        <tr><th></th>
-                            <td>
+                        <tr><th class="col-md-4"></th>
+                            <td class="col-md-6">
                                 <ul>
                                     <li><input type="checkbox" name="confirm">上記の内容で問題なし
                                     <li>※メールにてドライバー確認後、最終決定となります。
