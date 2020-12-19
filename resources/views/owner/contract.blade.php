@@ -1,5 +1,15 @@
 @extends('layouts.owner.app')
 
+<style>
+th {
+    width:30%;
+}
+td {
+    width:70%;
+}
+</style>
+
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
