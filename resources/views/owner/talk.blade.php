@@ -78,12 +78,18 @@
                         @endforeach
                     </div>
 
-                <div id="fixed" class="row">
+                <div id="fixed" class="row col-md-12">
                     <form>
                         @csrf
                         <textarea name="comment" cols="70" rows="3" placeholder="メッセージを入力"></textarea>
                         <button type="button" id="send">送信</button>
                     </form>
+                    <div class="col-md-12 text-right align-items-end">
+                        <form action="{{route('owner.contract',['idDriver'=> $driverInfo->id])}}" method="get">
+                            @csrf
+                            <div>契約を結ぶ（確認画面へ移動）<input type="image" src="{{asset('assets/image/arrow2.png')}}" id="arrow2"  alt="矢印画像"></div>
+                        </form>
+                    </div>
                     <input type="hidden" name="idDriver" value="{{$driverInfo->id}}">
                     <input type="hidden" name='idOwner' value="{{$ownerInfo->id}}">
                     <input type="hidden" name="login" value="{{Auth::id()}}">
