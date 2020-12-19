@@ -3,19 +3,19 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-10">
+        <div class="col-md-8">
             <div class="card">
                 <div class="card-header">契約確認</div>
                     <div class="card-body">
                     <table class="table">
                     <form action="/owner/mailContract" method="get"> 
                         @csrf             
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <label for="nameOwner" class="col-md-4 col-form-label text-md-right">ドライバー</label>
                             <div class="col-md-6">
                                 <input id="nameOwner" type="text" class="form-control" name="nameOwner" value="{{ old('nameOwner') }}" required autocomplete="nameOwner" autofocus>
                             </div>
-                        </div>
+                        </div> -->
 
 
 
