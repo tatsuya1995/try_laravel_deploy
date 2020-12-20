@@ -13,7 +13,17 @@ use App\Models\Owner;
 class MailContractController extends Controller
 {
     public function send(Request $request) {
-        //dd($request);
+
+        $request->validate([
+            'dateDeparture' => 'required',
+            'timeDeparture' => 'required',
+            'dateRevert' => 'required|after:dateDeparture',
+            'timeRevert' => 'required',
+            'carNumber' => 'required|string',
+            'subTotal' => 'required|numeric|min:1',
+            'confirm' => 'required',
+            ]);
+
         $to = [
             [
                 'email' => 'tatsuyawada1995@gmail.com',

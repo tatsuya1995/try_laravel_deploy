@@ -13,6 +13,11 @@ class OwnerSchedule extends Model
 
     use Notifiable;
 
+    //dateフォーマット変更のため追加
+    protected $dates = [
+        'departure','revert',
+    ];
+
     /**
      * The attributes that are mass assignable.
      *
@@ -21,6 +26,7 @@ class OwnerSchedule extends Model
     protected $fillable = [
 
     ];
+
 
     /**
      * The attributes that should be hidden for arrays.

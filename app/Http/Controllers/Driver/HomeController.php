@@ -10,6 +10,7 @@ use App\Events\Pusher;
 use App\Models\Driver;
 use App\Models\Post;
 use App\Models\Chat;
+use App\Models\OwnerSchedule;
 use Illuminate\Support\Facades\Auth;
 use Storage;
 
@@ -131,8 +132,20 @@ class HomeController extends Controller
         $requestPla = $request->place;
         $requestNumPople = $request->numPeople;
 
+        // //検索
+        // $searches = DB::table('_owner_schedules')
+        // ->join('owners','_owner_schedules.idOwner','=','owners.id')
+        // ->where([
+        //     ['departure','<=',$requestDep],
+        //     ['revert','>=',$requestRev],
+        //     ['place','=',$requestPla],
+        //     ['numPeople','>=',$requestNumPople],
+        // ])->get();
+        // //dd($searches);
+
+
         //検索
-        $searches = DB::table('_owner_schedules')
+        $searches = OwnerSchedule::query()
         ->join('owners','_owner_schedules.idOwner','=','owners.id')
         ->where([
             ['departure','<=',$requestDep],

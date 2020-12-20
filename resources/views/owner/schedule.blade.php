@@ -50,10 +50,12 @@
                                 <div>
                             </form>
                         </div>
-                        <a href="talkerSelect">ドライバーとのトークはこちら</a>
                     </div>
                 </div>
             </div>
+        </div>
+        <div>
+        <button><a href="talkerSelect">ドライバーとのトークはこちらから</a></button>
         </div>
         </div>
         <div class="col-md-6">
@@ -61,7 +63,7 @@
                 <div class="card-header">登録済の日程一覧</div>
                     <div class="card-body">
                         <div id="output">   <!-- 入力フォームを入れたら出力-->
-                            <table class="table">
+                            <table class="table text-center">
                                 <tr>
                                     <th>出発日</th>
                                     <th>返却日</th>
@@ -70,13 +72,13 @@
                                 </tr>
                                 @foreach($ownerSchedules as $ownerSchedule)
                                 <tr>
-                                    <td>{{$ownerSchedule->departure}}</td>
-                                    <td>{{$ownerSchedule->revert}}</td>
+                                    <td>{{$ownerSchedule->departure->format('Y/m/d H:i')}}</td>
+                                    <td>{{$ownerSchedule->revert->format('Y/m/d H:i')}}</td>
                                     <td>{{$ownerSchedule->place}}</td>
                                     <td>
                                         <form action="{{route('owner.destroy',['id'=> $ownerSchedule->id])}}" method="post">
                                         @csrf
-                                            <input type="submit" value="削除"></input>
+                                            <button type="submit" class="btn-danger">削除 </button>
                                         </form>
                                     </td>
                                 </tr>

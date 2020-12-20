@@ -22,13 +22,13 @@
                                 <div class="form-group row">
                                     <label for="departure" class="col-md-4 col-form-label text-md-right">貸出時間</label>
                                     <div class="col-md-7">
-                                        <input id="departure" type="datetime-local"  step="1800" class="form-control" name="departure" value="{{ old('departure') }}" required autofocus>
+                                        <input id="departure" type="datetime-local"   class="form-control" name="departure" value="{{ old('departure') }}" required autofocus>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="revert" class="col-md-4 col-form-label text-md-right">返却時間</label>
                                     <div class="col-md-7">
-                                        <input id="revert" type="datetime-local"  step="1800" class="form-control" name="revert" value="{{ old('revert') }}" required autofocus>
+                                        <input id="revert" type="datetime-local"  class="form-control" name="revert" value="{{ old('revert') }}" required >
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -65,33 +65,39 @@
             <div class="card">
                 <div class="card-header">現在登録済の日程一覧</div>
                     <div class="card-body">
-                        <div id="output">   <!-- 入力フォームを入れたら出力-->
-                            @isset($searches)
-                            <table class="table">
-                                <tr>
-                                    <th>出発日</th>
-                                    <th>返却日</th>
-                                    <th>貸出場所</th>
-                                    <th>最大乗車</th>    
-                                    <th>トークへ</th>                   
-                                </tr>
-                                @foreach ($searches as $search)
-                                <tr>
-                                    <td>{{$search->departure}}</td>
-                                    <td>{{$search->revert}}</td>
-                                    <td>{{$search->place}}</td>
-                                    <td>{{$search->numPeople}}人</td>
-                                    <td>
-                                        <form action="{{route('driver.talk')}}" method="post">
-                                        @csrf
-                                            <input type="hidden" name='idOwner'value="{{$search->idOwner}}">
-                                            <input type="image" src="{{asset('assets/image/arrow2.png')}}" id="arrow3"  alt="矢印画像">
-                                        </form>
-                                    </td>
-                                </tr>
-                                @endforeach 
-                            </table>
-                            @endisset
+                        <div id="output"> 
+                            @if(isset($searches))   <!--  検索ボタンの判定  -->
+                                @if($searches->isEmpty())　<!--  検索条件に合う登録があるかの判定  -->
+                                    <p>現在、検索条件に合う登録がありません。</p>
+                                @else　　　　　　　　　　　　　
+                                    <table class="table text-center">
+                                        <tr>
+                                            <th>出発日</th>
+                                            <th>返却日</th>
+                                            <th>貸出場所</th>
+                                            <th>最大乗車</th>    
+                                            <th>トークへ</th>                   
+                                        </tr>
+                                        @foreach ($searches as $search)
+                                        <tr>
+                                            <td>{{$search["departure"]->format('Y/m/d H:i')}}</td>
+                                            <td>{{$search->revert->format('Y/m/d H:i')}}</td>
+                                            <td>{{$search->place}}</td>
+                                            <td>{{$search->numPeople}}人</td>
+                                            <td>
+                                                <form action="{{route('driver.talk')}}" method="post">
+                                                @csrf
+                                                    <input type="hidden" name='idOwner'value="{{$search->idOwner}}">
+                                                    <input type="image" src="{{asset('assets/image/arrow2.png')}}" id="arrow3"  alt="矢印画像">
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        @endforeach 
+                                    </table>
+                                @endif
+                            @else      <!--  検索ボタンの判定  -->
+                            <p>検索後に表示されます。</p>
+                            @endif
                         </div>
                     </div>
                 </div>

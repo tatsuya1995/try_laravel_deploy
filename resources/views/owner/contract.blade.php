@@ -20,8 +20,16 @@ ul {
             <div class="card">
                 <div class="card-header">契約確認</div>
                     <div class="card-body">
-                        <a href="{{route('owner.talk',['idDriver'=> $driverInfo->id])}}">トークルームへ戻る</a>
-                        
+                        <button><a href="{{route('owner.talk',['idDriver'=> $driverInfo->id])}}">トークルームへ戻る</a></button>
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                            @foreach($errors->all() as $message)
+                                <li>{{$message}}</li>
+                            @endforeach
+                            </ul>
+                        </div>
+                        @endif
                         <table class="table">
                         <form action="/owner/mailContract" method="get"> 
                         @csrf             
@@ -29,28 +37,28 @@ ul {
                         <tr><th>使用開始時間</th><td>
                                                     <dt>
                                                         <dd>
-                                                            <input type="date" name="dateDeparture">
-                                                            <input type="time" name="timeDeparture">
+                                                            <input type="date" name="dateDeparture" value="{{old('dateDeparture')}}">
+                                                            <input type="time" name="timeDeparture" value="{{old('timeDeparture')}}">
                                                         </dd>
                                                     </dt>
                                                 </td></tr>
                         <tr><th>使用終了時間</th><td>
                                                     <dt>
                                                         <dd>
-                                                            <input type="date" name="dateRevert">
-                                                            <input type="time" name="timeRevert">
+                                                            <input type="date" name="dateRevert" value="{{(old('dateRevert'))}}">
+                                                            <input type="time" name="timeRevert" value="{{old('timeRevert')}}">
                                                         </dd>
                                                     </dt>
                                                 </td></tr>
                         <tr><th>車両情報</th>
                             <td>
                                 <dd>車種名：{{$ownerInfo->nameCar}}（最大{{$ownerInfo->numPeople}}人乗り）
-                                <dd>ナンバープレート：<input type=text name="carNumber">（例.北九州123-あ-1234）</input>
+                                <dd>ナンバープレート：<input type=text name="carNumber" value="{{old('carNumber')}}">（例.北九州123-あ-1234）
                             </td>
                         </tr>
                         <tr><th>使用料金 </th><td>
                             <dd class="text-primary">ドライバーと合意した金額を「小計」に入力後、「計算する」ボタンを押してください。
-                            <dd>小　計：<input type="text" size="5"  name="subtotal" id="subtotal"> 円＋保険料500円　 <b id="outputSubtotal"></b>
+                            <dd>小　計：<input type="text" size="5"  name="subTotal" id="subtotal" value="{{old('subTotal')}}"> 円＋保険料500円　 <b id="outputSubtotal"></b>
                             <dd>手数料：<b id="fee"></b>（小計の10%）　
                             <dd><button type="button" class="btn-primary" id="calc">計算する</button>　<b>総計：<span id="outputTotal"></span></b>
                         </td></tr>
@@ -101,6 +109,19 @@ ul {
                 alert('数値で再度入力ください');
             }
         })
+
+        //JS→PHPへ変数を渡す
+        var $data = {"outputTotal":outputTotal,"outputSubtotal":outputSubtotal}
+        $.ajax({
+            type: "POST",
+            url:"ContractMail.php",
+            data: $data,
+            dataType: "json",
+            scriptCharset:'utf-8',
+        }).done(function(data){
+            alert(data);
+        });
+
     });
 
 </script>

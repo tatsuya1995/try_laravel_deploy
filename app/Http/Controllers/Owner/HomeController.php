@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Owner;
+use App\Models\Driver;
 use App\Models\OwnerSchedule;
 use App\Models\Chat;
 use Illuminate\Support\Facades\Auth;
@@ -85,7 +86,7 @@ class HomeController extends Controller
 
     public function scheduleIn()
     {
-        $ownerSchedules = DB::table('_owner_schedules')
+        $ownerSchedules = OwnerSchedule::query()
         ->where('idOwner', '=', Auth::id())
         ->get();
         return view('owner.schedule',['ownerSchedules' => $ownerSchedules]);
@@ -112,7 +113,7 @@ class HomeController extends Controller
     {
         $ownerSchedule = OwnerSchedule::find($id);
         $ownerSchedule->delete();
-        return redirect('owner.schedule');
+        return redirect('owner/schedule');
     }
 
     public function talkerSelect()
@@ -198,8 +199,8 @@ class HomeController extends Controller
     public function contract($idDriver){
 
         $idOwner = Auth::id();
-        $ownerInfo = DB::table('owners')->where('id','=',$idOwner)->first();
-        $driverInfo = DB::table('drivers')->where('id','=',$idDriver)->first();
+        $ownerInfo = Owner::query()->where('id','=',$idOwner)->first();
+        $driverInfo = Driver::query()->where('id','=',$idDriver)->first();
         //dd($driverInfo);
 
         return view('owner/contract',compact('ownerInfo','driverInfo'));

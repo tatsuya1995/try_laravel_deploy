@@ -117,12 +117,18 @@ return [
     */
 
     'attributes' => [
-        'password' => 'パスワード', //追記
+        'password' => 'パスワード', 
         'departure' => '貸出時間',
         'revert' => '返却時間',
         'iconOwner'=>'アイコン画像',
         'iconDriver' => 'アイコン画像',
-
+        'dateDeparture' => '使用開始日',
+        'timeDeparture' => '使用開始時間',
+        'dateRevert' => '使用終了日',
+        'timeRevert' => '使用終了時間',
+        'carNumber' => 'ナンバープレートの入力',
+        'subTotal' => '使用料金の小計',
+        'confirm' => '確認のチェック入力',
     ],
 
 ];
