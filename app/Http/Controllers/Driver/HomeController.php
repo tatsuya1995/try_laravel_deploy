@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Events\Pusher;
 use App\Models\Driver;
+use App\Models\Owner;
 use App\Models\Post;
 use App\Models\Chat;
 use App\Models\OwnerSchedule;
@@ -20,76 +21,36 @@ class HomeController extends Controller
     {
         $this->middleware('auth:driver');
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {   
+
+    //ドライバー情報のプロパティ宣言
+    var $id ,$driver;
+
+    //ドライバー情報のメソッド宣言
+    public function driverInfo() {
         $id = Auth::id();
         $driver = Driver::find($id);
-        //dd($driver);
-        return view('driver.show',compact('driver'));
-    }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return $driver;
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show()
+    public function index()
     {   
-        $idDriver = Auth::id();
-        $driver = Driver::find($idDriver);
-        
-        // $pathDriver = $data['iconDriver']->store('public');
-        // $iconDriver = basename($pathDriver);
-
+        $driver = $this->driverInfo();
         return view('driver.show',compact('driver'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
+    public function show()
+    {    
+        $driver = $this->driverInfo();
+        return view('driver.show',compact('driver'));
+    }
+
     public function edit($id)
     {
-        $idDriver = $id;
-        $driver = Driver::find($idDriver);
+        $driver = $this->driverInfo();
         return view('driver.edit',compact('driver'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {   
         $driver = Driver::find($id);
@@ -104,16 +65,14 @@ class HomeController extends Controller
         return redirect('driver/show');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
+
     public function destroy($id)
     {
         //
     }
+
+
     public function searchIn()
     {
         return view('driver.search');
@@ -127,32 +86,14 @@ class HomeController extends Controller
             'numPeople' => 'min:1',
         ]);
 
-        $requestDep = $request->departure;
-        $requestRev = $request->revert;
-        $requestPla = $request->place;
-        $requestNumPople = $request->numPeople;
-
-        // //検索
-        // $searches = DB::table('_owner_schedules')
-        // ->join('owners','_owner_schedules.idOwner','=','owners.id')
-        // ->where([
-        //     ['departure','<=',$requestDep],
-        //     ['revert','>=',$requestRev],
-        //     ['place','=',$requestPla],
-        //     ['numPeople','>=',$requestNumPople],
-        // ])->get();
-        // //dd($searches);
-
-
         //検索
-        $searches = OwnerSchedule::query()
-        ->join('owners','_owner_schedules.idOwner','=','owners.id')
-        ->where([
-            ['departure','<=',$requestDep],
-            ['revert','>=',$requestRev],
-            ['place','=',$requestPla],
-            ['numPeople','>=',$requestNumPople],
-        ])->get();
+        $searches = OwnerSchedule::join('owners','_owner_schedules.idOwner','=','owners.id')
+                                    ->where([
+                                        ['departure','<=',$request->departure],
+                                        ['revert','>=',$request->revert],
+                                        ['place','=',$request->place],
+                                        ['numPeople','>=',$request->numPeople],
+                                    ])->get();
         //dd($searches);
         return view('driver.search',compact('searches','request'));
     }
@@ -161,31 +102,20 @@ class HomeController extends Controller
     {   
         //オーナー情報の表示
         $idOwner = $request->idOwner;
-        $ownerInfo = DB::table('owners')->where('id','=',$idOwner)->first();
+        $ownerInfo = Owner::where('id', $idOwner)->first();
         
         //ドライバー情報の表示
         $idDriver = Auth::id();
-        $driverInfo = DB::table('drivers')->where('id','=',$idDriver)->first();
-        //投稿内容の表示
-        // $posts = DB::table('posts')->where([
-        //     ['idOwner','=',$idOwner],
-        //     ['idDriver','=',$idDriver],
-        // ])->orderBy('created_at','desc')
-        // ->paginate(10);
-        //ドライバー、オーナー区別するトライ
+        $driverInfo = Driver::where('id', $idDriver)->first();
+
         $param = [
             'idOwner' => $idOwner,
             'idDriver' => $idDriver,
         ];
         //dd($param);
-        $query = Chat::where('idOwner' , $idOwner)->where('idDriver', $idDriver);
-        // $query->orWhere(function($query) use($idOwner,$idDriver){
-        //     $query->where('idOwner',$idOwner);
-        //     $query->where('idDriver',$idDriver);
-        // });
-        // $posts = $query->orderBy('id','asc')
-        //                 ->paginate(10);
-        $posts = $query->get();
+        $posts= Chat::where('idOwner' , $idOwner)
+                    ->where('idDriver', $idDriver)
+                    ->get();
         return view('driver/talk',compact('ownerInfo','driverInfo','posts'));
     }
 

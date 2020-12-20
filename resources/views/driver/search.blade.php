@@ -80,7 +80,7 @@
                                         </tr>
                                         @foreach ($searches as $search)
                                         <tr>
-                                            <td>{{$search["departure"]->format('Y/m/d H:i')}}</td>
+                                            <td>{{$search->departure->format('Y/m/d H:i')}}</td>
                                             <td>{{$search->revert->format('Y/m/d H:i')}}</td>
                                             <td>{{$search->place}}</td>
                                             <td>{{$search->numPeople}}人</td>

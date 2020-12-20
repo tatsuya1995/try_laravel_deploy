@@ -14,8 +14,14 @@ use Illuminate\Support\Facades\Auth;
 use Storage;
 use App\Events\Pusher;
 
+
 class HomeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:owner');
+    }
+
     //オーナー情報のプロパティ宣言
     var $idOwner ,$owner;
 
@@ -26,64 +32,25 @@ class HomeController extends Controller
         return $ownerInfo;
     }
 
-
-    public function __construct()
-    {
-        $this->middleware('auth:owner');
-    }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {   
-        $idOwner = Auth::id();
-        $owner = Owner::find($idOwner);
-        //dd($owner);
+        $owner = $this->ownerInfo();
         return view('owner.show',compact('owner'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show() 
     {   
-        // $idOwner = Auth::id();
-        // $owner = Owner::find($idOwner);
-        //dd($this->ownerInfo());
         $owner = $this->ownerInfo();
-        //dd($owner);
         return view('owner.show',compact('owner'));
-        //return view('owner.show');
-
     }
 
-/**
- * Show the form for editing the specified resource.
- *
- * @param  int  $id
- * @return \Illuminate\Http\Response
- */
     public function edit($id)
     {
-        // $idOwner = $id;
-        // $owner = Owner::find($idOwner);
-        //dd($owner);
         $owner = $this->ownerInfo();
         return view('owner.edit',compact('owner'));
     }
 
-/**
- * Update the specified resource in storage.
- *
- * @param  \Illuminate\Http\Request  $request
- * @param  int  $id
- * @return \Illuminate\Http\Response
- */
     public function update(Request $request, $id)
     {   
         $owner = Owner::find($id);
@@ -104,13 +71,13 @@ class HomeController extends Controller
 
     public function scheduleIn()
     {
-        $ownerSchedules = OwnerSchedule::query()
-        ->where('idOwner', '=', Auth::id())
-        ->get();
+        $ownerSchedules = OwnerSchedule::where('idOwner', Auth::id())
+                                        ->get();
         return view('owner.schedule',['ownerSchedules' => $ownerSchedules]);
     }
+
     public function scheduleOut(Request $request)
-    {   
+    {  
         $request->validate([
         'departure' => 'required',
         'revert' => 'required|after:departure',
@@ -134,6 +101,7 @@ class HomeController extends Controller
         return redirect('owner/schedule');
     }
 
+
     public function talkerSelect()
     {   
         //オーナー情報の取得
@@ -147,19 +115,20 @@ class HomeController extends Controller
         return view('owner/talkerSelect',compact('posts'));
     }
 
+
     public function talkIn(Request $request, $idDriver)
     {   
-        
         //オーナー情報の表示
         $idOwner = Auth::id();
-        $ownerInfo = DB::table('owners')->where('id','=',$idOwner)->first();
+        $ownerInfo = Owner::where('id', $idOwner)->first();
         
         //ドライバー情報の表示
         $idDriver = (int)$request->idDriver;
-        $driverInfo = Driver::where('id','=',$idDriver)->first();
+        $driverInfo = Driver::where('id', $idDriver)->first();
 
-        $query = Chat::where('idOwner', $idOwner)->where('idDriver', $idDriver);
-        $posts = $query->get();
+        $posts = Chat::where('idOwner', $idOwner)
+                        ->where('idDriver', $idDriver)
+                        ->get();
         //dd($posts);
         return view('owner/talk',compact('ownerInfo','driverInfo','posts'));
     }
@@ -186,8 +155,8 @@ class HomeController extends Controller
         // オーナーとドライバーのidと氏名を取得
 
         $idOwner = Auth::id();
-        $ownerInfo = Owner::where('id','=',$idOwner)->first();
-        $driverInfo = Driver::where('id','=',$idDriver)->first();
+        $ownerInfo = Owner::where('id', $idOwner)->first();
+        $driverInfo = Driver::where('id', $idDriver)->first();
 
         $query = Chat::where('idOwner' , $idOwner)->where('idDriver', $idDriver);
         $posts = $query->orderBy('created_at','desc')->get();
@@ -198,8 +167,8 @@ class HomeController extends Controller
     public function contract($idDriver){
 
         $idOwner = Auth::id();
-        $ownerInfo = Owner::where('id','=',$idOwner)->first();
-        $driverInfo = Driver::where('id','=',$idDriver)->first();
+        $ownerInfo = Owner::where('id', $idOwner)->first();
+        $driverInfo = Driver::where('id', $idDriver)->first();
         //dd($driverInfo);
 
         return view('owner/contract',compact('ownerInfo','driverInfo'));
