@@ -276,9 +276,7 @@ body {
 footer {
   margin-top:20px;
   padding:0.75rem;
-  background-color:#fff;
   font-size:90%;
-
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {

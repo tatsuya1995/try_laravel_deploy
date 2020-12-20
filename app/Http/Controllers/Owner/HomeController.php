@@ -32,11 +32,11 @@ class HomeController extends Controller
         return $ownerInfo;
     }
 
-    public function index()
-    {   
-        $owner = $this->ownerInfo();
-        return view('owner.show',compact('owner'));
-    }
+    // public function index()
+    // {   
+    //     $owner = $this->ownerInfo();
+    //     return view('owner.show',compact('owner'));
+    // }
 
 
     public function show() 

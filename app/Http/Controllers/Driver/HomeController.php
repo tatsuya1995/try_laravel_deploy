@@ -32,11 +32,11 @@ class HomeController extends Controller
         return $driver;
     }
 
-    public function index()
-    {   
-        $driver = $this->driverInfo();
-        return view('driver.show',compact('driver'));
-    }
+    // public function index()
+    // {   
+    //     $driver = $this->driverInfo();
+    //     return view('driver.show',compact('driver'));
+    // }
 
 
     public function show()

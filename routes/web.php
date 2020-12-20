@@ -12,9 +12,9 @@ use App\Events\Pusher;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 //画像アップロード部分
 Route::get('/images','ImagesController@index');
@@ -24,7 +24,7 @@ Route::get('/images/{filename}','ImagesController@show');
 Route::post('/images/{filename}','ImagesController@destroy');
 
 //ログイン前共通部分
-Route::get('/index','commonController@index')->name('index');
+Route::get('/','commonController@index')->name('index');
 Route::get('/qa','commonController@qa');
 Route::get('/select','commonController@select');
 //メールの送信
@@ -45,7 +45,7 @@ Route::namespace('Driver')->prefix('driver')->name('driver.')->group(function(){
     Route::middleware('auth:driver')->group(function(){
 
         //ブレイド の名前書いたり　見てわかる物は書かない
-        Route::get('home','HomeController@searchIn');
+        //Route::get('home','HomeController@searchIn');
         Route::get('search','HomeController@searchIn')->name('search');
         Route::post('search','HomeController@searchOut')->name('search');
         Route::post('talk','HomeController@talkIn')->name('talk');
@@ -77,7 +77,7 @@ Route::namespace('Owner')->prefix('owner')->name('owner.')->group(function(){
     //ログイン認証後
     Route::middleware('auth:owner')->group(function(){
 
-        Route::resource('home','HomeController',['only' => 'index']);
+        //Route::resource('home','HomeController',['only' => 'index']);
         Route::get('show','HomeController@show')->name('show');
         Route::get('schedule','HomeController@scheduleIn')->name('schedule');
         Route::post('schedule','HomeController@scheduleOut')->name('owner.schedule');

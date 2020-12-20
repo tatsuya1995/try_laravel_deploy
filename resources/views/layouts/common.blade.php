@@ -43,7 +43,7 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         <li class="nav-item">
-                                <a class="nav-link" href="{{'/index'}}">サービス説明</a>
+                                <a class="nav-link" href="{{'/'}}">サービス説明</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{'/select'}}">ログイン/新規登録</a>
