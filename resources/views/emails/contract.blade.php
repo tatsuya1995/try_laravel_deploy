@@ -14,11 +14,9 @@
 　　{{$ownerInfo->nameOwner}}　様</p>
 
 <p>◆使用開始時間<br>
-　　{{$request->dateDeparture}}</br>
-　　{{$request->timeDeparture}}</p>
+　　{{$request->dateDeparture}}　{{$request->timeDeparture}}</p>
 <p>◆使用終了時間<br>
-　　{{$request->dateRevert}}</br>
-　　{{$request->timeRevert}}</p>
+　　{{$request->dateRevert}}　{{$request->timeRevert}}</p>
 <p>◆車両情報<br>
 　　ナンバープレート：{{$request->carNumber}}</p>
 
