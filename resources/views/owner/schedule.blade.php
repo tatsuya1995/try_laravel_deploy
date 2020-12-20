@@ -65,8 +65,8 @@
                         <div id="output">   <!-- 入力フォームを入れたら出力-->
                             <table class="table text-center">
                                 <tr>
-                                    <th>出発日</th>
-                                    <th>返却日</th>
+                                    <th>出発時間</th>
+                                    <th>返却時間</th>
                                     <th>貸出場所</th>
                                     <th>削除</th>                    
                                 </tr>

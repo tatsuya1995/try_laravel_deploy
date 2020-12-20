@@ -9,12 +9,24 @@ use App\Models\Owner;
 use App\Models\Driver;
 use App\Models\OwnerSchedule;
 use App\Models\Chat;
+use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 use Storage;
 use App\Events\Pusher;
 
 class HomeController extends Controller
 {
+    //オーナー情報のプロパティ宣言
+    var $idOwner ,$owner;
+
+    //オーナー情報のメソッド宣言
+    public function ownerInfo() {
+        $idOwner = Auth::id();
+        $ownerInfo = Owner::find($idOwner);
+        return $ownerInfo;
+    }
+
+
     public function __construct()
     {
         $this->middleware('auth:owner');
@@ -26,8 +38,8 @@ class HomeController extends Controller
      */
     public function index()
     {   
-        $id = Auth::id();
-        $owner = Owner::find($id);
+        $idOwner = Auth::id();
+        $owner = Owner::find($idOwner);
         //dd($owner);
         return view('owner.show',compact('owner'));
     }
@@ -40,10 +52,14 @@ class HomeController extends Controller
      */
     public function show() 
     {   
-        $idOwner = Auth::id();
-        $owner = Owner::find($idOwner);
+        // $idOwner = Auth::id();
+        // $owner = Owner::find($idOwner);
+        //dd($this->ownerInfo());
+        $owner = $this->ownerInfo();
         //dd($owner);
         return view('owner.show',compact('owner'));
+        //return view('owner.show');
+
     }
 
 /**
@@ -54,8 +70,10 @@ class HomeController extends Controller
  */
     public function edit($id)
     {
-        $idOwner = $id;
-        $owner = Owner::find($idOwner);
+        // $idOwner = $id;
+        // $owner = Owner::find($idOwner);
+        //dd($owner);
+        $owner = $this->ownerInfo();
         return view('owner.edit',compact('owner'));
     }
 
@@ -120,12 +138,11 @@ class HomeController extends Controller
     {   
         //オーナー情報の取得
         $idOwner = Auth::id();
-        $posts = DB::table('posts')
-                    ->join('drivers','posts.idDriver','=','drivers.id')
-                    ->where('idOwner','=',$idOwner)
-                    ->groupBy('idDriver')
-                    ->orderBy('posts.created_at','desc')
-                    ->get();
+        $posts = Post::join('drivers','posts.idDriver','=','drivers.id')
+                        ->where('idOwner','=',$idOwner)
+                        ->groupBy('idDriver')
+                        ->orderBy('posts.created_at','desc')
+                        ->get();
         //dd($posts);
         return view('owner/talkerSelect',compact('posts'));
     }
@@ -139,24 +156,10 @@ class HomeController extends Controller
         
         //ドライバー情報の表示
         $idDriver = (int)$request->idDriver;
-        $driverInfo = DB::table('drivers')->where('id','=',$idDriver)->first();
-        //投稿内容の表示
-        // $posts = DB::table('posts')->where([
-        //     ['idOwner','=',$idOwner],
-        //     ['idDriver','=',$idDriver],
-        // ])->orderBy('created_at','desc')
-        // ->paginate(10);
+        $driverInfo = Driver::where('id','=',$idDriver)->first();
 
-        //dd($param);
-        $query = Chat::where('idOwner' , $idOwner)->where('idDriver', $idDriver);
-        // $query->orWhere(function($query) use($idOwner,$idDriver){
-        //     $query->where('idOwner',$idOwner);
-        //     $query->where('idDriver',$idDriver);
-        // });
-        // $posts = $query->orderBy('id','asc')
-        //                 ->paginate(10);
+        $query = Chat::where('idOwner', $idOwner)->where('idDriver', $idDriver);
         $posts = $query->get();
-
         //dd($posts);
         return view('owner/talk',compact('ownerInfo','driverInfo','posts'));
     }
@@ -183,14 +186,10 @@ class HomeController extends Controller
         // オーナーとドライバーのidと氏名を取得
 
         $idOwner = Auth::id();
-        $ownerInfo = DB::table('owners')->where('id','=',$idOwner)->first();
-        $driverInfo = DB::table('drivers')->where('id','=',$idDriver)->first();
+        $ownerInfo = Owner::where('id','=',$idOwner)->first();
+        $driverInfo = Driver::where('id','=',$idDriver)->first();
 
         $query = Chat::where('idOwner' , $idOwner)->where('idDriver', $idDriver);
-        // $query->orWhere(function($query) use($idOwner,$idDriver){
-        //     $query->where('idOwner',$idOwner);
-        //     $query->where('idDriver',$idDriver);
-        // });
         $posts = $query->orderBy('created_at','desc')->get();
         return view('owner/talk',compact('ownerInfo','driverInfo','posts'));
         
@@ -199,8 +198,8 @@ class HomeController extends Controller
     public function contract($idDriver){
 
         $idOwner = Auth::id();
-        $ownerInfo = Owner::query()->where('id','=',$idOwner)->first();
-        $driverInfo = Driver::query()->where('id','=',$idDriver)->first();
+        $ownerInfo = Owner::where('id','=',$idOwner)->first();
+        $driverInfo = Driver::where('id','=',$idDriver)->first();
         //dd($driverInfo);
 
         return view('owner/contract',compact('ownerInfo','driverInfo'));

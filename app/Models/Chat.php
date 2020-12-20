@@ -12,4 +12,6 @@ class Chat extends Model
     protected $fillable = [
         'comment'
     ];
+    //タイムスタンプの自動更新
+    public $timestamps = true ;
 }
