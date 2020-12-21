@@ -108,12 +108,6 @@
         	</div>
     	</div>
 	</div>
-	<div class="row col-md-12">
-		<div id="fixed">
-			<textarea id="textarea" name="comment" cols="70" rows="3" placeholder="メッセージを入力"></textarea>
-			<button type="button" class="btn btn-primary" id="scrollBtn">送信</button>
-		</div>
-	</div>
 </div>
 
 @endsection

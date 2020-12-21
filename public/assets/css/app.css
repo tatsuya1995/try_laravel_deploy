@@ -107,16 +107,14 @@ ul.bluetag li {
 
 /* ↓driver talk（owner talk）ページ↓ */
 .iconImg {
-  width:20%;
-  width:20%;
-  border-radius:50%;
   border: 1px solid #5f5039;
-
+  object-fit: cover; 
+  width:20%;
+  width:20%;
 }
 .iconImgTalktop {
   width:40%;
   width:40%;
-  border-radius:50%;
   border: 1px solid #5f5039;
 }
 .carImg {
@@ -126,7 +124,15 @@ ul.bluetag li {
 
 .marker {
   list-style-type:none;
-
+  font-size:120%;
+}
+.carDetail {
+  text-align:left;
+}
+@media screen and (max-width: 767px) {
+  .marker {
+    text-align:center;
+  }
 }
 /* ↑driver talkページ↑ */
 
@@ -199,7 +205,6 @@ ul.bluetag li {
 .iconImgContract {
   width:10%;
   width:10%;
-  border-radius:50%;
   border: 1px solid #5f5039;
 }
 /* ↑owner contractページ↑ */

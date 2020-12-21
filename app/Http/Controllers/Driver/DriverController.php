@@ -15,7 +15,7 @@ use App\Models\OwnerSchedule;
 use Illuminate\Support\Facades\Auth;
 use Storage;
 
-class HomeController extends Controller
+class DriverController extends Controller
 {
     public function __construct()
     {
@@ -32,16 +32,10 @@ class HomeController extends Controller
         return $driver;
     }
 
-    // public function index()
-    // {   
-    //     $driver = $this->driverInfo();
-    //     return view('driver.show',compact('driver'));
-    // }
-
-
     public function show()
     {    
         $driver = $this->driverInfo();
+        //dd($driver);
         return view('driver.show',compact('driver'));
     }
 
@@ -144,6 +138,6 @@ class HomeController extends Controller
         $idPost = $request->id;
         $post = Post::find($idPost);
         $post->delete();
-        return redirect()->action('Driver\HomeController@talkIn',['idOwner' => $idOwner]);
+        return redirect()->action('Driver\DriverController@talkIn',['idOwner' => $idOwner]);
     }
 }

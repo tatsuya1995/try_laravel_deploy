@@ -80,8 +80,8 @@
                                         </tr>
                                         @foreach ($searches as $search)
                                         <tr>
-                                            <td>{{$search->departure->format('Y/m/d H:i')}}</td>
-                                            <td>{{$search->revert->format('Y/m/d H:i')}}</td>
+                                            <td><?php echo (date('Y/m/d H:i', strtotime($search->departure)))?></td>
+                                            <td><?php echo (date('Y/m/d H:i', strtotime($search->revert)))?></td>
                                             <td>{{$search->place}}</td>
                                             <td>{{$search->numPeople}}人</td>
                                             <td>

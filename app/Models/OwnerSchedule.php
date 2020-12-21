@@ -14,9 +14,9 @@ class OwnerSchedule extends Model
     use Notifiable;
 
     //dateフォーマット変更のため追加
-    protected $dates = [
-        'departure','revert',
-    ];
+    // protected $dates = [
+    //     'departure','revert',
+    // ];
 
     /**
      * The attributes that are mass assignable.

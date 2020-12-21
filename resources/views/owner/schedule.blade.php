@@ -72,8 +72,8 @@
                                 </tr>
                                 @foreach($ownerSchedules as $ownerSchedule)
                                 <tr>
-                                    <td>{{$ownerSchedule->departure->format('Y/m/d H:i')}}</td>
-                                    <td>{{$ownerSchedule->revert->format('Y/m/d H:i')}}</td>
+                                    <td><?php echo (date('Y/m/d H:i', strtotime($ownerSchedule->departure)))?></td>
+                                    <td><?php echo (date('Y/m/d H:i', strtotime($ownerSchedule->revert)))?></td>
                                     <td>{{$ownerSchedule->place}}</td>
                                     <td>
                                         <form action="{{route('owner.destroy',['id'=> $ownerSchedule->id])}}" method="post">

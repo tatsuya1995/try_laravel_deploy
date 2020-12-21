@@ -15,7 +15,7 @@ use Storage;
 use App\Events\Pusher;
 
 
-class HomeController extends Controller
+class OwnerController extends Controller
 {
     public function __construct()
     {
@@ -31,13 +31,6 @@ class HomeController extends Controller
         $ownerInfo = Owner::find($idOwner);
         return $ownerInfo;
     }
-
-    // public function index()
-    // {   
-    //     $owner = $this->ownerInfo();
-    //     return view('owner.show',compact('owner'));
-    // }
-
 
     public function show() 
     {   
@@ -56,6 +49,8 @@ class HomeController extends Controller
         $owner = Owner::find($id);
         $owner->nameOwner = $request->input('nameOwner');
         $owner->email = $request->input('email');
+        $owner->nameCar = $request->input('nameCar');
+        $owner->numPeople = $request->input('numPeople'); 
 
         //S3への画像保存
         $iconOwner = $request->iconOwner;
@@ -89,7 +84,7 @@ class HomeController extends Controller
         $ownerSchedule->revert = $request->input('revert');
         $ownerSchedule->place = $request->input('place');
         $ownerSchedule->idOwner = Auth::id();
-
+        dd($ownerSchedule);
         $ownerSchedule->save();
         return redirect('owner/schedule');
     }
@@ -106,10 +101,10 @@ class HomeController extends Controller
     {   
         //オーナー情報の取得
         $idOwner = Auth::id();
-        $posts = Post::join('drivers','posts.idDriver','=','drivers.id')
+        $posts = Chat::join('drivers','chats.idDriver','=','drivers.id')
                         ->where('idOwner','=',$idOwner)
                         ->groupBy('idDriver')
-                        ->orderBy('posts.created_at','desc')
+                        ->orderBy('chats.created_at','desc')
                         ->get();
         //dd($posts);
         return view('owner/talkerSelect',compact('posts'));
