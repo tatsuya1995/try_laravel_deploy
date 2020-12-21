@@ -84,7 +84,7 @@ class OwnerController extends Controller
         $ownerSchedule->revert = $request->input('revert');
         $ownerSchedule->place = $request->input('place');
         $ownerSchedule->idOwner = Auth::id();
-        dd($ownerSchedule);
+        //dd($ownerSchedule);
         $ownerSchedule->save();
         return redirect('owner/schedule');
     }
