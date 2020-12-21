@@ -28,12 +28,11 @@ Route::get('/','commonController@index')->name('index');
 Route::get('/qa','commonController@qa');
 Route::get('/select','commonController@select');
 //メールの送信
-Route::post('/mail','MailSendController@send');
+Route::post('/mail','MailQaController@send');
 
 
 //ドライバー
 Route::namespace('Driver')->prefix('driver')->name('driver.')->group(function(){
-
 
     Auth::routes([
         'register' => true,
@@ -64,6 +63,7 @@ Route::namespace('Driver')->prefix('driver')->name('driver.')->group(function(){
 
     });
 });
+
 //オーナー
 Route::namespace('Owner')->prefix('owner')->name('owner.')->group(function(){
 
