@@ -73,7 +73,11 @@ ul {
                         </tr>
                     <input type="hidden" name="idDriver" value="{{$driverInfo->id}}">
                         <input type="hidden" name="idOwner" value="{{$ownerInfo->id}}">
-                        <input type="hidden" name="subtotal" value="">
+                        <input type="hidden" name="nameDriver" value="{{$driverInfo->nameDriver}}">
+                        <input type="hidden" name="nameOwner" value="{{$ownerInfo->nameOwner}}">
+                        <input type="hidden" name="numPeople" value="{{$ownerInfo->numPeople}}">
+                        <input type="hidden" name="nameCar" value="{{$ownerInfo->nameCar}}">
+
                         <input type="hidden" name="fee" value="fee">
                     </form>
                     </table>
@@ -110,17 +114,17 @@ ul {
             }
         })
 
-        //JS→PHPへ変数を渡す
-        var $data = {"outputTotal":outputTotal,"outputSubtotal":outputSubtotal}
-        $.ajax({
-            type: "POST",
-            url:"ContractMail.php",
-            data: $data,
-            dataType: "json",
-            scriptCharset:'utf-8',
-        }).done(function(data){
-            alert(data);
-        });
+        // //JS→PHPへ変数を渡す
+        // var $data = {"outputTotal":outputTotal,"outputSubtotal":outputSubtotal}
+        // $.ajax({
+        //     type: "POST",
+        //     url:"ContractMail.php",
+        //     data: $data,
+        //     dataType: "json",
+        //     scriptCharset:'utf-8',
+        // }).done(function(data){
+        //     alert(data);
+        // });
 
     });
 

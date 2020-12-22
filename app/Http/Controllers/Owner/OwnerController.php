@@ -159,8 +159,8 @@ class OwnerController extends Controller
         
     }
     
-    public function contract($idDriver){
-
+    public function contract($idDriver)
+    {
         $idOwner = Auth::id();
         $ownerInfo = Owner::where('id', $idOwner)->first();
         $driverInfo = Driver::where('id', $idDriver)->first();
@@ -168,6 +168,5 @@ class OwnerController extends Controller
 
         return view('owner/contract',compact('ownerInfo','driverInfo'));
     }
-
     
 }

@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Chat;
+use App\Models\Contract;
 use App\Events\Pusher;
 use Illuminate\Http\JsonResponse;
 use Illuminate\View\View;
-
+use Illuminate\Support\Facades\DB;
 class CommonController extends Controller
 {
     /**
@@ -57,5 +58,12 @@ class CommonController extends Controller
         return response()->json(['message' => '投稿しました。']);
 
     //     return view('/pusher',["chats" => $chats]);
+    }
+
+    public function finalContract()
+    {
+        $contracts = Contract::orderBy('created_at','desc')->get();
+        //$contracts = DB::table('contracts')->get();
+        return view('Administrator/finalContract',compact('contracts'));
     }
 }

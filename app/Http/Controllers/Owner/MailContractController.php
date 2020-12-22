@@ -9,6 +9,8 @@ use App\Mail\ContractMail;
 use Mail;
 use App\Models\Driver;
 use App\Models\Owner;
+use App\Models\Contract;
+
 
 class MailContractController extends Controller
 {
@@ -17,12 +19,25 @@ class MailContractController extends Controller
         $request->validate([
             'dateDeparture' => 'required',
             'timeDeparture' => 'required',
-            'dateRevert' => 'required|after:dateDeparture',
+            'dateRevert' => 'required|after_or_equal:dateDeparture',
             'timeRevert' => 'required',
             'carNumber' => 'required|string',
             'subTotal' => 'required|numeric|min:1',
             'confirm' => 'required',
             ]);
+            
+        Contract::create([
+            'nameDriver' => $request->nameDriver,
+            'nameOwner' => $request->nameOwner,
+            'dateDeparture' => $request->dateDeparture,
+            'timeDeparture' => $request->timeDeparture,
+            'dateRevert' => $request->dateRevert,
+            'timeRevert' => $request->timeRevert,
+            'nameCar' => $request->nameCar,
+            'numPeople' => $request->numPeople,
+            'carNumber' => $request->carNumber,
+            'subTotal' => $request->subTotal,
+        ]);
 
         $to = [
             [

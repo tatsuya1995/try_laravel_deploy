@@ -5,6 +5,8 @@ use App\Events\Pusher;
 Route::get('/','commonController@index')->name('index');
 Route::get('/select','commonController@select');
 Route::get('/qa','commonController@qa');
+//管理者用　契約状況確認ページ
+Route::get('/finalContract','commonController@finalContract');
 
 
 //メールの送信
