@@ -34,14 +34,27 @@
  
 # 使用技術
  
-"hoge"を動かすのに必要なライブラリなどを列挙する
- 
-* huga 3.5.2
-* hogehuga 1.0.2
- 
-```bash
-pip install huga_package
-```
+ バックエンド
+* PHP 
+* Laravel
+
+ フロントエンド
+* HTML
+* CSS
+* javascript
+* jQuery
+* Vue.js(現在学習中のため今後組み込む)
+
+　インフラ
+* AWS(EC2,S3)
+* mysql 
+
+　その他の使用技術
+* Pusher
+* git(gitHub)
+* Visual Studio Code
+* draw.io
+* Gmail
  
  # AWS構成図
 図を貼り付ける
