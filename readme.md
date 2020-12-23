@@ -35,19 +35,20 @@
 # 使用技術
  
  バックエンド
-* PHP 
-* Laravel
+* PHP 7.2.34
+* Laravel 6.20.5
 
  フロントエンド
 * HTML
 * CSS
 * javascript
-* jQuery
+* jQuery 3.2.1
 * Vue.js(現在学習中のため今後組み込む)
 
 　インフラ
+* mysql 8.0.22
 * AWS(EC2,S3)
-* mysql 
+
 
 　その他の使用技術
 * Pusher
