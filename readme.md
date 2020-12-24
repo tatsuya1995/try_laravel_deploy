@@ -33,23 +33,18 @@
  
 # 使用技術
  
-* バックエンド
-PHP 7.2.34/ Laravel 6.20.5
+* バックエンド<br>
+    PHP 7.2.34 / Laravel 6.20.5
 
-* フロントエンド
-HTML/ CSS/ javascript/ jQuery 3.2.1/ Vue.js(現在学習中のため今後組み込む)
+* フロントエンド<br>
+    HTML / CSS / javascript / jQuery 3.2.1 / Vue.js(現在学習中のため今後組み込む)
 
-　インフラ
-* mysql 8.0.22
-* AWS(EC2,S3)
+* インフラ<br>
+    mysql 8.0.22 / AWS(EC2,S3)
 
 
-　その他の使用技術
-* Pusher
-* git(gitHub)
-* Visual Studio Code
-* draw.io
-* Gmail
+* その他の使用技術<br>
+    Pusher / git(gitHub) / Visual Studio Code / draw.io / Gmail
  
  # AWS構成図
 ![画像](AWS.png)
