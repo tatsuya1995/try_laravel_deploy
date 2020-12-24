@@ -56,7 +56,8 @@
     
 **C. LINEのような手軽さで個人間でチャットが可能(非同期通信)**</br>
 &emsp; アプリ内のチャット機能を、スマートフォンユーザーのおよそ80％が利用しているLINEの操作に合わせることで、誰でも容易にチャット機能を使って交流できる。また、非同期通信を行うことによって画面の遷移無しで、相手のメッセージを受け取ることができる。
-    
+
+
 上記とは色合いが異なるが、その他にもユーザーと管理者を思いやった機能も追加した。    
 
 **D. 契約内容のエビデンスとしてメールの自動送信**</br>
@@ -65,6 +66,7 @@
 **E. 管理者用の契約内容閲覧機能**</br>
 &emsp; ドライバーとオーナー間で契約が結ばれた後、DBへその内容が保存されるため、その内容を表示する機能。その内容を見て自動車の保険の加入手続・料金の支払い手続きに移行する。<br>
 [[→要件定義書 リンク](https://docs.google.com/presentation/d/1vWEF7MWPqWR6HSBz8aYNJNr0i8-kscc3NNe2huMJbcU/edit?usp=sharing)]<br>
+
 # 使用技術
  
 **バックエンド**<br>
@@ -75,7 +77,6 @@
 
 **インフラ**<br>
 &emsp; mysql 8.0.22 / AWS(EC2,S3)
-
 
 **その他の使用技術**<br>
 &emsp; Pusher / git(gitHub) / Visual Studio Code / draw.io / Gmail
@@ -117,7 +118,8 @@ DEMOの実行方法など、"hoge"の基本的な使い方を説明する
 # 最後に
 大変お忙しい中、最後までご覧いただき誠にありがとうございました。<br>
 ご興味を持っていただけましたら、下記もご覧頂けると幸いです。<br>
-[[自己紹介サイト](https://tatsudesign.net/portfolio/main/index.html):学歴・職務経歴・webエンジニアを目指す経緯などを記載しています！]</br>
-[[Qiita](https://qiita.com/tatsuya_1995):発信力を持ったエンジニアになるべく今後はドシドシ投稿していきます！]</br>
-[[Twitter](https://twitter.com/string_tatsuya):日々の学習を記録・発信しています！]</br>
+
+&emsp; [→[自己紹介サイト](https://tatsudesign.net/portfolio/main/index.html):学歴・職務経歴・webエンジニアを目指す経緯などを記載しています！]</br>
+&emsp; [→[Qiita](https://qiita.com/tatsuya_1995):発信力を持ったエンジニアになるべく今後はドシドシ投稿していきます！]</br>
+&emsp; [→[Twitter](https://twitter.com/string_tatsuya):日々の学習を記録・発信しています！]</br>
 
