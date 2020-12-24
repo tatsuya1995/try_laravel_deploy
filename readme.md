@@ -38,7 +38,7 @@
 ![onwer2](admin.png)
  
 # こだわり
- 
+
 私はCtoCのカーシェアリング業界が伸びていない原因は主に下記の3点に起因すると考える。</br>
 &emsp; ①初期登録操作のハードルが高い</br>
 &emsp; ②条件に合う車両を探す作業が煩わしい</br>
@@ -64,7 +64,7 @@
 
 **E. 管理者用の契約内容閲覧機能**</br>
 &emsp; ドライバーとオーナー間で契約が結ばれた後、DBへその内容が保存されるため、その内容を表示する機能。その内容を見て自動車の保険の加入手続・料金の支払い手続きに移行する。
-
+[[→要件定義書 リンク](https://docs.google.com/presentation/d/1vWEF7MWPqWR6HSBz8aYNJNr0i8-kscc3NNe2huMJbcU/edit?usp=sharing)]<br>
 # 使用技術
  
 **バックエンド**<br>
