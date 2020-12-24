@@ -14,7 +14,7 @@
 
 
 # デモ
-[操作説明資料 リンク] (https://docs.google.com/presentation/d/1vp0uW4S5cwLc9BGpcaWo-VbV1Sns1QpCnw0aN3KeQYs/edit?usp=sharing)
+[操作説明資料 リンク](https://docs.google.com/presentation/d/1vp0uW4S5cwLc9BGpcaWo-VbV1Sns1QpCnw0aN3KeQYs/edit?usp=sharing)
 "hoge"の魅力が直感的に伝えわるデモ動画や図解を載せる
 
 #制作背景
