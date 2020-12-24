@@ -14,9 +14,9 @@
 
 # 操作説明
 このサービスのユーザーは3パターンに分けられる。</br>
-&emsp; A.ドライバー</br>
-&emsp; B.オーナー</br>
-&emsp; C.Car.マッチング（自動車保険会社）</br>
+&emsp; A.ドライバー(車を借りたい人）</br>
+&emsp; B.オーナー（車を貸したい人）</br>
+&emsp; C.Car.マッチング（自動車保険会社：本アプリケーションのクライアント）</br>
 それぞれの操作について下記に示す。
 [→[操作詳細説明 リンク](https://docs.google.com/presentation/d/1vp0uW4S5cwLc9BGpcaWo-VbV1Sns1QpCnw0aN3KeQYs/edit?usp=sharing)]
 
