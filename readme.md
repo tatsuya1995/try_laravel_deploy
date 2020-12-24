@@ -58,7 +58,7 @@
 * Gmail
  
  # AWS構成図
-![画像](.png)
+![画像](AWS.png)
 
  # DB設計
 ・ER図
