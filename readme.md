@@ -25,7 +25,7 @@
 #オーナーの基本操作<br>
 ![onwer2](owner2.gif)
 #管理者（Car.マッチング株式会社）の基本操作<br>
- 
+![onwer2](admin.png)
  
 #画面のイメージ
 
