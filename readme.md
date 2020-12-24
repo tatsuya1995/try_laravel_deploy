@@ -9,10 +9,12 @@
 ①操作がシンプル（登録→検索→チャット→契約）
 ②LINEのような手軽さで個人間で会話可能
 ③契約内容のエビデンスとしてメールを自動送信
+# 制作背景
+
 
 
 # デモ
- 
+[操作説明資料 リンク] (https://docs.google.com/presentation/d/1vp0uW4S5cwLc9BGpcaWo-VbV1Sns1QpCnw0aN3KeQYs/edit?usp=sharing)
 "hoge"の魅力が直感的に伝えわるデモ動画や図解を載せる
 
 #制作背景
