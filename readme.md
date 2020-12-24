@@ -1,8 +1,6 @@
 ![画像](logo.png)
  
- ![画像](driver.gif)
- ![画像](owner1.gif)
- ![画像](owner2.gif)
+
 # 概要
 [→[アプリケーション リンク](http://aws-tatsuya-infra)]<br>
 車両を保有している人と保有していない人を結ぶSNSアプリケーション。
@@ -18,8 +16,17 @@
 <br>[→[操作説明 リンク](https://docs.google.com/presentation/d/1vp0uW4S5cwLc9BGpcaWo-VbV1Sns1QpCnw0aN3KeQYs/edit?usp=sharing)]
 "hoge"の魅力が直感的に伝えわるデモ動画や図解を載せる
 
-
-
+#ドライバーの基本操作<br>
+ログイン→希望の条件で検索→該当したオーナーとチャットでの交流
+![driver](driver.gif)
+#オーナーの基本操作<br>
+ログイン→車両を貸し出せる日程を登録→ドライバーから依頼があればチャットでの交流→オーナーとドライバーが契約条件に合意した場合、契約フォームに記入し、Car.マッチングへメール送信
+![owner1](owner1.gif)
+#オーナーの基本操作<br>
+![onwer2](owner2.gif)
+#管理者（Car.マッチング株式会社）の基本操作<br>
+ 
+ 
 #画面のイメージ
 
 どうやって撮ってるんやろか
