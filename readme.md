@@ -1,7 +1,7 @@
 ![画像](logo.png)
  
 # 概要
- URL:
+[→[アプリケーション リンク](http://aws-tatsuya-infra)]<br>
 車両を保有している人と保有していない人を結ぶSNSアプリケーション。
 大手カーシェアリングサービスのように車を保有する会社からドライバーに貸し出す(BtoB)のでなく、
 個人間で気軽に貸し出せるサービス(CtoC)をコンセプトとした。
@@ -15,10 +15,10 @@
 
 # 制作背景
 交通インフラの整備や若者の車離れの影響を受け、自動車の国内需要は１９９０年ごろをピークとして年々減少している。これに伴い、大手のBtoBのカーシェアリングサービスが会員数は5年で約4倍以上伸びている。対して、今後の伸びてくると予想されていたCtoCのカーシェアリングは伸び悩んでいるというギャップが生じている。この現象に疑問を持ったため、原因をトヨタの問題解決の手法を用いて考え、このギャップを解決するサービスの開発を行った。
-[→[制作背景詳細 リンク](https://docs.google.com/presentation/d/1tZJGasBnQbUNXXe0prZ4kC7agbCEJ5aUzGzq7WhR7zA/edit?usp=sharing)]
+<br>[→[制作背景詳細 リンク](https://docs.google.com/presentation/d/1tZJGasBnQbUNXXe0prZ4kC7agbCEJ5aUzGzq7WhR7zA/edit?usp=sharing)]
 
 # デモ
-[→[操作説明 リンク](https://docs.google.com/presentation/d/1vp0uW4S5cwLc9BGpcaWo-VbV1Sns1QpCnw0aN3KeQYs/edit?usp=sharing)]
+<br>[→[操作説明 リンク](https://docs.google.com/presentation/d/1vp0uW4S5cwLc9BGpcaWo-VbV1Sns1QpCnw0aN3KeQYs/edit?usp=sharing)]
 "hoge"の魅力が直感的に伝えわるデモ動画や図解を載せる
 
 
