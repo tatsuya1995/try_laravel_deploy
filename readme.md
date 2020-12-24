@@ -13,11 +13,11 @@
 <br>[→[制作背景詳細 リンク](https://docs.google.com/presentation/d/1tZJGasBnQbUNXXe0prZ4kC7agbCEJ5aUzGzq7WhR7zA/edit?usp=sharing)]
 
 # 操作説明
-このサービスのユーザーは</br>
+このサービスのユーザーは3パターンに分けられる。</br>
 &emsp; A.ドライバー</br>
 &emsp; B.オーナー</br>
 &emsp; C.Car.マッチング（自動車保険会社）</br>
-の3パターンに分けられる。それぞれに操作について下記に示す。</br>
+それぞれの操作について下記に示す。</br>
 [→[操作詳細説明 リンク](https://docs.google.com/presentation/d/1vp0uW4S5cwLc9BGpcaWo-VbV1Sns1QpCnw0aN3KeQYs/edit?usp=sharing)]
 
 
