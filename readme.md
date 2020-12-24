@@ -13,16 +13,19 @@
 <br>[→[制作背景詳細 リンク](https://docs.google.com/presentation/d/1tZJGasBnQbUNXXe0prZ4kC7agbCEJ5aUzGzq7WhR7zA/edit?usp=sharing)]
 
 # 操作説明
-<br>[→[操作説明 リンク](https://docs.google.com/presentation/d/1vp0uW4S5cwLc9BGpcaWo-VbV1Sns1QpCnw0aN3KeQYs/edit?usp=sharing)]
-"hoge"の魅力が直感的に伝えわるデモ動画や図解を載せる
+ユーザーはドライバー・オーナー・Car.マッチング（自動車保険会社）の3パターンに分けられる。
+<br>[→[操作詳細説明 リンク](https://docs.google.com/presentation/d/1vp0uW4S5cwLc9BGpcaWo-VbV1Sns1QpCnw0aN3KeQYs/edit?usp=sharing)]
 
-## ドライバーの基本操作</br>
+
+## A. ドライバーの基本操作</br>
 ![driver](driver.gif)<br>
+
 ログイン→希望の条件で検索→該当したオーナーとチャットでの交流
 
 ## オーナーの基本操作</br>
 ![owner1](owner1.gif)<br>
-ログイン→車両を貸し出せる日程を登録→ドライバーから依頼があればチャットでの交流→オーナーとドライバーが契約条件に合意した場合、契約フォームに記入し、Car.マッチングへメール送信
+
+ログイン → 車両を貸し出せる日程を登録 → ドライバーから依頼があればチャットでの交流 → オーナーとドライバーが契約条件に合意した場合、契約フォームに記入し、Car.マッチングへメール送信
 
 ## オーナーの基本操作<br>
 ![onwer2](owner2.gif)
