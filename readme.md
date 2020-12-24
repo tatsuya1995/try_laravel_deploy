@@ -1,6 +1,8 @@
 ![画像](logo.png)
  
-
+ ![画像](driver.gif)
+ ![画像](owner1.gif)
+ ![画像](owner2.gif)
 # 概要
 [→[アプリケーション リンク](http://aws-tatsuya-infra)]<br>
 車両を保有している人と保有していない人を結ぶSNSアプリケーション。
