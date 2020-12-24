@@ -111,6 +111,6 @@ DEMOの実行方法など、"hoge"の基本的な使い方を説明する
 大変お忙しい中、最後までご覧いただき誠にありがとうございました。<br>
 ご興味を持っていただけましたら、下記もご覧頂けると幸いです。<br>
 [[自己紹介サイト](https://tatsudesign.net/portfolio/main/index.html):学歴・職務経歴・webエンジニアを目指す経緯などを記載しています！]</br>
-[[Qiita](https://qiita.com/tatsuya_1995):学習の定着化に加えて、発信力を持ったエンジニアになるべく今後はドシドシ投稿していきます！]</br>
+[[Qiita](https://qiita.com/tatsuya_1995):発信力を持ったエンジニアになるべく今後はドシドシ投稿していきます！]</br>
 [[Twitter](https://twitter.com/string_tatsuya):日々の学習を記録・発信しています！]</br>
 
