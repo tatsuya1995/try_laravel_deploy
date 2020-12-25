@@ -27,10 +27,10 @@
 
 ### A. ドライバーの基本操作</br>
 
-&emsp; ①ログイン</br>
-&emsp; ②希望の条件(日時や乗車人数)で検索</br>
-&emsp; ③該当したオーナーとチャットでの交流</br>
-&emsp; ④車両を借りることへの不安がなくなれば、契約を結んでもらえるようオーナーへ依頼</br>
+①ログイン</br>
+②希望の条件(日時や乗車人数)で検索</br>
+③該当したオーナーとチャットでの交流</br>
+④車両を借りることへの不安がなくなれば、契約を結んでもらえるようオーナーへ依頼</br>
 
 ![driver](driver.gif)
 
@@ -38,11 +38,11 @@
 
 ### B. オーナーの基本操作</br>
 
-&emsp; ①ログイン</br>
-&emsp; ②車両を貸し出せる日程を登録</br>
-&emsp; ③ドライバーから依頼があればチャットにて交流</br>
-&emsp; ④オーナーとドライバーが契約条件に合意した場合、契約フォームに入力</br>
-&emsp; ⑤確認メール送信</br>
+①ログイン</br>
+②車両を貸し出せる日程を登録</br>
+③ドライバーから依頼があればチャットにて交流</br>
+④オーナーとドライバーが契約条件に合意した場合、契約フォームに入力</br>
+⑤確認メール送信</br>
 
 ![owner1](owner1.gif)<br>
 ![onwer2](owner2.gif)
@@ -60,9 +60,9 @@
 # こだわり
 
 私はCtoCのカーシェアリング業界が伸びていない原因は主に下記の3点に起因すると考える。</br>
-&emsp; ①初期登録操作のハードルが高い</br>
-&emsp; ②条件に合う車両を探す作業が煩わしい</br>
-&emsp; ③全く交流がない他人から車両を借りることへの不安がある</br>
+①初期登録操作のハードルが高い</br>
+②条件に合う車両を探す作業が煩わしい</br>
+③全く交流がない他人から車両を借りることへの不安がある</br>
 
 これらを解決するために下記にこだわって開発した。
 
@@ -90,16 +90,16 @@
 # 使用技術
  
 **バックエンド**<br>
-&emsp; PHP 7.2.34 / Laravel 6.20.5
+PHP 7.2.34 / Laravel 6.20.5
 
 **フロントエンド**<br>
-&emsp; HTML / CSS / javascript / jQuery 3.2.1 / Vue.js(現在学習中のため今後組み込む)
+HTML / CSS / javascript / jQuery 3.2.1 / Vue.js(現在学習中のため今後組み込む)
 
 **インフラ**<br>
-&emsp; mysql 8.0.22 / AWS(EC2,S3)
+mysql 8.0.22 / AWS(EC2,S3)
 
 **その他の使用技術**<br>
-&emsp; Pusher / git(gitHub) / Visual Studio Code / draw.io / Gmail
+Pusher / git(gitHub) / Visual Studio Code / draw.io / Gmail
  
 # AWS構成図
 ![画像](aws.png)
@@ -135,7 +135,7 @@ web系企業ではクラウドはAWSが主流になっていますのでAWSを�
 大変お忙しい中、最後までご覧いただき誠にありがとうございました。<br>
 ご興味を持っていただけましたら、下記リンクもご覧頂けると幸いです。<br>
 
-&emsp; [→[自己紹介サイト](https://tatsudesign.net/portfolio/main/index.html):学歴・職務経歴・webエンジニアを目指す経緯などを記載しています！]</br>
-&emsp; [→[Qiita](https://qiita.com/tatsuya_1995):発信力を持ったエンジニアになるべく今後はドシドシ投稿していきます！]</br>
-&emsp; [→[Twitter](https://twitter.com/string_tatsuya):日々の学習を記録・発信しています！]</br>
+[→[自己紹介サイト](https://tatsudesign.net/portfolio/main/index.html):学歴・職務経歴・webエンジニアを目指す経緯などを記載しています！]</br>
+[→[Qiita](https://qiita.com/tatsuya_1995):発信力を持ったエンジニアになるべく今後はドシドシ投稿していきます！]</br>
+[→[Twitter](https://twitter.com/string_tatsuya):日々の学習を記録・発信しています！]</br>
 
