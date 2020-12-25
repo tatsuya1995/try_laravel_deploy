@@ -13,12 +13,11 @@
 <br>[→[制作背景詳細 リンク](https://docs.google.com/presentation/d/1tZJGasBnQbUNXXe0prZ4kC7agbCEJ5aUzGzq7WhR7zA/edit?usp=sharing)]
 
 # システム概要
-
 このサービスのユーザーは3パターンに分けられる。</br>
 &emsp; A.ドライバー (車を借りたい人）</br>
 &emsp; B.オーナー （車を貸したい人）</br>
 &emsp; C.管理者 (Car.マッチング株式会社:自動車保険会社）</br>
-
+[[→要件定義書 リンク](https://docs.google.com/presentation/d/1vWEF7MWPqWR6HSBz8aYNJNr0i8-kscc3NNe2huMJbcU/edit?usp=sharing)]<br>
 ![システムフロー](systemflow.png)
 
 # 操作説明
@@ -86,7 +85,7 @@
 
 **E. 管理者用の契約内容閲覧機能**</br>
 ドライバーとオーナー間で契約が結ばれた後、DBへその内容が保存されるため、その内容を表示する機能。その内容を見て自動車の保険の加入手続き・料金の支払い手続きに移行する。<br>
-[[→要件定義書 リンク](https://docs.google.com/presentation/d/1vWEF7MWPqWR6HSBz8aYNJNr0i8-kscc3NNe2huMJbcU/edit?usp=sharing)]<br>
+
 
 # 使用技術
  
@@ -131,7 +130,7 @@ web系企業ではクラウドはAWSが主流になっていますのでAWSを�
 
 # 最後に
 大変お忙しい中、最後までご覧いただき誠にありがとうございました。<br>
-ご興味を持っていただけましたら、下記もご覧頂けると幸いです。<br>
+ご興味を持っていただけましたら、下記リンクもご覧頂けると幸いです。<br>
 
 &emsp; [→[自己紹介サイト](https://tatsudesign.net/portfolio/main/index.html):学歴・職務経歴・webエンジニアを目指す経緯などを記載しています！]</br>
 &emsp; [→[Qiita](https://qiita.com/tatsuya_1995):発信力を持ったエンジニアになるべく今後はドシドシ投稿していきます！]</br>
