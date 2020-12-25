@@ -20,10 +20,11 @@
 &emsp; C.管理者 (Car.マッチング株式会社:自動車保険会社）</br>
 
 ![システムフロー](systemflow.png)
-それぞれの操作について下記に示す。
-[→[操作詳細説明 リンク](https://docs.google.com/presentation/d/1vp0uW4S5cwLc9BGpcaWo-VbV1Sns1QpCnw0aN3KeQYs/edit?usp=sharing)]
 
 # 操作説明
+
+それぞれの操作について下記に示す。
+[→[操作詳細説明 リンク](https://docs.google.com/presentation/d/1vp0uW4S5cwLc9BGpcaWo-VbV1Sns1QpCnw0aN3KeQYs/edit?usp=sharing)]
 
 ## A. ドライバーの基本操作 &emsp; (車を借りたい人）</br>
 ![driver](driver.gif)<br>
