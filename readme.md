@@ -95,7 +95,7 @@
 &emsp; Pusher / git(gitHub) / Visual Studio Code / draw.io / Gmail
  
 # AWS構成図
-![画像](AWS.png)
+![画像](aws.png)
 
 # DB設計
 ### ER図
