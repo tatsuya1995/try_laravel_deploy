@@ -76,30 +76,39 @@
 							　ご登録いただいた個人情報は、お問い合わせ内容の確認以外には使用いたしません。</p>
 							<form action="/mail" method="post">
 							@csrf
-							<dl>	
-								<dt>お名前（必須）</dt>
-								<dd><input type="text" name="name" required></dd>
-							</dl>
-							<dl>
-								<dt>メールアドレス（必須）</dt>
-								<dd><input type="email" name="email" required></dd>
-							</dl>
-							<dl>
-								<dt>内容</dt>
-								<dd>
-									<select name="title" >
+							<div class="form-group row">
+								<label for="text" class="col-md-4 col-form-label text-md-left">お名前</label>
+								<div class="col-md-6">
+									<input id="text" type="text" class="form-control" name="text" required >
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="email" class="col-md-4 col-form-label text-md-left">メールアドレス</label>
+								<div class="col-md-6">
+									<input id="email" type="email" class="form-control" name="email" required >
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="content" class="col-md-4 col-form-label text-md-left">内容</label>
+								<div class="col-md-6">
+									<select name="title" class="form-control" >
 										<option value="問い合わせ（事故・トラブルについて）">事故・トラブル時について</option>
 										<option value="問い合わせ（予約について）">予約について</option>
 										<option value="問い合わせ（その他について）">その他</option>	
 									</select>
-								</dd>
-								<dd><textarea name="content" cols="40" rows="3" maxlength="120"
-									placeholder="こちらにご記入ください。" ></textarea>
-								</dd>
-							</dl>
-							<dd><input type="submit" value="メールを送信する"></dd>
+								</div>
+							</div>
+							<div class="form-group row">
+								<div class="col-md-6">
+									<textarea name="content" placeholder="こちらにご記入ください。"class="form-control"></textarea></br>
+								</div>
+								<div class="col-md-6">
+									<input type="submit" value="メールを送信する">
+								</div>
+							</div>
 							<p>※確認のため、お客様にもメールを送信いたします。</br>
 						　　	時間が経ってもメールが届かない場合は、お電話ください。</p>
+
 							</form>
 						</div>   
                 	</div>
