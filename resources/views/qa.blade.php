@@ -70,27 +70,31 @@
             <div class="card">
                 <div class="card-header">お問い合わせ</div>
 				<div class="card-body">
-					<div class="mailform">
-						<div class="indent">
-							<p>お問い合わせは、下記フォームよりお気軽にお寄せください。</br>
-							　ご登録いただいた個人情報は、お問い合わせ内容の確認以外には使用いたしません。</p>
-							<form action="/mail" method="post">
+					<div class="mailform　col-md-6">
+						<form action="/mail" method="post">
 							@csrf
 							<div class="form-group row">
-								<label for="text" class="col-md-4 col-form-label text-md-left">お名前</label>
-								<div class="col-md-6">
+								<label for="" class="col-md-1 col-form-label text-md-right"></label>
+							<div class="col-md-9">
+								お問い合わせは、下記フォームよりお気軽にお寄せください。ご登録いただいた個人情報は、お問い合わせ内容の確認以外には使用いたしません。
+							</div>
+							</div>
+
+							<div class="form-group row">
+								<label for="text" class="col-md-2 col-form-label text-md-right">お名前</label>
+								<div class="col-md-3">
 									<input id="text" type="text" class="form-control" name="text" required >
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="email" class="col-md-4 col-form-label text-md-left">メールアドレス</label>
-								<div class="col-md-6">
+								<label for="email" class="col-md-2 col-form-label text-md-right">メールアドレス</label>
+								<div class="col-md-3">
 									<input id="email" type="email" class="form-control" name="email" required >
 								</div>
 							</div>
 							<div class="form-group row">
-								<label for="content" class="col-md-4 col-form-label text-md-left">内容</label>
-								<div class="col-md-6">
+								<label for="content" class="col-md-2 col-form-label text-md-right">内容</label>
+								<div class="col-md-4">
 									<select name="title" class="form-control" >
 										<option value="問い合わせ（事故・トラブルについて）">事故・トラブル時について</option>
 										<option value="問い合わせ（予約について）">予約について</option>
@@ -99,20 +103,24 @@
 								</div>
 							</div>
 							<div class="form-group row">
-								<div class="col-md-6">
-									<textarea name="content" placeholder="こちらにご記入ください。"class="form-control"></textarea></br>
+								<label for="content" class="col-md-2 col-form-label text-md-right"></label>
+								<div class="col-md-5">
+									<textarea name="content" placeholder="詳細はこちらにご記入ください。"class="form-control"></textarea></br>
 								</div>
 							</div>
 							<div class="form-group row">
+								<label for="subtotal" class="col-md-2 col-form-label text-md-right"></label>
 								<div class="col-md-6">
 									<input type="submit" value="メールを送信する">
 								</div>
 							</div>
-							<p>※確認のため、お客様にもメールを送信いたします。</br>
-						　　	時間が経ってもメールが届かない場合は、お電話ください。</p>
-
-							</form>
-						</div>   
+							<div class="form-group row">
+								<label for="subtotal" class="col-md-1 col-form-label text-md-right"></label>
+								<div class="col-md-9">
+								※確認のため、お客様にもメールを送信いたします。時間が経ってもメールが届かない場合は、お電話ください。
+								</div>
+							</div>
+							</form>  
                 	</div>
             	</div>
         	</div>
