@@ -610,7 +610,7 @@ h2,
 }
 @media screen and (max-width: 767px) {
   h2,.h2{
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -618,6 +618,12 @@ h3,
 .h3 {
   font-size: 1.575rem;
 }
+@media screen and (max-width: 767px) {
+  h3,.h3{
+    font-size: 1.2rem;
+  }
+}
+
 
 h4,
 .h4 {
