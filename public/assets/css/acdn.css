@@ -4,7 +4,7 @@
     padding-left:5%;
 }
 .acdn_one .acdn_header {
-    font-size: 110%;
+    font-size: 90%;
     font-weight: bold;
     position: relative;
     border-bottom:1px dotted #ccc;
@@ -68,10 +68,10 @@
 .acdn_one .acdn_inner p.txt {
     margin: 0;
 }
-@media screen and (max-width: 1024px) {
+/* @media screen and (max-width: 767px) {
     .acdn_one .acdn_header {
         font-size: 18px;
-    }
+    } */
     .acdn_one .acdn_header .i_box {
         width: 30px;
         height: 30px;

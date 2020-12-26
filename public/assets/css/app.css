@@ -624,6 +624,13 @@ h4,
   font-size: 1.35rem;
 }
 
+@media screen and (max-width: 767px) {
+  h4,.h4{
+    font-size: 1.1rem;
+  }
+}
+
+
 h5,
 .h5 {
   font-size: 1.125rem;
