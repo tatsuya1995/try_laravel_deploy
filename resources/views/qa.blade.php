@@ -102,6 +102,8 @@
 								<div class="col-md-6">
 									<textarea name="content" placeholder="こちらにご記入ください。"class="form-control"></textarea></br>
 								</div>
+							</div>
+							<div class="form-group row">
 								<div class="col-md-6">
 									<input type="submit" value="メールを送信する">
 								</div>
