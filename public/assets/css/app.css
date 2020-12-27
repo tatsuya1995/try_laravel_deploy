@@ -129,7 +129,7 @@ ul.bluetag li {
   border: 1px solid #5f5039;
 }
 .carImg {
-  width:40%;
+  width:50%;
   border: 1px solid #5f5039;
 }
 
@@ -145,6 +145,12 @@ ul.bluetag li {
     text-align:center;
   }
 }
+
+#card-header-talk {
+  font-size:12%
+}
+
+
 /* ↑driver talkページ↑ */
 
 /* ↑ ************* driverページ ************* ↑ */
@@ -185,9 +191,13 @@ ul.bluetag li {
   bottom:0;
   text-align:left;
   margin-bottom:20px;
-  width:70%;
-  
-
+  width:60%;
+}
+@media screen and (max-width: 767px) {
+  #fixed {
+    width:85%;
+    margin-bottom:5px;
+  }
 }
 #fixed textarea {
   margin:10px 30px;
@@ -215,9 +225,15 @@ ul.bluetag li {
 /* ↓owner contractページ↓ */
 .iconImgContract {
   width:10%;
-  width:10%;
   border: 1px solid #5f5039;
 }
+@media screen and (max-width: 767px) {
+  .iconImgContract {
+      width:15%;
+    }
+  }
+
+
 /* ↑owner contractページ↑ */
 
 /* ↑ ************* ownerページ ************* ↑ */
