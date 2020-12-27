@@ -103,6 +103,17 @@ ul.bluetag li {
   width:60%;
   transform:rotate(90deg);
 }
+#arrow3 {
+  width:60%;
+  transform:rotate(90deg);
+}
+@media screen and (max-width: 767px) {
+  #arrow3 {
+    width:30px;
+  }
+}
+
+
 /* ↑driver searchページ↑ */
 
 /* ↓driver talk（owner talk）ページ↓ */
