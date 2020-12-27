@@ -70,8 +70,8 @@
                                 @if($searches->isEmpty())　<!--  検索条件に合う登録があるかの判定  -->
                                     <p>現在、検索条件に合う登録がありません。</p>
                                 @else　　　　　　　　　　　　　
-                                    <table class="table text-center table-responsive">
-                                        <tr>
+                                    <table class="table text-center table-responsive" style="overflow: scroll">
+                                        <tr class="text-nowrap">
                                             <th>出発日</th>
                                             <th>返却日</th>
                                             <th>貸出場所</th>
@@ -82,8 +82,8 @@
                                         <tr>
                                             <td><?php echo (date('Y/m/d H:i', strtotime($search->departure)))?></td>
                                             <td><?php echo (date('Y/m/d H:i', strtotime($search->revert)))?></td>
-                                            <td>{{$search->place}}</td>
-                                            <td>{{$search->numPeople}}人</td>
+                                            <td class="text-nowrap">{{$search->place}}</td>
+                                            <td class="text-nowrap">{{$search->numPeople}}人</td>
                                             <td>
                                                 <form action="{{route('driver.talk')}}" method="post">
                                                 @csrf
