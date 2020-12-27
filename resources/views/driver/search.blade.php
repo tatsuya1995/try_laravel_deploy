@@ -70,7 +70,7 @@
                                 @if($searches->isEmpty())　<!--  検索条件に合う登録があるかの判定  -->
                                     <p>現在、検索条件に合う登録がありません。</p>
                                 @else　　　　　　　　　　　　　
-                                    <table class="table text-center">
+                                    <table class="table text-center table-responsive">
                                         <tr>
                                             <th>出発日</th>
                                             <th>返却日</th>
