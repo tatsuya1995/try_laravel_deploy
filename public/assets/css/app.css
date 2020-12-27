@@ -173,10 +173,11 @@ ul.bluetag li {
   width:3%;
   transform:rotate(90deg);
   float:right;
+  margin:3px;
 }
 @media screen and (max-width: 767px){
   #arrow2 {
-    width:8%;
+    width:7%;
   }
 }
 
