@@ -13,12 +13,12 @@
                         
                             @if($post->sort === 1)
                                 <div class="driverCard" style="text-align:left">
-                                <p><img src="{{$driverInfo->iconDriver}}" class="iconImgTalk" alt="ドライバーアイコン画像">　{{$driverInfo->nameDriver}}さん　○○○○○○○○○{{$post->created_at}}</p>
+                                <p><img src="{{$driverInfo->iconDriver}}" class="iconImgTalk" alt="ドライバーアイコン画像">　{{$driverInfo->nameDriver}}さん</p>
                                     <p>{{$post->comment}}</p>
                                 </div>
                             @elseif($post->sort === 0)
                             <div class="ownerCard" style="text-align:right">
-                            <p><img src="{{$ownerInfo->iconOwner}}" class="iconImgTalk" alt="オーナーアイコン画像">　{{$ownerInfo->nameOwner}}さん　○○○○○○○○○{{$post->created_at}}</p>
+                            <p><img src="{{$ownerInfo->iconOwner}}" class="iconImgTalk" alt="オーナーアイコン画像">　{{$ownerInfo->nameOwner}}さん</p>
                                 <p>{{$post->comment}}</p>
                             </div>
                             @endif
@@ -26,11 +26,11 @@
                         @endforeach
                         </div>
 
-                <div id="fixed">
+                    <div class="row" id="fixed">
                     <form>
                         @csrf
-                        <textarea name="comment" cols="70" rows="3" placeholder="メッセージを入力"></textarea>
-                        <button type="button"　class="btn btn-primary" id="send">送信</button>
+                        <textarea id="textarea" name="comment"  placeholder="メッセージを入力"></textarea>     
+                        <button type="button" class="btn btn-primary" id="send">送信</button>
                     </form>
                     <div class="text-right align-items-end">
                         <form action="{{route('owner.contract',['idDriver'=> $driverInfo->id])}}" method="get">
@@ -42,7 +42,6 @@
                     <input type="hidden" name='idOwner' value="{{$ownerInfo->id}}">
                     <input type="hidden" name="login" value="{{Auth::id()}}">
                 </div>
-
 
     <script src="/js/app.js"></script>
     <script>
