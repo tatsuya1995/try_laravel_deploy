@@ -51,7 +51,7 @@
                         </div>
                     @endif
                     <div class="row" id="fixed">
-                        <form>
+                        <form method="post" action="driver/post">
                         @csrf    
                         <textarea id="textarea" name="comment"  placeholder="メッセージを入力"></textarea>     
                         <button type="button" class="btn btn-primary" id="send">送信</button>
@@ -107,7 +107,7 @@
 
         $.ajaxSetup({
             headers: {
-                "X-CSRF-TOKEN":$('meta[name="csrf-token"]').attr("content"),
+                "X-CSRF-TOKEN":$('meta[name="csrf-token"]').attr("content")
             }
         });
         //メッセージ送信
