@@ -30,11 +30,11 @@ ul {
                             </ul>
                         </div>
                         @endif
-                        <table class="table">
+                        <table class="table table-responsive">
                         <form action="/owner/mailContract" method="get"> 
                         @csrf             
                         <tr class="text-nowrap"><th>ドライバー</th><td><img src="{{$driverInfo->iconDriver}}" class="iconImgContract" alt="ドライバーアイコン画像">　{{$driverInfo->nameDriver}}　様</td></tr>
-                        <tr class="text-nowrap"><th>使用開始時間</th><td>
+                        <tr class="text-nowrap"><th>使用開始</th><td>
                                                     <dt>
                                                         <dd>
                                                             <input type="date" name="dateDeparture" value="{{old('dateDeparture')}}">
@@ -42,7 +42,7 @@ ul {
                                                         </dd>
                                                     </dt>
                                                 </td></tr>
-                        <tr class="text-nowrap"><th>使用終了時間</th><td>
+                        <tr class="text-nowrap"><th>使用終了</th><td>
                                                     <dt>
                                                         <dd>
                                                             <input type="date" name="dateRevert" value="{{(old('dateRevert'))}}">
