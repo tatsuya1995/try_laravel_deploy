@@ -57,7 +57,7 @@
                             <button type="button" class="btn btn-primary" id="send">送信</button>
                                                  
                             <input type="hidden" name="idDriver" value="{{$driverInfo->id}}">
-                            <input name='idOwner' type="hidden" value="{{$ownerInfo->id}}">
+                            <input type="hidden" name='idOwner' value="{{$ownerInfo->id}}">
                             <input type="hidden" name="login" value="{{Auth::id()}}">
                         </form>
                     </div>
@@ -107,7 +107,7 @@
 
         $.ajaxSetup({
             headers: {
-                "X-CSRF-TOKEN":$('meta[name="csrf-token"]').attr("content")
+                "X-CSRF-TOKEN":$('meta[name="csrf-token"]').attr("content"),
             }
         });
         //メッセージ送信
