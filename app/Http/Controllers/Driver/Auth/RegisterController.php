@@ -78,9 +78,6 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {   
-        //ファイル内に保存
-        // $pathDriver = $data['iconDriver']->store('public');
-        // $iconDriver = basename($pathDriver);
 
         //S3に保存
         $iconDriver = $data['iconDriver'];
