@@ -30,7 +30,7 @@ ul {
                             </ul>
                         </div>
                         @endif
-                        <table class="table table-responsive">
+                        <table class="table table-responsive" style="overflow: scroll">
                         <form action="/owner/mailContract" method="get"> 
                         @csrf             
                         <tr class="text-nowrap"><th>ドライバー</th><td><img src="{{$driverInfo->iconDriver}}" class="iconImgContract" alt="ドライバーアイコン画像">　{{$driverInfo->nameDriver}}　様</td></tr>
