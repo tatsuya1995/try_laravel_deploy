@@ -21,7 +21,7 @@
 <p>◆使用料金<br>
     小計　：{{$request->subTotal}}円</br>
     保険料：500 円 </br>
-    手数料：{{round(($request->subTotal)*0.1)}} 円</br>
+    手数料：{{round((($request->subTotal)+500)*0.1)}} 円</br>
     総計　：{{round((($request->subTotal)+500)*1.1)}} 円(小数点以下切り上げ)
 
 
