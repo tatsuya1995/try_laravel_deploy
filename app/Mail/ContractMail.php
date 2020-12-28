@@ -31,13 +31,16 @@ class ContractMail extends Mailable
      */
     public function build()
     {   
-        //dd($this->driverInfo);
-        //dd($this->request);
-
+        //dd($this->ownerInfo);
         return $this->view('emails.contract')
                     ->from('tatsuyawada1995@gmail.com')
+                    ->bcc([
+                            $this->driverInfo->email,
+                            $this->ownerInfo->email,                    
+                            ])
                     ->subject('契約内容確認')
-                    ->with(['request'=> $this->request,
+                    ->with([
+                            'request'=> $this->request,
                             'driverInfo'=> $this->driverInfo,
                             'ownerInfo' => $this->ownerInfo,
                             ]);

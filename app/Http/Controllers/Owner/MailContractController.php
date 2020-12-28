@@ -51,6 +51,6 @@ class MailContractController extends Controller
         $ownerInfo = Owner::where('id',$idOwner)->first();
         //dd($driverInfo);
         Mail::to($to)->send(new ContractMail($request,$driverInfo,$ownerInfo));
-        //return view('owner/contract');
+        return view('owner/contract',compact('driverInfo','ownerInfo'));
     }
 }

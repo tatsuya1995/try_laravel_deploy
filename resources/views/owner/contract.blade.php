@@ -59,7 +59,7 @@ ul {
                         <tr class="text-nowrap"><th>使用料金 </th>
                         <td>
                             <dd class="text-primary">ドライバーと合意した金額を「小計」に入力後、「計算する」ボタンを押してください。
-                            <dd>小　計：<input type="text" size="5"  name="subTotal" id="subtotal" value="{{old('subTotal')}}"> 円＋保険料500円　 <b id="outputSubtotal"></b>
+                            <dd>小　計：<input type="text" size="7"  name="subTotal" id="subtotal" value="{{old('subTotal')}}"> 円＋保険料500円　 <b id="outputSubtotal"></b>
                             <dd>手数料：<b id="fee"></b>（小計の10%）　
                             <dd><button type="button" class="btn-primary" id="calc">計算する</button>　<b>総計：<span id="outputTotal"></span></b>
                         </td></tr>
@@ -78,8 +78,6 @@ ul {
                         <input type="hidden" name="nameOwner" value="{{$ownerInfo->nameOwner}}">
                         <input type="hidden" name="numPeople" value="{{$ownerInfo->numPeople}}">
                         <input type="hidden" name="nameCar" value="{{$ownerInfo->nameCar}}">
-
-                        <input type="hidden" name="fee" value="fee">
                     </form>
                     </table>
                 </div>
@@ -114,19 +112,6 @@ ul {
                 alert('数値で再度入力ください');
             }
         })
-
-        // //JS→PHPへ変数を渡す
-        // var $data = {"outputTotal":outputTotal,"outputSubtotal":outputSubtotal}
-        // $.ajax({
-        //     type: "POST",
-        //     url:"ContractMail.php",
-        //     data: $data,
-        //     dataType: "json",
-        //     scriptCharset:'utf-8',
-        // }).done(function(data){
-        //     alert(data);
-        // });
-
     });
 
 </script>
