@@ -33,8 +33,8 @@ ul {
                         <table class="table">
                         <form action="/owner/mailContract" method="get"> 
                         @csrf             
-                        <tr><th>ドライバー</th><td><img src="{{$driverInfo->iconDriver}}" class="iconImgContract" alt="ドライバーアイコン画像">　{{$driverInfo->nameDriver}}　様</td></tr>
-                        <tr><th>使用開始時間</th><td>
+                        <tr class="text-nowrap"><th>ドライバー</th><td><img src="{{$driverInfo->iconDriver}}" class="iconImgContract" alt="ドライバーアイコン画像">　{{$driverInfo->nameDriver}}　様</td></tr>
+                        <tr class="text-nowrap"><th>使用開始時間</th><td>
                                                     <dt>
                                                         <dd>
                                                             <input type="date" name="dateDeparture" value="{{old('dateDeparture')}}">
@@ -42,7 +42,7 @@ ul {
                                                         </dd>
                                                     </dt>
                                                 </td></tr>
-                        <tr><th>使用終了時間</th><td>
+                        <tr class="text-nowrap"><th>使用終了時間</th><td>
                                                     <dt>
                                                         <dd>
                                                             <input type="date" name="dateRevert" value="{{(old('dateRevert'))}}">
@@ -50,13 +50,13 @@ ul {
                                                         </dd>
                                                     </dt>
                                                 </td></tr>
-                        <tr><th>車両情報</th>
+                        <tr class="text-nowrap"><th>車両情報</th>
                             <td>
                                 <dd>車種名：{{$ownerInfo->nameCar}}（最大{{$ownerInfo->numPeople}}人乗り）
                                 <dd>ナンバープレート：<input type=text name="carNumber" value="{{old('carNumber')}}">（例.北九州123-あ-1234）
                             </td>
                         </tr>
-                        <tr><th>使用料金 </th><td>
+                        <tr class="text-nowrap"><th>使用料金 </th><td>
                             <dd class="text-primary">ドライバーと合意した金額を「小計」に入力後、「計算する」ボタンを押してください。
                             <dd>小　計：<input type="text" size="5"  name="subTotal" id="subtotal" value="{{old('subTotal')}}"> 円＋保険料500円　 <b id="outputSubtotal"></b>
                             <dd>手数料：<b id="fee"></b>（小計の10%）　

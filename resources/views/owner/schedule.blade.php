@@ -63,19 +63,19 @@
                 <div class="card-header">登録済の日程一覧</div>
                     <div class="card-body">
                         <div id="output">   <!-- 入力フォームを入れたら出力-->
-                            <table class="table text-center">
+                            <table class="table text-center table-responsive" style="overflow: scroll">
                                 <tr>
                                     <th>出発時間</th>
                                     <th>返却時間</th>
-                                    <th>貸出場所</th>
-                                    <th>削除</th>                    
+                                    <th class="text-nowrap">貸出場所</th>
+                                    <th class="text-nowrap">削除</th>                    
                                 </tr>
                                 @foreach($ownerSchedules as $ownerSchedule)
                                 <tr>
                                     <td><?php echo (date('Y/m/d H:i', strtotime($ownerSchedule->departure)))?></td>
                                     <td><?php echo (date('Y/m/d H:i', strtotime($ownerSchedule->revert)))?></td>
-                                    <td>{{$ownerSchedule->place}}</td>
-                                    <td>
+                                    <td class="text-nowrap">{{$ownerSchedule->place}}</td>
+                                    <td class="text-nowrap">
                                         <form action="{{route('owner.destroy',['id'=> $ownerSchedule->id])}}" method="post">
                                         @csrf
                                             <button type="submit" class="btn-danger">削除 </button>
