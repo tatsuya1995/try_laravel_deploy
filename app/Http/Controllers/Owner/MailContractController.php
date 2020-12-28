@@ -25,7 +25,8 @@ class MailContractController extends Controller
             'subTotal' => 'required|numeric|min:1',
             'confirm' => 'required',
             ]);
-            
+        
+        //契約情報の保存
         Contract::create([
             'nameDriver' => $request->nameDriver,
             'nameOwner' => $request->nameOwner,
@@ -44,12 +45,12 @@ class MailContractController extends Controller
                 'email' => 'tatsuyawada1995@gmail.com',
             ],
         ];
-        
+        //ドライバーとオーナーの情報の取得
         $idDriver = $request->idDriver;
         $driverInfo = Driver::where('id',$idDriver)->first();
         $idOwner = Auth::id();
         $ownerInfo = Owner::where('id',$idOwner)->first();
-        //dd($driverInfo);
+
         Mail::to($to)->send(new ContractMail($request,$driverInfo,$ownerInfo));
         return view('owner/contract',compact('driverInfo','ownerInfo'));
     }

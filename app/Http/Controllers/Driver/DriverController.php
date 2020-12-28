@@ -35,7 +35,6 @@ class DriverController extends Controller
     public function show()
     {    
         $driver = $this->driverInfo();
-        //dd($driver);
         return view('driver.show',compact('driver'));
     }
 
@@ -59,18 +58,11 @@ class DriverController extends Controller
         return redirect('driver/show');
     }
 
-
-
-    public function destroy($id)
-    {
-        //
-    }
-
-
     public function searchIn()
     {
         return view('driver.search');
     }
+
     public function searchOut(Request $request)
     {   
         $request->validate([
@@ -80,7 +72,7 @@ class DriverController extends Controller
             'numPeople' => 'min:1',
         ]);
 
-        //検索
+        //検索機能
         $searches = OwnerSchedule::join('owners','_owner_schedules.idOwner','=','owners.id')
                                     ->where([
                                         ['departure','<=',$request->departure],
@@ -88,7 +80,6 @@ class DriverController extends Controller
                                         ['place','=',$request->place],
                                         ['numPeople','>=',$request->numPeople],
                                     ])->get();
-        //dd($searches);
         return view('driver.search',compact('searches','request'));
     }
 

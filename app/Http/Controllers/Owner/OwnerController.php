@@ -107,7 +107,7 @@ class OwnerController extends Controller
                         ->orderBy('chats.created_at','desc')
                         ->get();
         //dd($posts);
-        return view('owner/talkerSelect',compact('posts'));
+        return view('owner/talker_select',compact('posts'));
     }
 
 
@@ -148,7 +148,6 @@ class OwnerController extends Controller
     public function talk(Request $request, $idDriver)
     {   
         // オーナーとドライバーのidと氏名を取得
-
         $idOwner = Auth::id();
         $ownerInfo = Owner::where('id', $idOwner)->first();
         $driverInfo = Driver::where('id', $idDriver)->first();

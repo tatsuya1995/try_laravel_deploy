@@ -2,11 +2,11 @@
 use App\Events\Pusher;
 
 //ログイン前　ドライバー・オーナー共通部分
-Route::get('/','commonController@index')->name('index');
-Route::get('/select','commonController@select');
-Route::get('/qa','commonController@qa');
+Route::get('/','CommonController@index')->name('index');
+Route::get('/select','CommonController@select');
+Route::get('/qa','CommonController@qa');
 //管理者用　契約状況確認ページ
-Route::get('/finalContract','commonController@finalContract');
+Route::get('/finalContract','CommonController@finalContract');
 
 
 //メールの送信

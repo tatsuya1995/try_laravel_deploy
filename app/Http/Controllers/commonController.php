@@ -11,21 +11,7 @@ use Illuminate\View\View;
 use Illuminate\Support\Facades\DB;
 class CommonController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //$this->middleware('auth');
-    }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
         return view('/index');
@@ -41,29 +27,29 @@ class CommonController extends Controller
         return view('/select');
     }
     
-    public function pusherGet()
-    {   
-        $chats = Chat::all();
-        return view('/pusher',["chats" => $chats]);
-    }
-
-    public function pusherCreate(Request $request):JsonResponse
-    {   
-        //dd($request);
-        //Eloquet モデル
-        $chat = new Chat($request->all());
-        $chat->save();
-        //pusherの処理
-        event(new Pusher($chat));
-        return response()->json(['message' => '投稿しました。']);
-
+    // public function pusherGet()
+    // {   
+    //     $chats = Chat::all();
     //     return view('/pusher',["chats" => $chats]);
-    }
+    // }
+
+    // public function pusherCreate(Request $request):JsonResponse
+    // {   
+    //     //dd($request);
+    //     //Eloquet モデル
+    //     $chat = new Chat($request->all());
+    //     $chat->save();
+    //     //pusherの処理
+    //     event(new Pusher($chat));
+    //     return response()->json(['message' => '投稿しました。']);
+
+    // //     return view('/pusher',["chats" => $chats]);
+    // }
 
     public function finalContract()
     {
-        $contracts = Contract::orderBy('created_at','desc')->get();
+        $contracts = Contract::orderBy('created_at','asc')->get();
         //$contracts = DB::table('contracts')->get();
-        return view('Administrator/finalContract',compact('contracts'));
+        return view('Administrator/final_contract',compact('contracts'));
     }
 }

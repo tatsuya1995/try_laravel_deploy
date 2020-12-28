@@ -54,12 +54,7 @@ class RegisterController extends Controller
         return view('driver.auth.register');
     }
 
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
+    
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -70,24 +65,17 @@ class RegisterController extends Controller
             ]);
     }
 
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\User
-     */
     protected function create(array $data)
     {   
-
         //S3に保存
         $iconDriver = $data['iconDriver'];
         $pathIconDriver = Storage::disk('s3')->putFile('/iconDriver',$iconDriver,'public');
 
-            return Driver::create([
-            'nameDriver' => $data['nameDriver'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'iconDriver' => Storage::disk('s3')->url($pathIconDriver),
+        return Driver::create([
+        'nameDriver' => $data['nameDriver'],
+        'email' => $data['email'],
+        'password' => Hash::make($data['password']),
+        'iconDriver' => Storage::disk('s3')->url($pathIconDriver),
         ]);
     }
 }
