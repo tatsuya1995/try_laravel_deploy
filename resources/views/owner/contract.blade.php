@@ -56,7 +56,8 @@ ul {
                                 <dd>ナンバープレート：<input type=text name="carNumber" value="{{old('carNumber')}}">（例.北九州123-あ-1234）
                             </td>
                         </tr>
-                        <tr class="text-nowrap"><th>使用料金 </th><td>
+                        <tr class="text-nowrap"><th>使用料金 </th>
+                        <td>
                             <dd class="text-primary">ドライバーと合意した金額を「小計」に入力後、「計算する」ボタンを押してください。
                             <dd>小　計：<input type="text" size="5"  name="subTotal" id="subtotal" value="{{old('subTotal')}}"> 円＋保険料500円　 <b id="outputSubtotal"></b>
                             <dd>手数料：<b id="fee"></b>（小計の10%）　
