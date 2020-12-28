@@ -51,7 +51,7 @@
         //チャンネルの指定
         var pusherChannel = pusher.subscribe('chat');
 
-        //イベントを受信したら下記処理
+        //イベントを受信した時の処理
         pusherChannel.bind('chat-event',function(data) {
 
             let appendText;

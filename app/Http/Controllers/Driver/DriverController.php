@@ -124,6 +124,7 @@ class DriverController extends Controller
             'comment' => $request->input('comment'),
             'sort' => 1,
         ];
+        dd($insertParam);
         //チャットデータ保存
         try{
             Chat::insert($insertParam);
