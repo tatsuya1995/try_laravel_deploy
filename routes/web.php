@@ -39,9 +39,9 @@ Route::namespace('Driver')->prefix('driver')->name('driver.')->group(function(){
         Route::get('talk/{idOwner}','DriverController@talkIn');
         Route::post('post','DriverController@postIn')->name('post');
         Route::post('delete','DriverController@deletePost')->name('deletePost');
- //pusherテスト
- Route::get('/pusher','TalkController@pusherGet')->name('pusher.get');
- Route::post('/pusher/create','TalkController@pusherCreate')->name('pusher.create');
+    //pusherテスト
+    Route::get('/pusher','TalkController@pusherGet')->name('pusher.get');
+    Route::post('/pusher/create','TalkController@pusherCreate')->name('pusher.create');
     });
 });
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー

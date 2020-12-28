@@ -52,14 +52,14 @@
                     @endif
                     <div class="row" id="fixed">
                         <form>
-                            @csrf
-                            <textarea id="textarea" name="comment"  placeholder="メッセージを入力"></textarea>     
-                            <button type="button" class="btn btn-primary" id="send">送信</button>
-                                                 
+                        @csrf    
+                        <textarea id="textarea" name="comment"  placeholder="メッセージを入力"></textarea>     
+                        <button type="button" class="btn btn-primary" id="send">送信</button>
+                        </form>
+
                             <input type="hidden" name="idDriver" value="{{$driverInfo->id}}">
                             <input type="hidden" name='idOwner' value="{{$ownerInfo->id}}">
                             <input type="hidden" name="login" value="{{Auth::id()}}">
-                        </form>
                     </div>
                 </div>
             </div>
@@ -123,6 +123,7 @@
             }).done(function(result){
                 $('textarea[name="comment"]').val('');
             }).fail(function(result){
+                printf('失敗しました');
             });
         });
     </script>
