@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Events\Pusher;
 use App\Models\Driver;
 use App\Models\Owner;
+use App\Models\Post;
 use App\Models\Chat;
 use App\Models\OwnerSchedule;
 use Illuminate\Support\Facades\Auth;
