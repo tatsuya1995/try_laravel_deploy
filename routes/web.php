@@ -7,10 +7,9 @@ Route::get('/select','CommonController@select');
 Route::get('/qa','CommonController@qa');
 //管理者用　契約状況確認ページ
 Route::get('/finalContract','CommonController@finalContract');
-
-
 //メールの送信
 Route::post('/mail','MailQaController@send');
+
 
 
 //ドライバー
@@ -25,9 +24,11 @@ Route::namespace('Driver')->prefix('driver')->name('driver.')->group(function(){
     //ログイン認証後
     Route::middleware('auth:driver')->group(function(){
 
-        //ブレイド の名前書いたり　見てわかる物は書かない
+        //検索
         Route::get('search','DriverController@searchIn')->name('search');
         Route::post('search','DriverController@searchOut')->name('search');
+        
+        //トーク
         Route::post('talk','DriverController@talkIn')->name('talk');
         Route::get('talk/{idOwner}','DriverController@talkIn');
         Route::post('post','DriverController@postIn')->name('post');
