@@ -123,7 +123,6 @@
             }).done(function(result){
                 $('textarea[name="comment"]').val('');
             }).fail(function(result){
-                printf('失敗しました');
             });
         });
     </script>
