@@ -4,12 +4,10 @@ namespace App\Http\Controllers\Driver;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
-
 use Illuminate\Http\Request;
 use App\Events\Pusher;
 use App\Models\Driver;
 use App\Models\Owner;
-use App\Models\Post;
 use App\Models\Chat;
 use App\Models\OwnerSchedule;
 use Illuminate\Support\Facades\Auth;
@@ -24,39 +22,48 @@ class DriverController extends Controller
 
     //ドライバー情報のプロパティ宣言
     var $id ,$driver;
-
     //ドライバー情報のメソッド宣言
+    public function driverId() {
+        $id = Auth::id();
+        return $id;
+    }
     public function driverInfo() {
         $id = Auth::id();
         $driver = Driver::find($id);
         return $driver;
     }
 
+//ーーーーーー登録情報表示・編集ーーーーーーーーーーーーーーーー
+
     public function show()
     {    
-        $driver = $this->driverInfo();
-        return view('driver.show',compact('driver'));
+        return view('driver.show',['driver'=>$this->driverInfo()]);
     }
 
-    public function edit($id)
+    public function edit()
     {
-        $driver = $this->driverInfo();
-        return view('driver.edit',compact('driver'));
+        return view('driver.edit',['driver'=>$this->driverInfo()]);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {   
-        $driver = Driver::find($id);
+        $driver = Driver::find($this->driverId());
         $driver->nameDriver = $request->input('nameDriver');
         $driver->email = $request->input('email');
 
+        //アイコン画像をS3ストレージへ保存
         $iconDriver = $request->iconDriver;
         $pathIconDriver = Storage::disk('s3')->putFile('/iconDriver',$iconDriver,'public');
         $driver->iconDriver = Storage::disk('s3')->url($pathIconDriver);
-
+        
         $driver->save();
         return redirect('driver/show');
     }
+
+ //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+
+//ーーーーーー貸出日程検索ーーーーーーーーーーーーーーーー
 
     public function searchIn()
     {
@@ -82,6 +89,11 @@ class DriverController extends Controller
                                     ])->get();
         return view('driver.search',compact('searches','request'));
     }
+
+ //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+
+ //ーーーーーートークーーーーーーーーーーーーーーーー
 
     public function talkIn(Request $request)
     {   
@@ -131,4 +143,7 @@ class DriverController extends Controller
         $post->delete();
         return redirect()->action('Driver\DriverController@talkIn',['idOwner' => $idOwner]);
     }
+ //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+
 }

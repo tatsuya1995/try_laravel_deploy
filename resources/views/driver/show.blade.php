@@ -12,7 +12,7 @@
                             <tr><th>メールアドレス</th><td>{{$driver->email}}</td></tr>
                             <tr><th>ドライバーアイコン画像</th><td><img src="{{$driver->iconDriver}}" width="150px" alt="アイコン画像"></td></tr>
                             <tr><th></th><td>
-                                <form action="{{route('driver.edit',['id'=>$driver->id])}}" method="get">
+                                <form action="{{route('driver.edit')}}" method="get">
                                 @csrf
                                     <button type="submit" class="btn btn-primary">編集する</button>
                                 </form></td>
