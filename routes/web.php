@@ -11,6 +11,9 @@ Route::get('/finalContract','CommonController@finalContract');
 Route::post('/mail','MailQaController@send');
 //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
+Route::get('/pusher','TalkController@pusherGet')->name('pusher.get');
+Route::post('/pusher/create','TalkController@pusherCreate')->name('pusher.create');
+
 
 //ーーーー　ドライバー　ーーーーーーーーーーーーーーーーーーー
 Route::namespace('Driver')->prefix('driver')->name('driver.')->group(function(){
