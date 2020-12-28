@@ -42,7 +42,7 @@ class CommonController extends Controller
     //     //pusherの処理
     //     event(new Pusher($chat));
     //     return response()->json(['message' => '投稿しました。']);
-
+//
     // //     return view('/pusher',["chats" => $chats]);
     // }
 
