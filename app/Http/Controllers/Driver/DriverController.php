@@ -97,7 +97,7 @@ class DriverController extends Controller
             'idOwner' => $idOwner,
             'idDriver' => $idDriver,
         ];
-        //dd($param);
+        //投稿の取得
         $posts= Chat::where('idOwner' , $idOwner)
                     ->where('idDriver', $idDriver)
                     ->get();

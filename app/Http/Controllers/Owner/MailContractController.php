@@ -50,7 +50,7 @@ class MailContractController extends Controller
         $driverInfo = Driver::where('id',$idDriver)->first();
         $idOwner = Auth::id();
         $ownerInfo = Owner::where('id',$idOwner)->first();
-
+        
         Mail::to($to)->send(new ContractMail($request,$driverInfo,$ownerInfo));
         return view('owner/contract',compact('driverInfo','ownerInfo'));
     }
