@@ -1,4 +1,4 @@
-![画像](/ReadmeFolder/logo original.png)
+![画像](/ReadmeFolder/logo.png)
 
 
 # 概要
