@@ -72,7 +72,7 @@
         <script>
         //ログを有効にする
         Pusher.logToConsole = true;
-
+        console.log('a');
         var pusher = new Pusher('6dfeb35a6b59eee36ab9',{
             cluster :'ap3',
             enctypted : true
@@ -125,6 +125,7 @@
             }).fail(function(result){
             });
         });
+
     </script>
 
 @endsection
