@@ -31,9 +31,7 @@
         <div class="col-md-10">
             <div class="card">
                 <div class="card-body"> 
-                    @if ($posts->isEmpty())
-                    <p>※メッセージを入力してください。</br>(例：○月○日に車両をお貸しいただけないでしょうか？5時間で3000円程度でお願いしたいです。)</p>
-                    @else
+                    
                         <div id="room">
                             @foreach($posts as $key => $post)
                                 @if($post->sort === 1)
@@ -49,7 +47,7 @@
                                 @endif
                             @endforeach
                         </div>
-                    @endif
+                
                     <div class="row" id="fixed">
                         <form>
                             @csrf
