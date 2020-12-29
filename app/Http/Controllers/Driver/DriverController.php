@@ -118,7 +118,7 @@ class DriverController extends Controller
     }
 
     public function postIn(Request $request)
-    {   dd($request);
+    {   
         $insertParam = [
             'idOwner' => (int)$request->input('idOwner'),
             'idDriver' => (int)$request->input('idDriver'),
