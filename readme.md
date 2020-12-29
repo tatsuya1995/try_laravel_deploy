@@ -1,5 +1,5 @@
-![画像](logo.png)
- ReadmeFolder
+![画像](/ReadmeFolder/logo original.png)
+
 
 # 概要
 車両を保有している人と保有していない人を結ぶSNSアプリケーション。
@@ -18,7 +18,7 @@ A.ドライバー (車を借りたい人）</br>
 B.オーナー （車を貸したい人）</br>
 C.管理者 (Car.マッチング株式会社:自動車保険会社）</br>
 [[→要件定義書 リンク](https://docs.google.com/presentation/d/1vWEF7MWPqWR6HSBz8aYNJNr0i8-kscc3NNe2huMJbcU/edit?usp=sharing)]<br>
-![システムフロー](systemflow.png)
+![システムフロー](/ReadmeFolder/systemflow.png)
 
 # 操作説明
 
@@ -32,7 +32,7 @@ C.管理者 (Car.マッチング株式会社:自動車保険会社）</br>
 ③該当したオーナーとチャットでの交流</br>
 ④車両を借りることへの不安がなくなれば、契約を結んでもらえるようオーナーへ依頼</br>
 
-![driver](driver.gif)
+![driver](/ReadmeFolder/driver.gif)
 
 ***
 
@@ -44,8 +44,8 @@ C.管理者 (Car.マッチング株式会社:自動車保険会社）</br>
 ④オーナーとドライバーが契約条件に合意した場合、契約フォームに入力</br>
 ⑤確認メール送信</br>
 
-![owner1](owner1.gif)<br>
-![onwer2](owner2.gif)
+![owner](/ReadmeFolder/owner.gif)<br>
+
 
 ***
 
@@ -53,7 +53,7 @@ C.管理者 (Car.マッチング株式会社:自動車保険会社）</br>
 
 ①ドライバーとオーナー間で契約が結ばれた後、DBへ内容が保存されるため、それらを表示</br>
 ②この登録情報を見て自動車の保険の加入手続き・料金の支払い手続きに移行</br>
-![onwer2](admin.png)
+![admin](/ReadmeFolder/admin.png)
  
 
 
@@ -102,11 +102,11 @@ mysql 8.0.22 / AWS(EC2,S3)
 Pusher / git(gitHub) / Visual Studio Code / draw.io / Gmail
  
 # AWS構成図
-![画像](aws.png)
+![画像](/ReadmeFolder/aws.png)
 
 # DB設計
 ### ・ ER図
-![画像](finaltable.png)
+![画像](/ReadmeFolder/finaltable.png)
 ### ・ 各種テーブル
 
 | **テーブル名** | **定義** |
