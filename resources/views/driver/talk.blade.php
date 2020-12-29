@@ -66,13 +66,12 @@
         </div>
     </div>
 </div>
-
         <script src="/js/app.js"></script>
         <script src="https://js.pusher.com/6.0/pusher.min.js"></script>
         <script>
         //ログを有効にする
         Pusher.logToConsole = true;
-        console.log('a');
+        
         var pusher = new Pusher('6dfeb35a6b59eee36ab9',{
             cluster :'ap3',
             enctypted : true
@@ -125,7 +124,6 @@
             }).fail(function(result){
             });
         });
-
     </script>
 
 @endsection
