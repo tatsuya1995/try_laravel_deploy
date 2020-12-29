@@ -17,7 +17,6 @@
 A.ドライバー (車を借りたい人）</br>
 B.オーナー （車を貸したい人）</br>
 C.管理者 (Car.マッチング株式会社:自動車保険会社）</br>
-[[→要件定義書 リンク](https://docs.google.com/presentation/d/1vWEF7MWPqWR6HSBz8aYNJNr0i8-kscc3NNe2huMJbcU/edit?usp=sharing)]<br>
 ![システムフロー](/ReadmeFolder/systemflow.png)
 
 # 操作説明
