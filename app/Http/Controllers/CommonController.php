@@ -35,8 +35,6 @@ class CommonController extends Controller
 
     public function pusherCreate(Request $request):JsonResponse
     {   
-        //dd($request);
-        //Eloquet モデル
         $chat = new Chat($request->all());
         $chat->save();
         //pusherの処理
