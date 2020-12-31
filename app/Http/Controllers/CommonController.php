@@ -43,7 +43,9 @@ class CommonController extends Controller
     }    
     public function finalContract()
     {
-        $contracts = Contract::orderBy('created_at','desc')->get();
+        $contracts = Contract::get();
+        //$contracts = DB::table('contracts')->orderBy('created_at','desc')->get();
+        dd($contracts);
         return view('Administrator/final_contract',compact('contracts'));
     }
 }
