@@ -67,64 +67,45 @@
         </div>
     </div>
 </div>
-        <script src="/js/app.js"></script>
-        <script src="https://js.pusher.com/6.0/pusher.min.js"></script>
-        <script>
-        //ログを有効にする
-        Pusher.logToConsole = true;
-        
-        var pusher = new Pusher('6dfeb35a6b59eee36ab9',{
-            cluster :'ap3',
-            enctypted : true
-        })
-        //チャンネルの指定
-        var pusherChannel = pusher.subscribe('chat');
+<script src="/js/app.js"></script>
+<script src="https://js.pusher.com/6.0/pusher.min.js"></script>
+<script>
+//pusherの設定
+Pusher.logToConsole = true;
+var pusher = new Pusher('6dfeb35a6b59eee36ab9',{
+    cluster :'ap3',
+    enctypted : true
+})
+//チャンネルの指定
+var pusherChannel = pusher.subscribe('chat');
 
-        //イベントを受信したら下記処理
-        pusherChannel.bind('chat-event',function(data) {
+//イベントを受信後の処理
+pusherChannel.bind('chat-event',function(data) {
+    //メッセージを表示
+    let appendText;
+    appendText = '<div class="idDriver" style="text-align:center"><p>'+'---- received　new message ---- <br>' + data.comment + '</p></div> ';
+    $("#room").append(appendText);
+});
 
-            let appendText;
-            let login = $('input[name="login"]').val();
-
-
-            appendText = '<div class="idDriver" style="text-align:center"><p>'+'---- received　new message ---- <br>' + data.comment + '</p></div> ';
-            // if(data.idDriver === login){
-            //     appendText = '<div class="idDriver" style="text-align:right"><p>' + data.comment + '</p></div> ';
-            // }else if(data.idOwner === login){
-            //     appendText = '<div class="idOwner" style="text-align:left"><p>' + data.comment + '</p></div> ';
-            // }else{
-            //     return false;
-            // }
-
-            //メッセージを表示
-            $("#room").append(appendText);
-
-            if(data.idOwner === login){
-                //ブラウザへプッシュ通知
-                //一旦置いておく
-            }
-        });
-
-        $.ajaxSetup({
-            headers: {
-                "X-CSRF-TOKEN":$('meta[name="csrf-token"]').attr("content")
-            }
-        });
-        //メッセージ送信
-        $('#send').on('click' , function(){
-            $.ajax({
-            type : 'POST',
-            url : '/driver/post',
-            data : {
-                comment : $('textarea[name="comment"]').val(),
-                idDriver : $('input[name="idDriver"]').val(),
-                idOwner : $('input[name="idOwner"]').val(),
-            }
-            }).done(function(result){
-                $('textarea[name="comment"]').val('');
-            }).fail(function(result){
-            });
-        });
-    </script>
-
+$.ajaxSetup({
+    headers: {
+        "X-CSRF-TOKEN":$('meta[name="csrf-token"]').attr("content")
+    }
+});
+//メッセージ送信
+$('#send').on('click' , function(){
+    $.ajax({
+    type : 'POST',
+    url : '/driver/post',
+    data : {
+        comment : $('textarea[name="comment"]').val(),
+        idDriver : $('input[name="idDriver"]').val(),
+        idOwner : $('input[name="idOwner"]').val(),
+    }
+    }).done(function(result){
+        $('textarea[name="comment"]').val('');
+    }).fail(function(result){
+    });
+});
+</script>
 @endsection

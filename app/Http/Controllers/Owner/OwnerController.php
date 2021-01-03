@@ -63,7 +63,6 @@ class OwnerController extends Controller
         $pathImgCar = Storage::disk('s3')->putFile('/imgCar',$imgCar,'public');
         $owner->iconOwner = Storage::disk('s3')->url($pathIconOwner);
         $owner->imgCar =Storage::disk('s3')->url($pathImgCar);
-
         $owner->save();
         return redirect('owner/show');
     }
@@ -82,7 +81,7 @@ class OwnerController extends Controller
         'revert' => 'required|after:departure',
         'place' => 'required',
         ]);
-
+        //スケジュールの保存
         $ownerSchedule = new OwnerSchedule;
         $ownerSchedule->departure = $request->input('departure');
         $ownerSchedule->revert = $request->input('revert');
@@ -112,9 +111,9 @@ class OwnerController extends Controller
     }
     public function talkIn(Request $request, $idDriver)
     {   
-        //オーナー情報の表示
+        //オーナー情報の取得
         $ownerInfo = Owner::where('id', $this->ownerId())->first();
-        //ドライバー情報の表示
+        //ドライバー情報の取得
         $idDriver = (int)$request->idDriver;
         $driverInfo = Driver::where('id', $idDriver)->first();
         //トーク情報の取得
@@ -150,7 +149,6 @@ class OwnerController extends Controller
         $query = Chat::where('idOwner' , $this->ownerId())->where('idDriver', $idDriver);
         $posts = $query->orderBy('created_at','desc')->get();
         return view('owner/talk',compact('ownerInfo','driverInfo','posts'));
-        
     }
     
     public function contract($idDriver)
