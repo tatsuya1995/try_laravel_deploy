@@ -72,7 +72,7 @@ class OwnerController extends Controller
     {
         $ownerSchedules = OwnerSchedule::where('idOwner', Auth::id())
                                         ->get();
-        return view('owner.schedule',['ownerSchedules' => $ownerSchedules]);
+        return view('owner.schedule',compact('ownerSchedules'));
     }
 
     public function scheduleOut(Request $request)
@@ -93,7 +93,7 @@ class OwnerController extends Controller
         return redirect('owner/schedule');
     }
 
-    public function destroy($id)
+    public function delete($id)
     {
         $ownerSchedule = OwnerSchedule::find($id);
         $ownerSchedule->delete();

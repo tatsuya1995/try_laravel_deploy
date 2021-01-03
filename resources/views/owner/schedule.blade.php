@@ -80,7 +80,7 @@
                                         <td><?php echo (date('Y/m/d H:i', strtotime($ownerSchedule->revert)))?></td>
                                         <td class="text-nowrap">{{$ownerSchedule->place}}</td>
                                         <td class="text-nowrap">
-                                            <form action="{{route('owner.destroy',['id'=> $ownerSchedule->id])}}" method="post">
+                                            <form action="{{route('owner.delete',['id'=> $ownerSchedule->id])}}" method="post">
                                             @csrf
                                                 <button type="submit" class="btn-danger">削除 </button>
                                             </form>

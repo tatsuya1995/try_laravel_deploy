@@ -68,8 +68,8 @@ Route::namespace('Owner')->prefix('owner')->name('owner.')->group(function(){
         
         //貸出日程登録
         Route::get('schedule','OwnerController@scheduleIn')->name('schedule');
-        Route::post('schedule','OwnerController@scheduleOut')->name('owner.schedule');
-        Route::post('destroy/{id}','OwnerController@destroy')->name('destroy');
+        Route::post('schedule','OwnerController@scheduleOut');
+        Route::post('delete/{id}','OwnerController@delete')->name('delete');
 
         //トークの相手を選択
         Route::post('talkerSelect','OwnerController@talkerSelect')->name('talkerSelect');
