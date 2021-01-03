@@ -1,6 +1,7 @@
 <?php
 use App\Events\Pusher;
 
+
 //ーーーーログイン前　共通部分ーーーーー
 Route::get('/','CommonController@index')->name('index');
 Route::get('/select','CommonController@select');
@@ -31,8 +32,8 @@ Route::namespace('Driver')->prefix('driver')->name('driver.')->group(function(){
         Route::post('update','DriverController@update')->name('update');
 
         //貸出日程検索
-        Route::get('search','DriverController@searchIn')->name('search');
-        Route::post('search','DriverController@searchOut')->name('search');
+        Route::get('search','DriverController@searchIn');
+        Route::post('search','DriverController@searchOut');
 
         //トーク
         Route::post('talk','DriverController@talkIn')->name('talk');

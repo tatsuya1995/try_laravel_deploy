@@ -68,7 +68,7 @@ class DriverController extends Controller
 
     public function searchIn()
     {
-        return view('driver.search');
+        return view('driver/search');
     }
 
     public function searchOut(Request $request)
@@ -88,7 +88,7 @@ class DriverController extends Controller
                                         ['place','=',$request->place],
                                         ['numPeople','>=',$request->numPeople],
                                     ])->get();
-        return view('driver.search',compact('searches','request'));
+        return view('driver/search',compact('searches','request'));
     }
 
  //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
@@ -132,7 +132,6 @@ class DriverController extends Controller
         }catch (\Exception $e){
             return false;
         }
-        
         //イベント発火
         event(new Pusher($request->all()));
         return true;
