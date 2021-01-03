@@ -26,6 +26,10 @@ class OwnerController extends Controller
     var $idOwner ,$owner;
 
     //オーナー情報のメソッド宣言
+    public function ownerId() {
+        $id = Auth::id();
+        return $id;
+    }
     public function ownerInfo() {
         $idOwner = Auth::id();
         $ownerInfo = Owner::find($idOwner);
@@ -38,15 +42,15 @@ class OwnerController extends Controller
         return view('owner.show',compact('owner'));
     }
 
-    public function edit($id)
+    public function edit()
     {
         $owner = $this->ownerInfo();
         return view('owner.edit',compact('owner'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {   
-        $owner = Owner::find($id);
+        $owner = Owner::find($this->ownerId());
         $owner->nameOwner = $request->input('nameOwner');
         $owner->email = $request->input('email');
         $owner->nameCar = $request->input('nameCar');

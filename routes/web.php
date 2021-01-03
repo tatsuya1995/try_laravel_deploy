@@ -63,8 +63,8 @@ Route::namespace('Owner')->prefix('owner')->name('owner.')->group(function(){
 
         //登録情報表示
         Route::get('show','OwnerController@show')->name('show');
-        Route::get('edit/{id}','OwnerController@edit')->name('edit');
-        Route::post('update/{id}','OwnerController@update')->name('update');
+        Route::get('edit','OwnerController@edit')->name('edit');
+        Route::post('update','OwnerController@update')->name('update');
         
         //貸出日程登録
         Route::get('schedule','OwnerController@scheduleIn')->name('schedule');

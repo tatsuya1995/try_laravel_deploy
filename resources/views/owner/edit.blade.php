@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">登録情報</div>
                     <div class="card-body">
-                        <form action="{{route('owner.update',['id'=>$owner->id])}}" method="post" enctype="multipart/form-data">
+                        <form action="{{route('owner.update')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row">
                         <label for="nameOwner" class="col-md-4 col-form-label text-md-right">氏名</label>

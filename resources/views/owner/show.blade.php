@@ -15,7 +15,7 @@
                             <tr><th>車両名</th><td>{{$owner->nameCar}}</td></tr>
                             <tr><th>最大乗車人数</th><td>{{$owner->numPeople}}人</td></tr>
                             <tr><th></th><td>
-                            <form action="{{route('owner.edit',['id'=>$owner->id])}}" method="get">
+                            <form action="{{route('owner.edit')}}" method="get">
                             @csrf
                                 <button type="submit" class="btn btn-primary">編集する
                             </form></td>
