@@ -72,7 +72,6 @@ Route::namespace('Owner')->prefix('owner')->name('owner.')->group(function(){
         Route::post('delete/{id}','OwnerController@delete')->name('delete');
 
         //トークの相手を選択
-        Route::post('talkerSelect','OwnerController@talkerSelect')->name('talkerSelect');
         Route::get('talkerSelect','OwnerController@talkerSelect')->name('talkerSelect');
 
         //トーク

@@ -18,7 +18,7 @@
                             @elseif($post->sort === 0)
                                 <div class="ownerCard" style="text-align:right">
                                 <p><img src="{{$ownerInfo->iconOwner}}" class="iconImgTalk" alt="オーナーアイコン画像">　{{$ownerInfo->nameOwner}}さん</p>
-                                    <p>{{$post->comment}}</p>
+                                <p>{{$post->comment}}</p>
                                 </div>
                             @endif
                         @endforeach
@@ -40,6 +40,7 @@
                         <input type="hidden" name='idOwner' value="{{$ownerInfo->id}}">
                         <input type="hidden" name="login" value="{{Auth::id()}}">
                     </div>
+
     <script src="/js/app.js"></script>
     <script src="https://js.pusher.com/6.0/pusher.min.js"></script>
     <script>
@@ -52,29 +53,15 @@
         })
         //チャンネルの指定
         var pusherChannel = pusher.subscribe('chat');
-
         //イベントを受信した時の処理
         pusherChannel.bind('chat-event',function(data) {
 
             let appendText;
             let login = $('input[name="login"]').val();
-
-            // console.log(data.sort);
-            // if(data.sort === 1){
-                appendText = '<div class="idDriver" style="text-align:center"><p>'+'---- received　new message ---- <br>' + data.comment + '</p></div> ';
-            // }else if(data.sort === 0){
-            //     appendText = '<div class="idOwner" style="text-align:right"><p>' + data.comment + '</p></div> ';
-            // }else{
-            //     return false;
-            // }
-
+            
+            appendText = '<div class="idDriver" style="text-align:center"><p>'+'---- received　new message ---- <br>' + data.comment + '</p></div> ';
             //メッセージを表示
             $("#room").append(appendText);
-
-            if(data.idOwner === login){
-                //ブラウザへプッシュ通知
-                //一旦置いておく
-            }
         });
 
         $.ajaxSetup({

@@ -88,7 +88,6 @@ class OwnerController extends Controller
         $ownerSchedule->revert = $request->input('revert');
         $ownerSchedule->place = $request->input('place');
         $ownerSchedule->idOwner = Auth::id();
-        //dd($ownerSchedule);
         $ownerSchedule->save();
         return redirect('owner/schedule');
     }
@@ -104,31 +103,24 @@ class OwnerController extends Controller
     public function talkerSelect()
     {   
         //オーナー情報の取得
-        $idOwner = Auth::id();
         $posts = Chat::join('drivers','chats.idDriver','=','drivers.id')
-                        ->where('idOwner','=',$idOwner)
+                        ->where('idOwner','=',$this->ownerId())
                         ->groupBy('idDriver')
                         ->orderBy('chats.created_at','desc')
                         ->get();
-        //dd($posts);
         return view('owner/talker_select',compact('posts'));
     }
-
-
     public function talkIn(Request $request, $idDriver)
     {   
         //オーナー情報の表示
-        $idOwner = Auth::id();
-        $ownerInfo = Owner::where('id', $idOwner)->first();
-        
+        $ownerInfo = Owner::where('id', $this->ownerId())->first();
         //ドライバー情報の表示
         $idDriver = (int)$request->idDriver;
         $driverInfo = Driver::where('id', $idDriver)->first();
-
-        $posts = Chat::where('idOwner', $idOwner)
+        //トーク情報の取得
+        $posts = Chat::where('idOwner', $this->ownerId())
                         ->where('idDriver', $idDriver)
                         ->get();
-        //dd($posts);
         return view('owner/talk',compact('ownerInfo','driverInfo','posts'));
     }
     public function postIn(Request $request)
@@ -152,11 +144,10 @@ class OwnerController extends Controller
     public function talk(Request $request, $idDriver)
     {   
         // オーナーとドライバーのidと氏名を取得
-        $idOwner = Auth::id();
-        $ownerInfo = Owner::where('id', $idOwner)->first();
+        $ownerInfo = Owner::where('id', $this->ownerId())->first();
         $driverInfo = Driver::where('id', $idDriver)->first();
-
-        $query = Chat::where('idOwner' , $idOwner)->where('idDriver', $idDriver);
+        //トーク履歴の取得
+        $query = Chat::where('idOwner' , $this->ownerId())->where('idDriver', $idDriver);
         $posts = $query->orderBy('created_at','desc')->get();
         return view('owner/talk',compact('ownerInfo','driverInfo','posts'));
         
@@ -164,10 +155,9 @@ class OwnerController extends Controller
     
     public function contract($idDriver)
     {
-        $idOwner = Auth::id();
-        $ownerInfo = Owner::where('id', $idOwner)->first();
+        // オーナーとドライバーのidと氏名を取得
+        $ownerInfo = Owner::where('id', $this->ownerId())->first();
         $driverInfo = Driver::where('id', $idDriver)->first();
-        //dd($driverInfo);
 
         return view('owner/contract',compact('ownerInfo','driverInfo'));
     }
