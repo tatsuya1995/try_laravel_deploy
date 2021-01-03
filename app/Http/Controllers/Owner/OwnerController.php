@@ -106,7 +106,7 @@ class OwnerController extends Controller
         $posts = Chat::join('drivers','chats.idDriver','=','drivers.id')
                         ->where('idOwner','=',$this->ownerId())
                         ->groupBy('idDriver')
-                        ->orderBy('chats.created_at','desc')
+                        ->orderBy('chats.created_at','asc')
                         ->get();
         return view('owner/talker_select',compact('posts'));
     }
