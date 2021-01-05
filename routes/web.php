@@ -61,6 +61,9 @@ Route::namespace('Owner')->prefix('owner')->name('owner.')->group(function(){
         'verify' => false
     ]);
 
+    //ゲストユーザーログイン
+    Route::get('guest','Auth\LoginController@guestLogin')->name('guest');
+
     //ログイン認証後
     Route::middleware('auth:owner')->group(function(){
 
