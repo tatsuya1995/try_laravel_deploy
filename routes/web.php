@@ -22,6 +22,9 @@ Route::namespace('Driver')->prefix('driver')->name('driver.')->group(function(){
         'reset' => false,
         'verify' => false
     ]);
+    
+    //ゲストユーザーログイン
+    Route::get('guest','Auth\LoginController@guestLogin')->name('guest');
 
     //ログイン認証後
     Route::middleware('auth:driver')->group(function(){

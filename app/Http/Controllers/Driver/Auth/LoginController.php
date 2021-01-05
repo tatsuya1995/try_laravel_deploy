@@ -7,6 +7,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Driver;
 
 class LoginController extends Controller
 {
@@ -23,17 +24,23 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
+    //ゲストユーザー用のメールアドレスを定数として定義
+    private const GUEST_USER_EMAIL = 'guestdriver@gmail.com';
+
+    //ゲストログイン処理
+    public function guestLogin()
+    {
+        $user = Driver::where('email',self::GUEST_USER_EMAIL)->first();
+        if ($user) {
+            Auth::login($user);
+            return redirect('/driver/search');
+        }
+        return redirect('/driver/search');
+    }
+
     protected $redirectTo = RouteServiceProvider::DRIVER_HOME;
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+
+
     public function __construct()
     {
         $this->middleware('guest:driver')->except('logout');
