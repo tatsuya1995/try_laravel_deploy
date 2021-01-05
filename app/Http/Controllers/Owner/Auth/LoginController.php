@@ -22,9 +22,9 @@ class LoginController extends Controller
         $user = Owner::where('email',self::GUEST_OWNER_EMAIL)->first();
         if ($user) {
             Auth::login($user);
-            return view('/owner/schedule');
+            return redirect('/owner/schedule');
         }
-        return view('/owner/schedule');
+        return redirect('/owner/schedule');
     }
 
     protected $redirectTo = RouteServiceProvider::OWNER_HOME;

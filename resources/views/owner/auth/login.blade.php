@@ -43,11 +43,11 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('ログイン') }}
                                 </button>&emsp;
-                                <button class="btn btn-success">
+                                <!-- <button class="btn btn-success">
                                     <a href="{{ route('owner.guest') }}" class="text-white">
                                     ゲストログイン
                                     </a>
-                                </button>
+                                </button> -->
                             </div>
                         </div>
                     </form>

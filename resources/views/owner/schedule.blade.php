@@ -17,7 +17,7 @@
                                 </ul>
                             </div>
                             @endif 
-                            <form action="" method="post">
+                            <form action="/owner/schedule" method="post">
                                 @csrf
                                 <div class="form-group row">
                                     <label for="" class="col-md-4 col-form-label text-md-right">貸出時間</label>
