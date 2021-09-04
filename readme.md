@@ -138,7 +138,7 @@ web系企業ではクラウドはAWSが主流になっていますのでAWSを�
 大変お忙しい中、最後までご覧いただき誠にありがとうございました。<br>
 ご興味を持っていただけましたら、下記リンクもご覧頂けると幸いです。<br>
 
-[→[自己紹介サイト](https://tatsudesign.net/portfolio/main/index.html):学歴・職務経歴・webエンジニアを目指す経緯などを記載しています！]</br>
+[→[自己紹介サイト](https://tatsudesign.net/%e3%80%90%e8%87%aa%e5%b7%b1%e7%b4%b9%e4%bb%8b%e3%80%91/):学歴・職務経歴・webエンジニアを目指す経緯などを記載しています！]</br>
 [→[Qiita](https://qiita.com/tatsuya_1995):発信力を持ったエンジニアになるべく今後はドシドシ投稿していきます！]</br>
 [→[Twitter](https://twitter.com/string_tatsuya):日々の学習を記録・発信しています！]</br>
 
