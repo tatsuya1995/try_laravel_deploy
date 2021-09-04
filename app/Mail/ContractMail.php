@@ -33,7 +33,7 @@ class ContractMail extends Mailable
     {   
         //dd($this->ownerInfo);
         return $this->view('emails.contract')
-                    ->from('tatsuyawada1995@gmail.com')
+                    ->from('test@gmail.com')
                     ->bcc([
                             $this->driverInfo->email,
                             $this->ownerInfo->email,                    
